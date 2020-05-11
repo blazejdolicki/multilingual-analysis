@@ -1,0 +1,583 @@
+﻿Epoch:  80%|██████████████████████████████████████████████▍           | 8/10 [5:12:47<1:18:33, 2356.70s/it0
+5/09/2020 12:48:40 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 12:48:40 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 12:48:40 - INFO - __main__ -     Num examples = 1397
+05/09/2020 12:48:40 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.55it/s]
+05/09/2020 12:49:19 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 12:49:19 - INFO - __main__ -     f1 = 0.9779000329148446██████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 12:49:19 - INFO - __main__ -     loss = 0.12132846817235986
+05/09/2020 12:49:19 - INFO - __main__ -     precision = 0.9781760030102065
+05/09/2020 12:49:19 - INFO - __main__ -     recall = 0.9776242184929254
+                                                                                                          0
+5/09/2020 12:52:02 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 12:52:03 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 12:52:03 - INFO - __main__ -     Num examples = 1397
+05/09/2020 12:52:03 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 12:52:41 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 12:52:41 - INFO - __main__ -     f1 = 0.9774559815698536██████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 12:52:41 - INFO - __main__ -     loss = 0.12050635407192334
+05/09/2020 12:52:41 - INFO - __main__ -     precision = 0.97761685319289
+05/09/2020 12:52:41 - INFO - __main__ -     recall = 0.9772951628825272
+                                                                                                          0
+5/09/2020 12:55:25 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 12:55:25 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 12:55:25 - INFO - __main__ -     Num examples = 1397
+05/09/2020 12:55:25 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 12:56:03 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 12:56:03 - INFO - __main__ -     f1 = 0.977694206134681███████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 12:56:03 - INFO - __main__ -     loss = 0.12073649888277162
+05/09/2020 12:56:03 - INFO - __main__ -     precision = 0.9777171869123731
+05/09/2020 12:56:03 - INFO - __main__ -     recall = 0.9776712264372679
+                                                                                                          0
+5/09/2020 12:58:47 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 12:58:47 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 12:58:47 - INFO - __main__ -     Num examples = 1397
+05/09/2020 12:58:47 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.57it/s]
+05/09/2020 12:59:26 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 12:59:26 - INFO - __main__ -     f1 = 0.977739122258527███████| 175/175 [00:38<00:00,  5.15it/s]
+05/09/2020 12:59:26 - INFO - __main__ -     loss = 0.12121764547303818
+05/09/2020 12:59:26 - INFO - __main__ -     precision = 0.9778540530374271
+05/09/2020 12:59:26 - INFO - __main__ -     recall = 0.9776242184929254
+                                                                                                          0
+5/09/2020 13:02:09 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:02:09 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:02:09 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:02:09 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:02:48 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:02:48 - INFO - __main__ -     f1 = 0.9783283189168861██████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 13:02:48 - INFO - __main__ -     loss = 0.12087691831650903
+05/09/2020 13:02:48 - INFO - __main__ -     precision = 0.9783743124441728
+05/09/2020 13:02:48 - INFO - __main__ -     recall = 0.9782823297137216
+                                                                                                          0
+5/09/2020 13:05:31 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:05:31 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:05:31 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:05:31 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:06:10 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:06:10 - INFO - __main__ -     f1 = 0.9780400639518481██████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 13:06:10 - INFO - __main__ -     loss = 0.12053802137132152
+05/09/2020 13:06:10 - INFO - __main__ -     precision = 0.9783621054612164
+05/09/2020 13:06:10 - INFO - __main__ -     recall = 0.9777182343816105
+                                                                                                          0
+5/09/2020 13:08:53 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:08:53 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:08:53 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:08:53 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:09:32 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:09:32 - INFO - __main__ -     f1 = 0.9785762998847682██████| 175/175 [00:38<00:00,  5.10it/s]
+05/09/2020 13:09:32 - INFO - __main__ -     loss = 0.12250146780672366
+05/09/2020 13:09:32 - INFO - __main__ -     precision = 0.9791058823529412
+05/09/2020 13:09:32 - INFO - __main__ -     recall = 0.9780472899920086
+                                                                                                          0
+5/09/2020 13:12:16 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:12:16 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:12:16 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:12:16 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:12:55 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:12:55 - INFO - __main__ -     f1 = 0.9780348995813931██████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 13:12:55 - INFO - __main__ -     loss = 0.1243650659308956
+05/09/2020 13:12:55 - INFO - __main__ -     precision = 0.9785872276342417
+05/09/2020 13:12:55 - INFO - __main__ -     recall = 0.9774831946598975
+                                                                                                          0
+5/09/2020 13:15:38 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:15:38 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:15:38 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:15:38 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:16:17 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:16:17 - INFO - __main__ -     f1 = 0.9778341912888137██████| 175/175 [00:38<00:00,  5.13it/s]
+05/09/2020 13:16:17 - INFO - __main__ -     loss = 0.12388840057295705
+05/09/2020 13:16:17 - INFO - __main__ -     precision = 0.9779031499764927
+05/09/2020 13:16:17 - INFO - __main__ -     recall = 0.9777652423259531
+                                                                                                          0
+5/09/2020 13:19:01 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:19:01 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:19:01 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:19:01 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:19:39 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:19:39 - INFO - __main__ -     f1 = 0.9777621062529385██████| 175/175 [00:38<00:00,  5.09it/s]
+05/09/2020 13:19:39 - INFO - __main__ -     loss = 0.1256057808893768
+05/09/2020 13:19:39 - INFO - __main__ -     precision = 0.9779000329148446
+05/09/2020 13:19:39 - INFO - __main__ -     recall = 0.9776242184929254
+05/09/2020 13:19:39 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:19:39 - INFO - __main__ -   ***** Running evaluation 5000 in nl *****
+05/09/2020 13:19:39 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:19:39 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:20:18 - INFO - __main__ -   ***** Evaluation result 5000 in nl *****
+05/09/2020 13:20:18 - INFO - __main__ -     f1 = 0.9777621062529385██████| 175/175 [00:38<00:00,  5.13it/s]
+05/09/2020 13:20:18 - INFO - __main__ -     loss = 0.1256057808893768
+05/09/2020 13:20:18 - INFO - __main__ -     precision = 0.9779000329148446
+05/09/2020 13:20:18 - INFO - __main__ -     recall = 0.9776242184929254
+05/09/2020 13:20:18 - INFO - __main__ -   Hit patience=1
+                                                                                                          0
+5/09/2020 13:23:02 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:23:02 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:23:02 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:23:02 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:23:40 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:23:40 - INFO - __main__ -     f1 = 0.9784612490594432██████| 175/175 [00:38<00:00,  5.10it/s]
+05/09/2020 13:23:40 - INFO - __main__ -     loss = 0.12472359528747412
+05/09/2020 13:23:40 - INFO - __main__ -     precision = 0.9788755586920724
+05/09/2020 13:23:40 - INFO - __main__ -     recall = 0.9780472899920086
+Iteration: 100%|███████████████████████████████████████████████████████| 9028/9028 [38:30<00:00,  3.91it/s]
+Epoch:  90%|██████████████████████████████████████████████████████      | 9/10 [5:51:17<39:02, 2342.75s/it0
+5/09/2020 13:26:24 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:26:24 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:26:24 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:26:24 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:27:03 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:27:03 - INFO - __main__ -     f1 = 0.9783901991675876██████| 175/175 [00:38<00:00,  5.10it/s]
+05/09/2020 13:27:03 - INFO - __main__ -     loss = 0.12551674269698976
+05/09/2020 13:27:03 - INFO - __main__ -     precision = 0.9788275148207396
+05/09/2020 13:27:03 - INFO - __main__ -     recall = 0.9779532741033234
+                                                                                                          0
+5/09/2020 13:29:46 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:29:46 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:29:46 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:29:46 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:30:25 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:30:25 - INFO - __main__ -     f1 = 0.9781382228490832██████| 175/175 [00:38<00:00,  5.09it/s]
+05/09/2020 13:30:25 - INFO - __main__ -     loss = 0.1271696187888873
+05/09/2020 13:30:25 - INFO - __main__ -     precision = 0.9782762025673579
+05/09/2020 13:30:25 - INFO - __main__ -     recall = 0.9780002820476661
+                                                                                                          0
+5/09/2020 13:33:08 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:33:09 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:33:09 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:33:09 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.55it/s]
+05/09/2020 13:33:47 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:33:47 - INFO - __main__ -     f1 = 0.9786533759638892██████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 13:33:47 - INFO - __main__ -     loss = 0.12694359293944477
+05/09/2020 13:33:47 - INFO - __main__ -     precision = 0.9788835065606922
+05/09/2020 13:33:47 - INFO - __main__ -     recall = 0.9784233535467494
+                                                                                                          0
+5/09/2020 13:36:31 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:36:31 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:36:31 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:36:31 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.55it/s]
+05/09/2020 13:37:10 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:37:10 - INFO - __main__ -     f1 = 0.9783482615135058██████| 175/175 [00:38<00:00,  5.09it/s]
+05/09/2020 13:37:10 - INFO - __main__ -     loss = 0.1279789147135411
+05/09/2020 13:37:10 - INFO - __main__ -     precision = 0.9785553047404063
+05/09/2020 13:37:10 - INFO - __main__ -     recall = 0.9781413058806938
+                                                                                                          0
+5/09/2020 13:39:53 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:39:53 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:39:53 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:39:53 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:40:32 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:40:32 - INFO - __main__ -     f1 = 0.977965902410347███████| 175/175 [00:38<00:00,  5.09it/s]
+05/09/2020 13:40:32 - INFO - __main__ -     loss = 0.1293417730135739
+05/09/2020 13:40:32 - INFO - __main__ -     precision = 0.9784490871447393
+05/09/2020 13:40:32 - INFO - __main__ -     recall = 0.9774831946598975
+                                                                                                          0
+5/09/2020 13:43:16 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:43:16 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:43:16 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:43:16 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.55it/s]
+05/09/2020 13:43:54 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:43:54 - INFO - __main__ -     f1 = 0.9783692278754819██████| 175/175 [00:38<00:00,  5.10it/s]
+05/09/2020 13:43:54 - INFO - __main__ -     loss = 0.1274455131085051
+05/09/2020 13:43:54 - INFO - __main__ -     precision = 0.9786913777694153
+05/09/2020 13:43:54 - INFO - __main__ -     recall = 0.9780472899920086
+                                                                                                          0
+5/09/2020 13:46:38 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:46:38 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:46:38 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:46:38 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:47:16 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:47:16 - INFO - __main__ -     f1 = 0.9781571089323082██████| 175/175 [00:38<00:00,  5.10it/s]
+05/09/2020 13:47:16 - INFO - __main__ -     loss = 0.12822813697004937
+05/09/2020 13:47:16 - INFO - __main__ -     precision = 0.9785022109323549
+05/09/2020 13:47:16 - INFO - __main__ -     recall = 0.9778122502702957
+                                                                                                          0
+5/09/2020 13:50:00 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:50:00 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:50:00 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:50:00 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:50:39 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:50:39 - INFO - __main__ -     f1 = 0.9782291813607936██████| 175/175 [00:38<00:00,  5.09it/s]
+05/09/2020 13:50:39 - INFO - __main__ -     loss = 0.12871301266295113
+05/09/2020 13:50:39 - INFO - __main__ -     precision = 0.9785052443441042
+05/09/2020 13:50:39 - INFO - __main__ -     recall = 0.9779532741033234
+                                                                                                          0
+5/09/2020 13:53:22 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:53:22 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:53:22 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:53:22 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 13:54:01 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:54:01 - INFO - __main__ -     f1 = 0.9779700467872005██████| 175/175 [00:38<00:00,  5.08it/s]
+05/09/2020 13:54:01 - INFO - __main__ -     loss = 0.1296305336790673
+05/09/2020 13:54:01 - INFO - __main__ -     precision = 0.97826904985889
+05/09/2020 13:54:01 - INFO - __main__ -     recall = 0.9776712264372679
+05/09/2020 13:54:01 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:54:01 - INFO - __main__ -   ***** Running evaluation 5500 in nl *****
+05/09/2020 13:54:01 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:54:01 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.55it/s]
+05/09/2020 13:54:40 - INFO - __main__ -   ***** Evaluation result 5500 in nl *****
+05/09/2020 13:54:40 - INFO - __main__ -     f1 = 0.9779700467872005██████| 175/175 [00:38<00:00,  5.09it/s]
+05/09/2020 13:54:40 - INFO - __main__ -     loss = 0.1296305336790673
+05/09/2020 13:54:40 - INFO - __main__ -     precision = 0.97826904985889
+05/09/2020 13:54:40 - INFO - __main__ -     recall = 0.9776712264372679
+05/09/2020 13:54:40 - INFO - __main__ -   Hit patience=2
+                                                                                                          0
+5/09/2020 13:57:23 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 13:57:23 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 13:57:23 - INFO - __main__ -     Num examples = 1397
+05/09/2020 13:57:23 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.55it/s]
+05/09/2020 13:58:02 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 13:58:02 - INFO - __main__ -     f1 = 0.9780181027389209██████| 175/175 [00:38<00:00,  5.09it/s]
+05/09/2020 13:58:02 - INFO - __main__ -     loss = 0.1297929503896947
+05/09/2020 13:58:02 - INFO - __main__ -     precision = 0.9782710939704637
+05/09/2020 13:58:02 - INFO - __main__ -     recall = 0.9777652423259531
+                                                                                                          0
+5/09/2020 14:00:45 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 14:00:46 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 14:00:46 - INFO - __main__ -     Num examples = 1397
+05/09/2020 14:00:46 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.56it/s]
+05/09/2020 14:01:24 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 14:01:24 - INFO - __main__ -     f1 = 0.9780410965345371██████| 175/175 [00:38<00:00,  5.12it/s]
+05/09/2020 14:01:24 - INFO - __main__ -     loss = 0.12968346032107678
+05/09/2020 14:01:24 - INFO - __main__ -     precision = 0.9783171064390198
+05/09/2020 14:01:24 - INFO - __main__ -     recall = 0.9777652423259531
+Iteration: 100%|███████████████████████████████████████████████████████| 9028/9028 [38:29<00:00,  3.91it/s]
+Epoch: 100%|███████████████████████████████████████████████████████████| 10/10 [6:29:47<00:00, 2338.77s/it]
+05/09/2020 14:03:36 - INFO - __main__ -    global_step = 5640, average loss = 0.04924314111105334
+05/09/2020 14:03:36 - INFO - __main__ -   Saving model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/
+05/09/2020 14:03:36 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/config.json
+05/09/2020 14:03:38 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/pytorch_model.bin
+05/09/2020 14:03:38 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/09/2020 14:03:38 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/added_tokens.json. We won't load it.
+05/09/2020 14:03:38 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/sentencepiece.bpe.model
+05/09/2020 14:03:38 - INFO - transformers.tokenization_utils -   loading file None
+05/09/2020 14:03:38 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/special_tokens_map.json
+05/09/2020 14:03:38 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/tokenizer_config.json
+05/09/2020 14:03:39 - INFO - __main__ -   Evaluate the following checkpoints: ['/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best', '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128']
+05/09/2020 14:03:39 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best/config.json
+05/09/2020 14:03:39 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/09/2020 14:03:39 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best/pytorch_model.bin
+05/09/2020 14:03:58 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 14:03:58 - INFO - __main__ -   ***** Running evaluation best in nl *****
+05/09/2020 14:03:58 - INFO - __main__ -     Num examples = 1397
+05/09/2020 14:03:58 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:37<00:00,  4.63it/s]
+05/09/2020 14:04:36 - INFO - __main__ -   ***** Evaluation result best in nl *****
+05/09/2020 14:04:36 - INFO - __main__ -     f1 = 0.9781780557776418
+05/09/2020 14:04:36 - INFO - __main__ -     loss = 0.11636503465580712
+05/09/2020 14:04:36 - INFO - __main__ -     precision = 0.9786383098856632
+05/09/2020 14:04:36 - INFO - __main__ -     recall = 0.9777182343816105
+05/09/2020 14:04:36 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/config.json
+05/09/2020 14:04:36 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/09/2020 14:04:36 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/pytorch_model.bin
+05/09/2020 14:04:56 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 14:04:56 - INFO - __main__ -   ***** Running evaluation MaxLen128 in nl *****
+05/09/2020 14:04:56 - INFO - __main__ -     Num examples = 1397
+05/09/2020 14:04:56 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:38<00:00,  4.58it/s]
+05/09/2020 14:05:34 - INFO - __main__ -   ***** Evaluation result MaxLen128 in nl *****
+05/09/2020 14:05:34 - INFO - __main__ -     f1 = 0.9781361670114727
+05/09/2020 14:05:34 - INFO - __main__ -     loss = 0.12964396112099036
+05/09/2020 14:05:34 - INFO - __main__ -     precision = 0.9783661759864554
+05/09/2020 14:05:34 - INFO - __main__ -     recall = 0.9779062661589809
+05/09/2020 14:05:34 - INFO - __main__ -   Loading the best checkpoint from /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best
+
+05/09/2020 14:05:34 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/09/2020 14:05:34 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/added_tokens.json. We won't load it.
+05/09/2020 14:05:34 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/sentencepiece.bpe.model
+05/09/2020 14:05:34 - INFO - transformers.tokenization_utils -   loading file None
+05/09/2020 14:05:34 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/special_tokens_map.json
+05/09/2020 14:05:34 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/tokenizer_config.json
+05/09/2020 14:05:35 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best/config.json
+05/09/2020 14:05:35 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/09/2020 14:05:35 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best/pytorch_model.bin
+05/09/2020 14:05:53 - INFO - __main__ -   all languages = nl
+05/09/2020 14:05:53 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/nl/test.xlm-roberta-large in language nl
+05/09/2020 14:05:53 - INFO - utils_tag -   lang_id=0, lang=nl, lang2id=None
+05/09/2020 14:05:53 - INFO - utils_tag -   Writing example 0 of 1471
+05/09/2020 14:05:53 - INFO - utils_tag -   *** Example ***
+05/09/2020 14:05:53 - INFO - utils_tag -   guid: nl-1
+05/09/2020 14:05:53 - INFO - utils_tag -   tokens: <s> ▁GEN UA ▁- ▁Klo o ster orden ▁en ▁congrega ties ▁zullen ▁in ▁juli ▁mee do en ▁aan ▁de ▁protest en ▁tegen ▁de ▁global isering ▁van ▁de ▁economie ▁tijdens ▁de ▁top ▁van ▁de ▁zeven ▁grootste ▁industrie land en ▁en ▁Rusland ▁( ▁G 8 ▁) ▁in ▁Gen ua ▁ . </s> </s>
+05/09/2020 14:05:53 - INFO - utils_tag -   input_ids: 0 109141 20004 20 42826 31 1515 38228 22 137845 2449 33607 23 14801 7421 246 33 664 8 18782 33 11982 8 7964 24171 131 8 97558 24170 8 2663 131 8 146845 53653 95845 1760 33 22 123949 15 527 1019 1388 23 15937 3116 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/09/2020 14:05:53 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   label_ids: -100 17 -100 17 17 -100 -100 -100 17 17 -100 17 17 17 17 -100 -100 17 17 17 -100 17 17 17 -100 17 17 17 17 17 17 17 17 17 17 17 -100 -100 17 17 17 17 -100 17 17 17 -100 17 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/09/2020 14:05:53 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/09/2020 14:05:53 - INFO - utils_tag -   *** Example ***
+05/09/2020 14:05:53 - INFO - utils_tag -   guid: nl-2
+05/09/2020 14:05:53 - INFO - utils_tag -   tokens: <s> ▁Niet ▁door ▁lui de ▁demonstra ties ▁ , ▁maar ▁door ▁vast en ▁en ▁bi dden ▁willen ▁de ▁religi eu zen ▁hun ▁solidar iteit ▁met ▁de ▁armen ▁laten ▁zien ▁ . </s> </s>
+05/09/2020 14:05:53 - INFO - utils_tag -   input_ids: 0 55711 1911 1869 112 32837 2449 6 4 1476 1911 18410 33 22 333 57415 26300 8 16867 4615 3121 1926 72954 14491 435 8 120066 19161 14340 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/09/2020 14:05:53 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   label_ids: -100 17 17 17 -100 17 -100 17 -100 17 17 17 -100 17 17 -100 17 17 17 -100 -100 17 17 -100 17 17 17 17 17 17 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/09/2020 14:05:53 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/09/2020 14:05:53 - INFO - utils_tag -   *** Example ***
+05/09/2020 14:05:53 - INFO - utils_tag -   guid: nl-3
+05/09/2020 14:05:53 - INFO - utils_tag -   tokens: <s> ▁ , , ▁Door ▁te ▁vast en ▁laten ▁we ▁een ▁typ isch ▁geweld loos ▁geluid ▁horen ▁'' ▁ , ▁zegt ▁de ▁Italia anse ▁franc isc aan ▁Alberto ▁To sini ▁tegen ▁Vid imus ▁Dominum ▁ , ▁web magazin e ▁van ▁religi eu zen ▁ . </s> </s>
+05/09/2020 14:05:53 - INFO - utils_tag -   input_ids: 0 6 4 4 20769 120 18410 33 19161 642 293 11417 9370 145553 34716 119213 109735 5106 6 4 60745 8 7694 20540 37863 60263 2755 74279 717 5234 11982 13888 8611 132959 6 4 1467 136289 13 131 16867 4615 3121 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/09/2020 14:05:53 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   label_ids: -100 17 -100 -100 17 17 17 -100 17 17 17 17 -100 17 -100 17 17 17 17 -100 17 17 17 -100 17 -100 -100 17 17 -100 17 17 -100 17 17 -100 17 -100 -100 17 17 -100 -100 17 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/09/2020 14:05:53 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/09/2020 14:05:53 - INFO - utils_tag -   *** Example ***
+05/09/2020 14:05:53 - INFO - utils_tag -   guid: nl-4
+05/09/2020 14:05:53 - INFO - utils_tag -   tokens: <s> ▁ , , ▁Het ▁is ▁ook ▁een ▁manier ▁om ▁de ▁dagen ▁van ▁de ▁G 8 - top ▁door ▁te ▁brengen ▁in ▁ gemeenschap ▁met ▁de gen en ▁die ▁geen ▁brood ▁hebben ▁ . ▁'' </s> </s>
+05/09/2020 14:05:53 - INFO - utils_tag -   input_ids: 0 6 4 4 1947 83 1232 293 10430 171 8 8514 131 8 527 1019 9 13784 1911 120 58721 23 6 213287 435 8 1409 33 68 4408 120977 3899 6 5 5106 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/09/2020 14:05:53 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   label_ids: -100 17 -100 -100 17 17 17 17 17 17 17 17 17 17 17 -100 -100 -100 17 17 17 17 17 -100 17 17 -100 -100 17 17 17 17 17 -100 17 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/09/2020 14:05:53 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/09/2020 14:05:53 - INFO - utils_tag -   *** Example ***
+05/09/2020 14:05:53 - INFO - utils_tag -   guid: nl-5
+05/09/2020 14:05:53 - INFO - utils_tag -   tokens: <s> ▁De ▁' ▁mobil isatie ▁' ▁van ▁de ▁religi eu zen ▁staat ▁vooral ▁in ▁het ▁teken ▁van ▁het ▁ple ido oi ▁voor ▁kwijt s chel ding ▁van ▁de ▁schuld en last ▁van ▁de ▁arms te ▁landen ▁ . </s> </s>
+05/09/2020 14:05:53 - INFO - utils_tag -   input_ids: 0 262 242 3268 119232 242 131 8 16867 4615 3121 10046 37760 23 225 62945 131 225 6221 3911 5380 624 179374 7 47515 6238 131 8 126660 33 19777 131 8 121641 67 87294 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/09/2020 14:05:53 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/09/2020 14:05:53 - INFO - utils_tag -   label_ids: -100 17 17 17 -100 17 17 17 17 -100 -100 17 17 17 17 17 17 17 17 -100 -100 17 17 -100 -100 -100 17 17 17 -100 -100 17 17 17 -100 17 17 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/09/2020 14:05:53 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/09/2020 14:05:54 - INFO - __main__ -   Saving features into cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_test_nl_xlm-roberta-large_128, len(features)=1471
+05/09/2020 14:05:54 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 14:05:54 - INFO - __main__ -     Num examples = 1471
+05/09/2020 14:05:54 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 184/184 [00:39<00:00,  4.68it/s]
+05/09/2020 14:06:34 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 14:06:34 - INFO - __main__ -     f1 = 0
+05/09/2020 14:06:34 - INFO - __main__ -     loss = 14.523872297743093
+05/09/2020 14:06:34 - INFO - __main__ -     precision = 0.0
+05/09/2020 14:06:34 - INFO - __main__ -     recall = 0.0
+05/09/2020 14:06:34 - INFO - __main__ -   Loading the best checkpoint from /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best
+
+05/09/2020 14:06:34 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/09/2020 14:06:34 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/added_tokens.json. We won't load it.
+05/09/2020 14:06:34 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/sentencepiece.bpe.model
+05/09/2020 14:06:34 - INFO - transformers.tokenization_utils -   loading file None
+05/09/2020 14:06:34 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/special_tokens_map.json
+05/09/2020 14:06:34 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/tokenizer_config.json
+05/09/2020 14:06:34 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best/config.json
+05/09/2020 14:06:34 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/09/2020 14:06:34 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128/checkpoint-best/pytorch_model.bin
+05/09/2020 14:06:53 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/09/2020 14:06:53 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/09/2020 14:06:53 - INFO - __main__ -     Num examples = 1397
+05/09/2020 14:06:53 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████| 175/175 [00:37<00:00,  4.71it/s]
+05/09/2020 14:07:31 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/09/2020 14:07:31 - INFO - __main__ -     f1 = 0.9781780557776418
+05/09/2020 14:07:31 - INFO - __main__ -     loss = 0.11636503465580712
+05/09/2020 14:07:31 - INFO - __main__ -     precision = 0.9786383098856632
+05/09/2020 14:07:31 - INFO - __main__ -     recall = 0.9777182343816105
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ 

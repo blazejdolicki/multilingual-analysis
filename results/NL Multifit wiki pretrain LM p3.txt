@@ -1,0 +1,134 @@
+﻿(multifit) ubuntu@ip-172-31-42-96:~/multifit$ python -m ulmfit lm2 --dataset-path data/wiki/nl-100 --tokenizer='sp' --nl 4 --name 'nl4' --max-vocab 15000 --lang nl --qrnn=True - train_lm 10 --bs=50 --drop_mult=0
+Max vocab: 15000
+Cache dir: data/wiki/nl-100/models/sp15k
+Model dir: data/wiki/nl-100/models/sp15k/qrnn_nl4.m
+sentencepiece_trainer.cc(116) LOG(INFO) Running command: --input=data/wiki/nl-100/models/sp15k/all_text.txt --character_coverage=1 --unk_id=9 --pad_id=-1 --bos_id=-1 --eos_id=-1 --max_sentence_length=20480 --input_sentence_size=10000000 --user_defined_symbols=xxunk,xxpad,xxbos,xxeos,xxfld,xxmaj,xxup,xxrep,xxwrep --model_prefix=data/wiki/nl-100/models/sp15k/spm --vocab_size=15000 --model_type=unigram
+sentencepiece_trainer.cc(49) LOG(INFO) Starts training with : 
+TrainerSpec {
+  input: data/wiki/nl-100/models/sp15k/all_text.txt
+  input_format: 
+  model_prefix: data/wiki/nl-100/models/sp15k/spm
+  model_type: UNIGRAM
+  vocab_size: 15000
+  self_test_sample_size: 0
+  character_coverage: 1
+  input_sentence_size: 10000000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 20480
+  num_threads: 16
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  treat_whitespace_as_suffix: 0
+  user_defined_symbols: xxunk
+  user_defined_symbols: xxpad
+  user_defined_symbols: xxbos
+  user_defined_symbols: xxeos
+  user_defined_symbols: xxfld
+  user_defined_symbols: xxmaj
+  user_defined_symbols: xxup
+  user_defined_symbols: xxrep
+  user_defined_symbols: xxwrep
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 9
+  bos_id: -1
+  eos_id: -1
+  pad_id: -1
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+}
+NormalizerSpec {
+  name: nmt_nfkc
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 1
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+
+trainer_interface.cc(267) LOG(INFO) Loading corpus: data/wiki/nl-100/models/sp15k/all_text.txt
+trainer_interface.cc(139) LOG(INFO) Loaded 1000000 lines
+trainer_interface.cc(139) LOG(INFO) Loaded 2000000 lines
+trainer_interface.cc(114) LOG(WARNING) Too many sentences are loaded! (2585555), which may slow down training.
+trainer_interface.cc(116) LOG(WARNING) Consider using --input_sentence_size=<size> and --shuffle_input_sentence=true.
+trainer_interface.cc(119) LOG(WARNING) They allow to randomly sample <size> sentences from the entire corpus.
+trainer_interface.cc(315) LOG(INFO) Loaded all 2585555 sentences
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxunk
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxpad
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxbos
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxeos
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxfld
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxmaj
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxup
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxrep
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: xxwrep
+trainer_interface.cc(330) LOG(INFO) Adding meta_piece: <unk>
+trainer_interface.cc(335) LOG(INFO) Normalizing sentences...
+trainer_interface.cc(384) LOG(INFO) all chars count=572152194
+trainer_interface.cc(392) LOG(INFO) Done: 100% characters are covered.
+trainer_interface.cc(402) LOG(INFO) Alphabet size=5052
+trainer_interface.cc(403) LOG(INFO) Final character coverage=1
+trainer_interface.cc(435) LOG(INFO) Done! preprocessed 2585555 sentences.
+unigram_model_trainer.cc(129) LOG(INFO) Making suffix array...
+unigram_model_trainer.cc(133) LOG(INFO) Extracting frequent sub strings...
+unigram_model_trainer.cc(184) LOG(INFO) Initialized 1000000 seed sentencepieces
+trainer_interface.cc(441) LOG(INFO) Tokenizing input sentences with whitespace: 2585555
+trainer_interface.cc(451) LOG(INFO) Done! 1547296
+unigram_model_trainer.cc(470) LOG(INFO) Using 1547296 sentences for EM training
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=500235 obj=14.419 num_tokens=3689746 num_tokens/piece=7.37603
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=374193 obj=12.0095 num_tokens=3693171 num_tokens/piece=9.8697
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=280529 obj=11.9819 num_tokens=3737323 num_tokens/piece=13.3224
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=279916 obj=11.9741 num_tokens=3753781 num_tokens/piece=13.4104
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=209936 obj=11.8437 num_tokens=3875801 num_tokens/piece=18.4618
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=209925 obj=11.9615 num_tokens=3880276 num_tokens/piece=18.4841
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=157443 obj=11.8397 num_tokens=4073062 num_tokens/piece=25.8701
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=157439 obj=12.0343 num_tokens=4080690 num_tokens/piece=25.9192
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=118079 obj=11.8961 num_tokens=4285204 num_tokens/piece=36.291
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=118079 obj=11.8808 num_tokens=4290027 num_tokens/piece=36.3318
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=88559 obj=11.9608 num_tokens=4490054 num_tokens/piece=50.7013
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=88559 obj=11.9443 num_tokens=4498691 num_tokens/piece=50.7988
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=66419 obj=12.0426 num_tokens=4705741 num_tokens/piece=70.8493
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=66419 obj=12.0239 num_tokens=4712075 num_tokens/piece=70.9447
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=49814 obj=12.1491 num_tokens=4942634 num_tokens/piece=99.2218
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=49814 obj=12.1264 num_tokens=4951292 num_tokens/piece=99.3956
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=37360 obj=12.2781 num_tokens=5203363 num_tokens/piece=139.276
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=37360 obj=12.2499 num_tokens=5210255 num_tokens/piece=139.461
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=28020 obj=12.4387 num_tokens=5497156 num_tokens/piece=196.187
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=28020 obj=12.4036 num_tokens=5504642 num_tokens/piece=196.454
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=21015 obj=12.6294 num_tokens=5849167 num_tokens/piece=278.333
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=21015 obj=12.583 num_tokens=5864445 num_tokens/piece=279.06
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=0 size=16500 obj=12.8323 num_tokens=6178138 num_tokens/piece=374.433
+unigram_model_trainer.cc(486) LOG(INFO) EM sub_iter=1 size=16500 obj=12.7846 num_tokens=6191068 num_tokens/piece=375.216
+trainer_interface.cc(507) LOG(INFO) Saving model: data/wiki/nl-100/models/sp15k/spm.model
+trainer_interface.cc(531) LOG(INFO) Saving vocabs: data/wiki/nl-100/models/sp15k/spm.vocab
+Wiki text was split to 263567 articles
+Wiki text was split to 526 articles
+bunch_path data/wiki/nl-100/models/sp15k/lm
+Running tokenization lm...
+Data lm, trn: 263567, val: 526                                                          
+Size of vocabulary: 15000
+First 20 words in vocab: ['xxunk', 'xxpad', 'xxbos', 'xxeos', 'xxfld', 'xxmaj', 'xxup', 'xxrep', 'xxwrep', '<unk>', '▁', '▁de', '▁.', '▁van', '▁,', '▁in', '▁het', '▁:', '▁een', 's']
+Training args:  {'clip': 0.12, 'alpha': 2, 'beta': 1, 'drop_mult': 0} dps:  {'output_p': 0.25, 'hidden_p': 0.1, 'input_p': 0.2, 'embed_p': 0.02, 'weight_p': 0.15}
+Bptt 70
+Training lm from random weights
+epoch     train_loss  valid_loss  accuracy  time    
+0         2.904094    3.000196    0.449317  48:47                                                                
+1         2.870330    2.928913    0.456512  48:48                                                                
+2         2.828186    2.862358    0.462975  48:35                                                                
+3         2.726938    2.814088    0.469034  48:35                                                                
+4         2.621106    2.727738    0.480801  48:35                                                                
+5         2.594354    2.640063    0.493358  48:36                                                                
+6         2.489377    2.542464    0.508271  48:35                                                                
+7         2.423930    2.458691    0.520701  48:35                                                                
+8         2.357236    2.388375    0.531702  48:37                                                                
+9         2.307425    2.372555    0.535443  48:49                                                                 
+data/wiki/nl-100/models/sp15k
+Saving info data/wiki/nl-100/models/sp15k/qrnn_nl4.m/info.json
+(multifit) ubuntu@ip-172-31-42-96:~/multifit$ 

@@ -1,0 +1,70 @@
+﻿(multifit) ubuntu@ip-172-31-42-96:~/multifit$ python -m ulmfit eval --glob="wiki/nl-100/models/sp15k/qrnn_nl4.m" --name nl4 --dataset-template='../cls/nl-books' --num-lm-epochs=20  --num-cls-epochs=8  --bs=18 --lr_sched=1cycle --label-smoothing-eps=0.1
+Processing data/wiki/nl-100/models/sp15k/qrnn_nl4.m
+../cls/nl-books
+Max vocab: 15000
+Cache dir: /home/ubuntu/multifit/data/cls/nl-books/models/sp15k
+Model dir: /home/ubuntu/multifit/data/cls/nl-books/models/sp15k/qrnn_nl4.m
+Overwrite classifier? False
+Training
+Validation set not found using 10% of trn
+(100263, 2)
+(1800, 2)
+Running tokenization lm...
+Data lm, trn: 90237, val: 10026                                                                                                    
+Running tokenization cls...
+Data cls, trn: 1800, val: 200                                                                                                    
+Running tokenization tst...
+Data tst, trn: 200, val: 2000                                                                                                    
+Size of vocabulary: 15000
+First 20 words in vocab: ['xxunk', 'xxpad', 'xxbos', 'xxeos', 'xxfld', 'xxmaj', 'xxup', 'xxrep', 'xxwrep', '<unk>', '▁', '▁de', '▁.', '▁van', '▁,', '▁in', '▁het', '▁:', '▁een', 's']
+Transformer False
+Training args:  {'clip': 0.12, 'alpha': 2, 'beta': 1, 'drop_mult': 0.3} dps:  {'output_p': 0.25, 'hidden_p': 0.1, 'input_p': 0.2, 'embed_p': 0.02, 'weight_p': 0.15}
+Loading pretrained model
+Bptt 70
+Training lm from:  [PosixPath('/home/ubuntu/multifit/data/wiki/nl-100/models/sp15k/qrnn_nl4.m/lm_best'), PosixPath('/home/ubuntu/multifit/data/wiki/nl-100/models/sp15k/qrnn_nl4.m/../itos')]
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.974076    4.480619    0.344153  11:38                                                                                                          
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.391006    4.218255    0.384979  16:14                                                                                                           
+1         4.221392    4.039488    0.411984  16:12                                                                                                           
+2         4.052249    3.925436    0.428626  16:15                                                                                                           
+3         4.041405    3.861022    0.437330  16:14                                                                                                           
+4         3.967737    3.825046    0.442659  16:15                                                                                                           
+5         3.920756    3.796523    0.446518  16:15                                                                                                           
+6         3.903320    3.769964    0.450549  16:13                                                                                                           
+7         3.893681    3.750454    0.453633  16:20                                                                                                           
+8         3.852304    3.731322    0.456492  16:16                                                                                                           
+9         3.857001    3.712675    0.459777  16:24                                                                                                            
+10        3.837351    3.690774    0.463397  16:25                                                                                                            
+11        3.874026    3.670360    0.466898  16:25                                                                                                            
+12        3.773067    3.650136    0.470465  16:26                                                                                                            
+13        3.778633    3.629324    0.474115  16:25                                                                                                            
+14        3.781963    3.610765    0.477304  16:17                                                                                                            
+15        3.743334    3.593155    0.480349  16:15                                                                                                            
+16        3.748100    3.580611    0.482742  16:13                                                                                                            
+17        3.706300    3.571609    0.484392  16:13                                                                                                            
+18        3.689884    3.567225    0.485316  16:13                                                                                                            
+19        3.661690    3.566158    0.485482  16:14                                                                                                            
+/home/ubuntu/multifit/data/cls/nl-books/models/sp15k
+Saving info /home/ubuntu/multifit/data/cls/nl-books/models/sp15k/qrnn_nl4.m/info.json
+Save model from the best epoch? False
+Single training schedule
+epoch     train_loss  valid_loss  accuracy  time    
+0         0.478440    0.501638    0.815000  00:13                                                                                                      
+1         0.415996    0.530207    0.845000  00:13                                                                                                      
+2         0.341261    0.383661    0.900000  00:13                                                                                                      
+3         0.286803    0.377773    0.900000  00:13                                                                                                      
+4         0.259949    0.374831    0.880000  00:13                                                                                                      
+5         0.234244    0.387580    0.895000  00:13                                                                                                      
+6         0.231238    0.365169    0.915000  00:13                                                                                                      
+7         0.226988    0.360183    0.920000  00:13                                                                                                      
+Saving models at /home/ubuntu/multifit/data/cls/nl-books/models/sp15k/qrnn_nl4.m
+Save model from the best epoch? False
+Loss and accuracy using (cls_best): [0.25571826, tensor(0.9030), tensor(0.9018), tensor(0.9042)] [0.2443497, tensor(0.9200), tensor(0.9238), tensor(0.9158)]
+                                        name  tst_accuracy  tst_loss  val_accuracy  val_loss
+0  data/cls/nl-books/models/sp15k/qrnn_nl4.m         0.903  0.255718          0.92   0.24435
+ds    nl-books
+best      90.3
+max       90.3
+avg       90.3
+(multifit) ubuntu@ip-172-31-42-96:~/multifit$ 

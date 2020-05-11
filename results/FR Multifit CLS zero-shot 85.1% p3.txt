@@ -1,0 +1,70 @@
+﻿(multifit) ubuntu@ip-172-31-42-96:~/multifit$ python -m ulmfit eval --glob="wiki/fr-100/models/sp15k/qrnn_nl4.m" --name nl4 --dataset-template='../cls/fr-books-laser' --num-lm-epochs=20  --num-cls-epochs=8  --bs=18 --lr_sched=1cycle --label-smoothing-eps=0.1
+Processing data/wiki/fr-100/models/sp15k/qrnn_nl4.m
+../cls/fr-books-laser
+Max vocab: 15000
+Cache dir: /home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k
+Model dir: /home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k/qrnn_nl4.m
+Training
+Loading validation /home/ubuntu/multifit/data/cls/fr-books-laser/fr.dev.csv
+(36868, 3)
+(1800, 3)
+bunch_path /home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k/lm
+Running tokenization lm...
+Data lm, trn: 33182, val: 3686                                                                                                   
+bunch_path /home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k/cls
+Running tokenization cls...
+Data cls, trn: 1800, val: 200                                                                                                    
+bunch_path /home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k/tst
+Running tokenization tst...
+Data tst, trn: 200, val: 2000                                                                                                    
+Size of vocabulary: 15000
+First 20 words in vocab: ['xxunk', 'xxpad', 'xxbos', 'xxeos', 'xxfld', 'xxmaj', 'xxup', 'xxrep', 'xxwrep', '<unk>', '▁', '▁de', '▁,', 's', '▁.', "'", '▁la', '▁:', '▁le', '▁et']
+Transformer False
+Training args:  {'clip': 0.12, 'alpha': 2, 'beta': 1, 'drop_mult': 0.3} dps:  {'output_p': 0.25, 'hidden_p': 0.1, 'input_p': 0.2, 'embed_p': 0.02, 'weight_p': 0.15}
+Loading pretrained model
+Bptt 70
+Training lm from:  [PosixPath('/home/ubuntu/multifit/data/wiki/fr-100/models/sp15k/qrnn_nl4.m/lm_best'), PosixPath('/home/ubuntu/multifit/data/wiki/fr-100/models/sp15k/qrnn_nl4.m/../itos')]
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.922894    4.341100    0.358370  01:47                                                                                                        
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.573192    4.249246    0.373667  02:26                                                                                                         
+1         4.419209    4.136588    0.390591  02:26                                                                                                         
+2         4.217196    4.013668    0.409310  02:26                                                                                                         
+3         4.098540    3.909330    0.424013  02:26                                                                                                         
+4         4.031496    3.817298    0.437506  02:26                                                                                                         
+5         3.971954    3.739816    0.449022  02:26                                                                                                         
+6         3.891811    3.663831    0.461626  02:26                                                                                                         
+7         3.860273    3.594006    0.473879  02:27                                                                                                         
+8         3.770548    3.535337    0.483774  02:27                                                                                                         
+9         3.726407    3.470574    0.496415  02:26                                                                                                          
+10        3.707885    3.420900    0.505995  02:26                                                                                                          
+11        3.638939    3.374933    0.515647  02:26                                                                                                          
+12        3.563324    3.310144    0.529188  02:26                                                                                                          
+13        3.544335    3.267577    0.538872  02:26                                                                                                          
+14        3.512839    3.226820    0.547384  02:26                                                                                                          
+15        3.466326    3.202760    0.552896  02:26                                                                                                          
+16        3.462395    3.184755    0.557073  02:26                                                                                                          
+17        3.408261    3.168845    0.560813  02:26                                                                                                          
+18        3.417619    3.164695    0.561862  02:26                                                                                                          
+19        3.378515    3.161807    0.562416  02:26                                                                                                          
+/home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k
+Saving info /home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k/qrnn_nl4.m/info.json
+Single training schedule
+epoch     train_loss  valid_loss  accuracy  time    
+0         0.499354    0.442686    0.885000  00:07                                                                                                      
+1         0.454964    0.458698    0.855000  00:07                                                                                                      
+2         0.379233    0.442483    0.865000  00:07                                                                                                      
+3         0.293739    0.501301    0.840000  00:07                                                                                                      
+4         0.268073    0.484748    0.870000  00:07                                                                                                      
+5         0.258947    0.490762    0.830000  00:07                                                                                                      
+6         0.240569    0.449728    0.855000  00:07                                                                                                      
+7         0.230049    0.446449    0.850000  00:07                                                                                                      
+Saving models at /home/ubuntu/multifit/data/cls/fr-books-laser/models/sp15k/qrnn_nl4.m
+Loss and accuracy using (cls_best): [0.34708473, tensor(0.8510), tensor(0.8516), tensor(0.8504)] [0.3548908, tensor(0.8500), tensor(0.8718), tensor(0.8193)]
+                                              name  tst_accuracy  tst_loss  val_accuracy  val_loss
+0  data/cls/fr-books-laser/models/sp15k/qrnn_nl4.m         0.851  0.347085          0.85  0.354891
+ds    fr-books-las
+best          85.1
+max           85.1
+avg           85.1
+(multifit) ubuntu@ip-172-31-42-96:~/multifit$ 

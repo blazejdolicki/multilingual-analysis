@@ -1,0 +1,147 @@
+(laser) ubuntu@ip-172-31-42-96:~/LASER/tasks/cls$ bash cls.sh create_labels
+Start time:
+Fri May  1 11:35:11 CEST 2020
+
+Dataset already exists. Skipping download. 
+
+Extracting CLS data
+ - extract labels from data/cls-acl10-unprocessed/en/books/train.txt
+ - extract texts from data/cls-acl10-unprocessed/en/books/train.txt
+ - extract labels from data/cls-acl10-unprocessed/de/books/train.txt
+ - extract texts from data/cls-acl10-unprocessed/de/books/train.txt
+ - extract labels from data/cls-acl10-unprocessed/fr/books/train.txt
+ - extract texts from data/cls-acl10-unprocessed/fr/books/train.txt
+ - extract labels from data/cls-acl10-unprocessed/jp/books/train.txt
+ - extract texts from data/cls-acl10-unprocessed/jp/books/train.txt
+ - extract labels from data/cls-acl10-unprocessed/nl/books/train.txt
+ - extract texts from data/cls-acl10-unprocessed/nl/books/train.txt
+ - extract labels from data/cls-acl10-unprocessed/en/books/dev.txt
+ - extract texts from data/cls-acl10-unprocessed/en/books/dev.txt
+ - extract labels from data/cls-acl10-unprocessed/de/books/dev.txt
+ - extract texts from data/cls-acl10-unprocessed/de/books/dev.txt
+ - extract labels from data/cls-acl10-unprocessed/fr/books/dev.txt
+ - extract texts from data/cls-acl10-unprocessed/fr/books/dev.txt
+ - extract labels from data/cls-acl10-unprocessed/jp/books/dev.txt
+ - extract texts from data/cls-acl10-unprocessed/jp/books/dev.txt
+ - extract labels from data/cls-acl10-unprocessed/nl/books/dev.txt
+ - extract texts from data/cls-acl10-unprocessed/nl/books/dev.txt
+ - extract labels from data/cls-acl10-unprocessed/en/books/test.txt
+ - extract texts from data/cls-acl10-unprocessed/en/books/test.txt
+ - extract labels from data/cls-acl10-unprocessed/de/books/test.txt
+ - extract texts from data/cls-acl10-unprocessed/de/books/test.txt
+ - extract labels from data/cls-acl10-unprocessed/fr/books/test.txt
+ - extract texts from data/cls-acl10-unprocessed/fr/books/test.txt
+ - extract labels from data/cls-acl10-unprocessed/jp/books/test.txt
+ - extract texts from data/cls-acl10-unprocessed/jp/books/test.txt
+ - extract labels from data/cls-acl10-unprocessed/nl/books/test.txt
+ - extract texts from data/cls-acl10-unprocessed/nl/books/test.txt
+
+LASER: calculate embeddings for CLS
+ - loading encoder /home/ubuntu/LASER/models/bilstm.93langs.2018-12-26.pt
+
+Processing:
+ - Split sentences: embed/train.tok.en
+ -                  lines/max words: 1800/3805 -> 14297/360
+ - Combine embeddings:
+                input: embed/train.split.enc.en 14297 sentences
+                IDs: embed/train.sid.en, 1800 sentences
+                output: embed/train.enc.en
+ - Split sentences: embed/train.tok.de
+ -                  lines/max words: 1800/1416 -> 12104/304
+ - Combine embeddings:
+                input: embed/train.split.enc.de 12104 sentences
+                IDs: embed/train.sid.de, 1800 sentences
+                output: embed/train.enc.de
+ - Split sentences: embed/train.tok.fr
+ -                  lines/max words: 1800/1162 -> 7594/378
+ - Combine embeddings:
+                input: embed/train.split.enc.fr 7594 sentences
+                IDs: embed/train.sid.fr, 1800 sentences
+                output: embed/train.enc.fr
+WARNING: No known abbreviations for language 'ja', attempting fall-back to English version...
+ - Split sentences: embed/train.tok.jp
+ -                  lines/max words: 1800/1905 -> 1881/1148
+ - Combine embeddings:
+                input: embed/train.split.enc.jp 1881 sentences
+                IDs: embed/train.sid.jp, 1800 sentences
+                output: embed/train.enc.jp
+ - Split sentences: embed/train.tok.nl
+ -                  lines/max words: 1800/2616 -> 20192/462
+ - Combine embeddings:
+                input: embed/train.split.enc.nl 20192 sentences
+                IDs: embed/train.sid.nl, 1800 sentences
+                output: embed/train.enc.nl
+ - Split sentences: embed/dev.tok.en
+ -                  lines/max words: 200/1075 -> 1496/228
+ - Combine embeddings:
+                input: embed/dev.split.enc.en 1496 sentences
+                IDs: embed/dev.sid.en, 200 sentences
+                output: embed/dev.enc.en
+ - Split sentences: embed/dev.tok.de
+ -                  lines/max words: 200/715 -> 1163/143
+ - Combine embeddings:
+                input: embed/dev.split.enc.de 1163 sentences
+                IDs: embed/dev.sid.de, 200 sentences
+                output: embed/dev.enc.de
+ - Split sentences: embed/dev.tok.fr
+ -                  lines/max words: 200/459 -> 731/200
+ - Combine embeddings:
+                input: embed/dev.split.enc.fr 731 sentences
+                IDs: embed/dev.sid.fr, 200 sentences
+                output: embed/dev.enc.fr
+WARNING: No known abbreviations for language 'ja', attempting fall-back to English version...
+ - Split sentences: embed/dev.tok.jp
+ -                  lines/max words: 200/568 -> 204/569
+ - Combine embeddings:
+                input: embed/dev.split.enc.jp 204 sentences
+                IDs: embed/dev.sid.jp, 200 sentences
+                output: embed/dev.enc.jp
+ - Split sentences: embed/dev.tok.nl
+ -                  lines/max words: 200/1144 -> 2146/204
+ - Combine embeddings:
+                input: embed/dev.split.enc.nl 2146 sentences
+                IDs: embed/dev.sid.nl, 200 sentences
+                output: embed/dev.enc.nl
+ - Split sentences: embed/test.tok.en
+ -                  lines/max words: 2000/2190 -> 15199/333
+ - Combine embeddings:
+                input: embed/test.split.enc.en 15199 sentences
+                IDs: embed/test.sid.en, 2000 sentences
+                output: embed/test.enc.en
+ - Split sentences: embed/test.tok.de
+ -                  lines/max words: 2000/1578 -> 13248/350
+ - Combine embeddings:
+                input: embed/test.split.enc.de 13248 sentences
+                IDs: embed/test.sid.de, 2000 sentences
+                output: embed/test.enc.de
+ - Split sentences: embed/test.tok.fr
+ -                  lines/max words: 2000/1499 -> 8364/359
+ - Combine embeddings:
+                input: embed/test.split.enc.fr 8364 sentences
+                IDs: embed/test.sid.fr, 2000 sentences
+                output: embed/test.enc.fr
+WARNING: No known abbreviations for language 'ja', attempting fall-back to English version...
+ - Split sentences: embed/test.tok.jp
+ -                  lines/max words: 2000/1010 -> 2174/906
+ - Combine embeddings:
+                input: embed/test.split.enc.jp 2174 sentences
+                IDs: embed/test.sid.jp, 2000 sentences
+                output: embed/test.enc.jp
+ - Split sentences: embed/test.tok.nl
+ -                  lines/max words: 2000/1932 -> 22338/364
+ - Combine embeddings:
+                input: embed/test.split.enc.nl 22338 sentences
+                IDs: embed/test.sid.nl, 2000 sentences
+                output: embed/test.enc.nl
+
+Training CLS classifier (log files in embed)
+Creating labels (logs in embed/cls.en-en-create-labels.log)
+
+Accuracy matrix:
+Train     en     de     fr     jp     nl 
+ en:    83.40  82.25  81.40  73.75  77.65
+
+End time:
+Fri May  1 11:37:45 CEST 2020
+
+(laser) ubuntu@ip-172-31-42-96:~/LASER/tasks/cls$ 

@@ -1,0 +1,70 @@
+﻿(multifit) ubuntu@ip-172-31-42-96:~/multifit$ python -m ulmfit eval --glob="wiki/fr-100/models/sp15k/qrnn_nl4.m" --name nl4 --dataset-template='../cls/fr-books' --num-lm-epochs=20  --num-cls-epochs=8  --bs=18 --lr_sched=1cycle --label-smoothing-eps=0.1
+Processing data/wiki/fr-100/models/sp15k/qrnn_nl4.m
+../cls/fr-books
+Max vocab: 15000
+Cache dir: /home/ubuntu/multifit/data/cls/fr-books/models/sp15k
+Model dir: /home/ubuntu/multifit/data/cls/fr-books/models/sp15k/qrnn_nl4.m
+Training
+Validation set not found using 10% of trn
+(36868, 3)
+(1800, 3)
+bunch_path /home/ubuntu/multifit/data/cls/fr-books/models/sp15k/lm
+bunch path exists
+Data lm, trn: 33182, val: 3686
+bunch_path /home/ubuntu/multifit/data/cls/fr-books/models/sp15k/cls
+bunch path exists
+Data cls, trn: 1800, val: 200
+bunch_path /home/ubuntu/multifit/data/cls/fr-books/models/sp15k/tst
+bunch path exists
+Data tst, trn: 200, val: 2000
+Size of vocabulary: 15000
+First 20 words in vocab: ['xxunk', 'xxpad', 'xxbos', 'xxeos', 'xxfld', 'xxmaj', 'xxup', 'xxrep', 'xxwrep', '<unk>', '▁', '▁de', '▁,', 's', '▁.', "'", '▁la', '▁:', '▁le', '▁et']
+Transformer False
+Training args:  {'clip': 0.12, 'alpha': 2, 'beta': 1, 'drop_mult': 0.3} dps:  {'output_p': 0.25, 'hidden_p': 0.1, 'input_p': 0.2, 'embed_p': 0.02, 'weight_p': 0.15}
+Loading pretrained model
+Bptt 70
+Training lm from:  [PosixPath('/home/ubuntu/multifit/data/wiki/fr-100/models/sp15k/qrnn_nl4.m/lm_best'), PosixPath('/home/ubuntu/multifit/data/wiki/fr-100/models/sp15k/qrnn_nl4.m/../itos')]
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.996278    4.341730    0.359836  01:43                                                             
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.552981    4.247477    0.373923  02:23                                                              
+1         4.365191    4.134931    0.391244  02:23                                                              
+2         4.233806    4.015904    0.408772  02:23                                                              
+3         4.114961    3.903489    0.425220  02:23                                                              
+4         4.026899    3.815788    0.437304  02:23                                                              
+5         3.961130    3.738492    0.449253  02:23                                                              
+6         3.874259    3.665355    0.461500  02:23                                                              
+7         3.833101    3.589064    0.474400  02:23                                                              
+8         3.785210    3.531372    0.484541  02:24                                                              
+9         3.700863    3.473780    0.495553  02:23                                                               
+10        3.670180    3.415957    0.507455  02:24                                                               
+11        3.637078    3.366893    0.517155  02:24                                                               
+12        3.618661    3.320325    0.527527  02:23                                                               
+13        3.547095    3.277290    0.536538  02:23                                                               
+14        3.503662    3.239320    0.545568  02:24                                                               
+15        3.497175    3.205729    0.552977  02:23                                                               
+16        3.444454    3.186104    0.557540  02:23                                                               
+17        3.460492    3.169675    0.561301  02:23                                                               
+18        3.414355    3.161258    0.562929  02:24                                                               
+19        3.408089    3.159238    0.563452  02:23                                                               
+/home/ubuntu/multifit/data/cls/fr-books/models/sp15k
+Saving info /home/ubuntu/multifit/data/cls/fr-books/models/sp15k/qrnn_nl4.m/info.json
+Single training schedule
+epoch     train_loss  valid_loss  accuracy  time    
+0         0.464081    0.483614    0.840000  00:07                                                           
+1         0.417869    0.423979    0.875000  00:07                                                           
+2         0.342850    0.476066    0.835000  00:07                                                           
+3         0.287292    0.407242    0.890000  00:07                                                           
+4         0.255120    0.415062    0.910000  00:07                                                           
+5         0.233019    0.407567    0.910000  00:07                                                           
+6         0.224896    0.396340    0.915000  00:07                                                           
+7         0.221431    0.393961    0.915000  00:07                                                           
+Saving models at /home/ubuntu/multifit/data/cls/fr-books/models/sp15k/qrnn_nl4.m
+Loss and accuracy using (cls_best): [0.24021079, tensor(0.9110), tensor(0.9093), tensor(0.9127)] [0.28629804, tensor(0.9150), tensor(0.9277), tensor(0.8970)]
+                                        name  tst_accuracy  tst_loss  val_accuracy  val_loss
+0  data/cls/fr-books/models/sp15k/qrnn_nl4.m         0.911  0.240211         0.915  0.286298
+ds    fr-books
+best      91.1
+max       91.1
+avg       91.1
+(multifit) ubuntu@ip-172-31-42-96:~/multifit$ 

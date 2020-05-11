@@ -1,0 +1,73 @@
+﻿(multifit) ubuntu@ip-172-31-42-96:~/multifit$ python -m ulmfit eval --glob="wiki/nl-100/models/sp15k/qrnn_nl4.m" --name nl4 --dataset-template='../cls/nl-books-laser' --num-lm-epochs=20  --num-cls-epochs=8  --bs=18 --lr_sched=1cycle --label-smoothing-eps=0.1
+Processing data/wiki/nl-100/models/sp15k/qrnn_nl4.m
+../cls/nl-books-laser
+data/wiki/../cls/nl-books-laser
+Max vocab: 15000
+Cache dir: /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k
+Model dir: /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k/qrnn_nl4.m
+Overwrite classifier? False
+Training
+Data dir /home/ubuntu/multifit/data/cls/nl-books-laser
+Loading validation /home/ubuntu/multifit/data/cls/nl-books-laser/nl.dev.csv
+dataset path /home/ubuntu/multifit/data/cls/nl-books-laser
+(100263, 2)
+(1800, 2)
+Running tokenization lm...
+Data lm, trn: 90237, val: 10026                                               
+Running tokenization cls...
+Data cls, trn: 1800, val: 200                                               
+Running tokenization tst...
+Data tst, trn: 200, val: 2000                                               
+Size of vocabulary: 15000
+First 20 words in vocab: ['xxunk', 'xxpad', 'xxbos', 'xxeos', 'xxfld', 'xxmaj', 'xxup', 'xxrep', 'xxwrep', '<unk>', '▁', '▁de', '▁.', '▁van', '▁,', '▁in', '▁het', '▁:', '▁een', 's']
+Transformer False
+Training args:  {'clip': 0.12, 'alpha': 2, 'beta': 1, 'drop_mult': 0.3} dps:  {'output_p': 0.25, 'hidden_p': 0.1, 'input_p': 0.2, 'embed_p': 0.02, 'weight_p': 0.15}
+Loading pretrained model
+Bptt 70
+Training lm from:  [PosixPath('/home/ubuntu/multifit/data/wiki/nl-100/models/sp15k/qrnn_nl4.m/lm_best'), PosixPath('/home/ubuntu/multifit/data/wiki/nl-100/models/sp15k/qrnn_nl4.m/../itos')]
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.984326    4.480755    0.344002  12:14                                                     
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.424217    4.217330    0.385112  16:48                                                      
+1         4.167978    4.041138    0.412032  16:47                                                      
+2         4.087436    3.925652    0.428348  16:47                                                      
+3         4.014079    3.862339    0.437163  16:47                                                      
+4         3.952273    3.827234    0.441640  16:49                                                      
+5         3.938201    3.796405    0.446593  16:48                                                      
+6         3.915969    3.772632    0.450149  16:49                                                      
+7         3.901546    3.750203    0.453352  16:48                                                      
+8         3.906632    3.732110    0.456386  16:48                                                      
+9         3.875359    3.712118    0.459945  16:47                                                       
+10        3.842931    3.692008    0.463507  16:48                                                       
+11        3.789619    3.669559    0.467177  16:47                                                       
+12        3.821873    3.647658    0.470861  16:49                                                       
+13        3.799484    3.629165    0.474042  16:48                                                       
+14        3.776280    3.609626    0.477615  16:48                                                       
+15        3.778909    3.593560    0.480499  16:49                                                       
+16        3.750777    3.580985    0.482866  16:48                                                       
+17        3.739851    3.571467    0.484603  16:48                                                       
+18        3.689467    3.566995    0.485493  16:48                                                       
+19        3.709866    3.566007    0.485713  16:49                                                       
+/home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k
+Saving info /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k/qrnn_nl4.m/info.json
+Save model from the best epoch? False
+Single training schedule
+epoch     train_loss  valid_loss  accuracy  time    
+0         0.551780    0.566379    0.735000  00:13                                                 
+1         0.485526    0.539753    0.800000  00:13                                                 
+2         0.397405    0.899506    0.660000  00:13                                                 
+3         0.313991    0.720868    0.690000  00:13                                                 
+4         0.281110    0.526807    0.805000  00:13                                                 
+5         0.244717    0.588778    0.805000  00:13                                                 
+6         0.225560    0.546832    0.805000  00:13                                                 
+7         0.228505    0.543991    0.800000  00:13                                                 
+Saving models at /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k/qrnn_nl4.m
+Save model from the best epoch? False
+Loss and accuracy using (cls_best): [0.4792826, tensor(0.7855), tensor(0.7823), tensor(0.7886)] [0.46238628, tensor(0.8000), tensor(0.7938), tensor(0.8058)]
+                                              name  tst_accuracy  tst_loss  val_accuracy  val_loss
+0  data/cls/nl-books-laser/models/sp15k/qrnn_nl4.m        0.7855  0.479283           0.8  0.462386
+ds    nl-books-las
+best         78.55
+max          78.55
+avg          78.55
+(multifit) ubuntu@ip-172-31-42-96:~/multifit$ 

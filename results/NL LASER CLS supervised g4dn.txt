@@ -1,0 +1,52 @@
+(laser) ubuntu@ip-172-31-42-96:~/LASER/tasks/cls$ bash cls.sh
+Start time:
+Wed May  6 13:59:31 CEST 2020
+
+Dataset already exists. Skipping download. 
+
+Extracting CLS data
+Labels from data/cls-acl10-unprocessed/en/books/train.txt already extracted
+Texts from data/cls-acl10-unprocessed/en/books/train.txt already extracted
+Labels from data/cls-acl10-unprocessed/nl/books/train.txt already extracted
+Texts from data/cls-acl10-unprocessed/nl/books/train.txt already extracted
+Labels from data/cls-acl10-unprocessed/en/books/dev.txt already extracted
+Texts from data/cls-acl10-unprocessed/en/books/dev.txt already extracted
+Labels from data/cls-acl10-unprocessed/nl/books/dev.txt already extracted
+Texts from data/cls-acl10-unprocessed/nl/books/dev.txt already extracted
+Labels from data/cls-acl10-unprocessed/en/books/test.txt already extracted
+Texts from data/cls-acl10-unprocessed/en/books/test.txt already extracted
+Labels from data/cls-acl10-unprocessed/nl/books/test.txt already extracted
+Texts from data/cls-acl10-unprocessed/nl/books/test.txt already extracted
+
+LASER: calculate embeddings for CLS
+ - loading encoder /home/ubuntu/LASER/models/bilstm.93langs.2018-12-26.pt
+
+Processing:
+ - SplitLines: embed/train.split.en already exists
+ - JoinEmbed: embed/train.enc.en already exists
+ - SplitLines: embed/train.split.nl already exists
+ - JoinEmbed: embed/train.enc.nl already exists
+ - SplitLines: embed/dev.split.en already exists
+ - JoinEmbed: embed/dev.enc.en already exists
+ - SplitLines: embed/dev.split.nl already exists
+ - JoinEmbed: embed/dev.enc.nl already exists
+ - SplitLines: embed/test.split.en already exists
+ - JoinEmbed: embed/test.enc.en already exists
+ - SplitLines: embed/test.split.nl already exists
+ - JoinEmbed: embed/test.enc.nl already exists
+
+Training CLS classifier (log files in embed)
+ - train on en, dev on en
+Starting embed/cls.en-en.log
+ - train on nl, dev on nl
+Starting embed/cls.nl-nl.log
+
+Accuracy matrix:
+Train     en     nl 
+ en:    83.40  77.65
+ nl:    76.80  82.45
+
+End time:
+Wed May  6 14:01:05 CEST 2020
+
+(laser) ubuntu@ip-172-31-42-96:~/LASER/tasks/cls$ 

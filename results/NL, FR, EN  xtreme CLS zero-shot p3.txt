@@ -1,0 +1,108 @@
+﻿(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ bash scripts/train_cls.sh xlm-roberta-large
+Languages: en,fr,nl
+05/06/2020 07:26:30 - INFO - root -   Input args: Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='/home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed', do_eval=True, do_lower_case=False, do_predict=True, do_predict_dev=False, do_train=True, eval_all_checkpoints=True, eval_test_set=True, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, init_checkpoint=None, learning_rate=2e-05, local_rank=-1, log_file='train.log', logging_steps=50, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-large', model_type='xlmr', no_cuda=False, num_train_epochs=5.0, output_dir='/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/', overwrite_cache=True, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=2, predict_languages='en,fr,nl', save_only_best_checkpoint=True, save_steps=200, seed=42, server_ip='', server_port='', task_name='cls', test_split='test', tokenizer_name='', train_language='en', train_split='train', warmup_steps=0, weight_decay=0.0)
+05/06/2020 07:26:30 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+05/06/2020 07:26:30 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-config.json from cache at /home/ubuntu/.cache/torch/transformers/5ac6d3984e5ca7c5227e4821c65d341900125db538c5f09a1ead14f380def4a7.aa59609b4f56f82fa7699f0d47997566ccc4cf07e484f3a7bc883bd7c5a34488
+05/06/2020 07:26:30 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 07:26:30 - INFO - __main__ -   config = XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 07:26:30 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-sentencepiece.bpe.model from cache at /home/ubuntu/.cache/torch/transformers/f7e58cf8eef122765ff522a4c7c0805d2fe8871ec58dcb13d0c2764ea3e4a0f3.309f0c29486cffc28e1e40a2ab0ac8f500c203fe080b95f820aa9cb58e5b84ed
+05/06/2020 07:26:31 - INFO - __main__ -   lang2id = None
+05/06/2020 07:26:31 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='/home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=True, do_predict_dev=False, do_train=True, eval_all_checkpoints=True, eval_test_set=True, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, init_checkpoint=None, learning_rate=2e-05, local_rank=-1, log_file='train.log', logging_steps=50, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-large', model_type='xlmr', n_gpu=1, no_cuda=False, num_train_epochs=5.0, output_dir='/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/', output_mode='classification', overwrite_cache=True, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=2, predict_languages='en,fr,nl', save_only_best_checkpoint=True, save_steps=200, seed=42, server_ip='', server_port='', task_name='cls', test_split='test', tokenizer_name='', train_language='en', train_split='train', warmup_steps=0, weight_decay=0.0)
+05/06/2020 07:26:31 - INFO - __main__ -   loading from existing model xlm-roberta-large
+05/06/2020 07:26:31 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-pytorch_model.bin from cache at /home/ubuntu/.cache/torch/transformers/4cb7e8aaa4c1a784991e044524aa4ec899c93dc895f081a27c4e5410f87c584d.2f41fe28a80f2730715b795242a01fc3dda846a85e7903adb3907dc5c5a498bf

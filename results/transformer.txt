@@ -1,0 +1,27 @@
+﻿(multifit) ubuntu@ip-172-31-42-96:~/multifit$ python -m ulmfit lm2 --dataset-path data/wiki/nl-100 --tokenizer='sp' --name 'transformer' --max-vocab 15000 --lang nl --qrnn=False - train_lm 10 --bs=50 --drop_mult=0
+Max vocab: 15000
+Cache dir: data/wiki/nl-100/models/sp15k
+Model dir: data/wiki/nl-100/models/sp15k/lstm_transformer.m
+Wiki text was split to 263567 articles
+Wiki text was split to 526 articles
+Data lm, trn: 263567, val: 526
+Size of vocabulary: 15000
+First 20 words in vocab: ['xxunk', 'xxpad', 'xxbos', 'xxeos', 'xxfld', 'xxmaj', 'xxup', 'xxrep', 'xxwrep', '<unk>', '▁', '▁de', '▁.', '▁van', '▁,', '▁in', '▁het', '▁:', '▁een', 's']
+Transformer False
+Training args:  {'clip': 0.12, 'alpha': 2, 'beta': 1, 'drop_mult': 0} dps:  {'output_p': 0.25, 'hidden_p': 0.1, 'input_p': 0.2, 'embed_p': 0.02, 'weight_p': 0.15}
+Bptt 70
+Training lm from random weights
+epoch     train_loss  valid_loss  accuracy  time    
+0         2.901512    2.986962    0.451941  58:18                                                                
+1         2.904753    2.953639    0.452881  58:28                                                                
+2         2.859264    2.931760    0.455004  58:11                                                                
+3         2.806200    2.893470    0.459741  58:11                                                                
+4         2.729990    2.812968    0.470256  58:14                                                                
+5         2.687362    2.725883    0.481349  58:17                                                                
+6         2.616096    2.636420    0.494545  58:27                                                                
+7         2.551465    2.566667    0.506498  58:13                                                                
+8         2.525511    2.509848    0.514946  58:24                                                                
+9         2.467839    2.493041    0.517982  58:21                                                                 
+data/wiki/nl-100/models/sp15k
+Saving info data/wiki/nl-100/models/sp15k/lstm_transformer.m/info.json
+(multifit) ubuntu@ip-172-31-42-96:~/multifit$ 

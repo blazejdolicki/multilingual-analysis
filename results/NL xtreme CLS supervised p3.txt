@@ -1,0 +1,658 @@
+﻿(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ bash scripts/train_cls.sh xlm-roberta-large
+Train langauge: nl
+Test languages: nl
+05/06/2020 07:53:42 - INFO - root -   Input args: Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='/home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed', do_eval=True, do_lower_case=False, do_predict=True, do_predict_dev=False, do_train=True, eval_all_checkpoints=True, eval_test_set=True, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, init_checkpoint=None, learning_rate=2e-05, local_rank=-1, log_file='train.log', logging_steps=50, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-large', model_type='xlmr', no_cuda=False, num_train_epochs=5.0, output_dir='/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/', overwrite_cache=True, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=2, predict_languages='nl', save_only_best_checkpoint=True, save_steps=200, seed=42, server_ip='', server_port='', task_name='cls', test_split='test', tokenizer_name='', train_language='nl', train_split='train', warmup_steps=0, weight_decay=0.0)
+05/06/2020 07:53:42 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+05/06/2020 07:53:42 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-config.json from cache at /home/ubuntu/.cache/torch/transformers/5ac6d3984e5ca7c5227e4821c65d341900125db538c5f09a1ead14f380def4a7.aa59609b4f56f82fa7699f0d47997566ccc4cf07e484f3a7bc883bd7c5a34488
+05/06/2020 07:53:42 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 07:53:42 - INFO - __main__ -   config = XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 07:53:42 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-sentencepiece.bpe.model from cache at /home/ubuntu/.cache/torch/transformers/f7e58cf8eef122765ff522a4c7c0805d2fe8871ec58dcb13d0c2764ea3e4a0f3.309f0c29486cffc28e1e40a2ab0ac8f500c203fe080b95f820aa9cb58e5b84ed
+05/06/2020 07:53:43 - INFO - __main__ -   lang2id = None
+05/06/2020 07:53:43 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='/home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=True, do_predict_dev=False, do_train=True, eval_all_checkpoints=True, eval_test_set=True, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, init_checkpoint=None, learning_rate=2e-05, local_rank=-1, log_file='train.log', logging_steps=50, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-large', model_type='xlmr', n_gpu=1, no_cuda=False, num_train_epochs=5.0, output_dir='/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/', output_mode='classification', overwrite_cache=True, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=2, predict_languages='nl', save_only_best_checkpoint=True, save_steps=200, seed=42, server_ip='', server_port='', task_name='cls', test_split='test', tokenizer_name='', train_language='nl', train_split='train', warmup_steps=0, weight_decay=0.0)
+05/06/2020 07:53:43 - INFO - __main__ -   loading from existing model xlm-roberta-large
+05/06/2020 07:53:43 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-pytorch_model.bin from cache at /home/ubuntu/.cache/torch/transformers/4cb7e8aaa4c1a784991e044524aa4ec899c93dc895f081a27c4e5410f87c584d.2f41fe28a80f2730715b795242a01fc3dda846a85e7903adb3907dc5c5a498bf
+05/06/2020 07:54:03 - INFO - transformers.modeling_utils -   Weights of XLMRobertaForSequenceClassification not initialized from pretrained model: ['classifier.dense.weight', 'classifier.dense.bias', 'classifier.out_proj.weight', 'classifier.out_proj.bias']
+05/06/2020 07:54:03 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in XLMRobertaForSequenceClassification: ['lm_head.bias', 'lm_head.dense.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight']
+05/06/2020 07:54:05 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed
+Empty line
+05/06/2020 07:54:05 - INFO - processors.utils -   Writing example 0
+05/06/2020 07:54:05 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:54:05 - INFO - processors.utils -   guid: train-nl-0
+05/06/2020 07:54:05 - INFO - processors.utils -   input_ids: 0 5018 69847 111765 233 293 44681 23 168975 5 5018 13014 81022 3114 708 126 645 8 22830 111 1926 148199 5870 33 293 5895 236 16913 19585 56950 37829 5 262 73654 83 11982 4 8 95150 3188 1602 1056 8518 45744 33 171 293 5895 236 22990 8 47757 1779 120 26300 1056 5 1947 113412 13 46079 171 1926 20288 19 19585 120 19161 6 7689 1926 218341 123 872 3932 20624 5 5018 69847 9689 645 8 123341 131 388 143 510 22 645 8 22830 4621 16913 15461 120 2814 737 8 30256 624 8 23475 10513 17564 5 4146 4319 199529 13 22 15326 167005 13 5551 91 90543 18 8081 6614 7473 7 79417 72 73 8 6165 2590 2
+05/06/2020 07:54:05 - INFO - processors.utils -   sentence: <s> ▁Een ▁zomer ▁begint ▁op ▁een ▁camping ▁in ▁Frankrijk . ▁Een ▁echt paar ▁ru zi et ▁over ▁de ▁vraag ▁of ▁hun ▁puber zon en ▁een ▁week je ▁samen ▁achter ▁mogen ▁blijven . ▁De ▁moeder ▁is ▁tegen , ▁de ▁vader ▁heeft ▁zo ▁zijn ▁eigen ▁reden en ▁om ▁een ▁week je ▁zonder ▁de ▁jonge ns ▁te ▁willen ▁zijn . ▁Het ▁uiteindelijk e ▁besluit ▁om ▁hun ▁zone n ▁achter ▁te ▁laten ▁ zet ▁hun ▁huwelijk ▁dan ig ▁onder ▁druk . ▁Een ▁zomer ▁gaat ▁over ▁de ▁pijn ▁van ▁los la ten ▁en ▁over ▁de ▁vraag ▁hoe ▁samen ▁verder ▁te ▁gaan ▁als ▁de ▁zorg ▁voor ▁de ▁kinderen ▁weg valt . ▁Met ▁haar ▁toegankelijk e ▁en ▁toch ▁scherp e ▁pen ▁s laag t ▁Tin eke ▁Bei s huizen ▁er in ▁de ▁wan kel </s>
+05/06/2020 07:54:05 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:54:05 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:54:05 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:54:05 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:54:05 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:54:05 - INFO - processors.utils -   guid: train-nl-1
+05/06/2020 07:54:05 - INFO - processors.utils -   input_ids: 0 90991 9069 9956 128723 11572 83 225 1954 3611 124238 66527 1515 982 9 112 978 1003 131 8 47522 184 6 187161 59176 57282 8349 92 4 435 23 8 35912 162800 134071 7745 14355 1505 180008 22 1056 36395 45950 341 18687 1505 5 87455 7112 39029 225 47522 184 6 153376 1760 3778 293 133748 145 10384 134091 92359 4 435 293 31576 188 18741 19395 92 157 2146 18 664 293 77227 5 3786 8167 2703 18 113696 160 9858 28329 33 22 72 10756 18 293 192296 152526 171 4319 23953 435 8 8484 90991 9069 9956 128723 11572 5 5987 97994 607 225 3551 3778 700 85073 24069 1911 293 13584 1177 149312 33 20702 4 3778 14355 1505 180008 2
+05/06/2020 07:54:05 - INFO - processors.utils -   sentence: <s> ▁IK ▁RE IS ▁ALLE EN ▁is ▁het ▁raz end ▁spannende ▁vijf ster ren - de bu ut ▁van ▁de ▁Noor se ▁ schrijver ▁Samuel ▁Bj ør k , ▁met ▁in ▁de ▁hoofd rollen ▁inspect eur ▁Hol ger ▁Munch ▁en ▁zijn ▁collega ▁Mia ▁K rü ger . Om slag Op ▁het ▁Noor se ▁ platte land ▁wordt ▁een ▁zes ja rig ▁meisje ▁gevonden , ▁met ▁een ▁spring to uw ▁opge k no op t ▁aan ▁een ▁boom . ▁Ze ▁dra ag t ▁vreemde ▁po ppen kler en ▁en ▁er ▁hang t ▁een ▁vliegtuig label ▁om ▁haar ▁nek ▁met ▁de ▁tekst ▁IK ▁RE IS ▁ALLE EN . ▁Als ▁blijkt ▁dat ▁het ▁land ▁wordt ▁ge teist erd ▁door ▁een ▁slu we ▁moord en aar , ▁wordt ▁Hol ger ▁Munch </s>
+05/06/2020 07:54:05 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:54:05 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:54:05 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:54:05 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:54:05 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:54:05 - INFO - processors.utils -   guid: train-nl-2
+05/06/2020 07:54:05 - INFO - processors.utils -   input_ids: 0 3256 51408 225 14666 6921 78387 17362 5 35080 14666 3188 293 81 89576 4034 5 7763 206 2313 225 116765 4375 4812 1376 225 43233 607 8 6 187161 1348 4535 11916 33292 120920 5864 1123 3476 5 61445 3476 2950 52173 233 225 63474 131 225 14666 87860 225 2360 2950 72 293 4535 63474 664 120 7205 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:54:05 - INFO - processors.utils -   sentence: <s> ▁Ik ▁vond ▁het ▁boek ▁Ir ène ▁beter . Dit ▁boek ▁heeft ▁een ▁v lotte ▁start . To ch ▁naar ▁het ▁midden ▁toe ▁heb ▁ik ▁het ▁gevoel ▁dat ▁de ▁ schrijver ▁niet ▁goed ▁weet ▁welke ▁richting ▁hij ▁uit ▁moet . Ik ▁moet ▁wel ▁zeggen ▁op ▁het ▁eind ▁van ▁het ▁boek ▁lukt ▁het ▁hem ▁wel ▁er ▁een ▁goed ▁eind ▁aan ▁te ▁maken . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 07:54:05 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:54:05 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:54:05 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 07:54:05 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:54:05 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:54:05 - INFO - processors.utils -   guid: train-nl-3
+05/06/2020 07:54:05 - INFO - processors.utils -   input_ids: 0 1947 13163 67 163 22 6997 39 3176 101031 171 23 225 14666 120 8297 5 3256 4812 225 293 6647 11365 10513 94781 4 4812 4052 73792 7364 24401 23119 3121 22 16714 67 607 59659 7 1376 72 23 576 4 6146 72065 19686 2313 4052 74525 21859 5 4613 147 1376 12255 225 1232 1602 1067 18841 171 225 14666 1348 1123 120 58401 4 22 113412 83 607 123 1232 131 70734 50875 71 5 61445 914 225 23824 52173 5 27 1376 1902 72 6973 4757 131 136002 5 25 647 33 115 19656 13 98178 6048 68 1937 493 169 70951 111950 33 664 225 38593 14203 5386 120 58721 25 4 137448 8 29256 5 357 242 2306 5997 2
+05/06/2020 07:54:05 - INFO - processors.utils -   sentence: <s> ▁Het ▁kost te ▁me ▁en ór m ▁veel ▁moeite ▁om ▁in ▁het ▁boek ▁te ▁komen . ▁Ik ▁heb ▁het ▁een ▁paar ▁keer ▁weg gelegd , ▁heb ▁andere ▁boeken ▁tussen door ▁gele zen ▁en ▁merk te ▁dat ▁ál s ▁ik ▁er ▁in ▁las , ▁mijn ▁aandacht ▁continu ▁naar ▁andere ▁zaken ▁ging . Ma ar ▁ik ▁zou ▁het ▁ook ▁zo nde ▁vinden ▁om ▁het ▁boek ▁niet ▁uit ▁te ▁lezen , ▁en ▁uiteindelijk ▁is ▁dat ▁dan ▁ook ▁van avond ▁gebeur d . Ik ▁ga ▁het ▁gewoon ▁zeggen . ... ▁ik ▁had ▁er ▁mé ér ▁van ▁verwacht . ' E en ▁du ister e ▁ontdek king ▁die ▁lang ▁ver z wegen ▁geheim en ▁aan ▁het ▁licht ▁drei gt ▁te ▁brengen ' , ▁meldt ▁de ▁cover . ▁En ▁' ~ een </s>
+05/06/2020 07:54:05 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:54:05 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:54:05 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 07:54:05 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:54:05 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:54:05 - INFO - processors.utils -   guid: train-nl-4
+05/06/2020 07:54:05 - INFO - processors.utils -   input_ids: 0 26125 63448 27859 3915 41865 293 6648 4532 22594 932 19518 157 4803 71 3778 624 293 2373 701 282 2265 12333 11090 4 11796 624 136171 131 225 11205 34535 40466 4 9520 117262 5 24002 65079 16941 131 8 1764 3778 102477 78647 793 5864 111 22169 12750 3188 5 6586 26125 63448 12750 3188 32 5018 269 42 624 4319 32392 350 106829 5 3786 3188 3176 76143 6 120106 71 4 1476 3188 1850 4408 52223 13 164441 92359 5 5018 131 8 60724 13 124945 68 932 1850 3188 83 353 67 4 293 47757 19 68 72 15315 624 4319 55743 120 1056 5 14441 5864 83 144 16941 131 9520 117262 4 2043 737 14752 8298 155927 1123 11205 2
+05/06/2020 07:54:05 - INFO - processors.utils -   sentence: <s> ▁Kay lee ▁Dun ham ▁krijgt ▁een ▁mail tje ▁waarin ▁ze ▁uitge no dig d ▁wordt ▁voor ▁een ▁ano nie me ▁social media site , ▁alleen ▁voor ▁leerlingen ▁van ▁het ▁Not tawa ▁college , ▁NO DIG . ▁Aan ▁ieder ▁lid ▁van ▁de ▁site ▁wordt ▁gevra agd ▁wat ▁hij ▁of ▁zij ▁nodig ▁heeft . ▁Wat ▁Kay lee ▁nodig ▁heeft ? ▁Een ▁nie r ▁voor ▁haar ▁zie ke ▁broer . ▁Ze ▁heeft ▁veel ▁actie ▁ gevoer d , ▁maar ▁heeft ▁nog ▁geen ▁geschikt e ▁donor ▁gevonden . ▁Een ▁van ▁de ▁weinig e ▁vrienden ▁die ▁ze ▁nog ▁heeft ▁is ▁Na te , ▁een ▁jonge n ▁die ▁er ▁altijd ▁voor ▁haar ▁lijkt ▁te ▁zijn . ▁Ook ▁hij ▁is ▁al ▁lid ▁van ▁NO DIG , ▁net ▁als ▁vele ▁anderen ▁jongeren ▁uit ▁Not </s>
+05/06/2020 07:54:05 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:54:05 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:54:05 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:54:05 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:54:09 - INFO - __main__ -   Saving features into cached file /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed/cached_train_xlm-roberta-large_128_cls_nl
+05/06/2020 07:54:09 - INFO - __main__ -   ***** Running training *****
+05/06/2020 07:54:09 - INFO - __main__ -     Num examples = 1800
+05/06/2020 07:54:09 - INFO - __main__ -     Num Epochs = 5
+05/06/2020 07:54:09 - INFO - __main__ -     Instantaneous batch size per GPU = 2
+05/06/2020 07:54:09 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 32
+05/06/2020 07:54:09 - INFO - __main__ -     Gradient Accumulation steps = 16
+05/06/2020 07:54:09 - INFO - __main__ -     Total optimization steps = 280
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 900/900 [01:23<00:00, 10.73it/s]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 900/900 [01:23<00:00, 10.79it/s]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 900/900 [01:23<00:00, 10.79it/s]
+Epoch:  60%|████████████████████████████████████████████████████████████████████████████▏                                                  | 3/5 [04:10<02:47, 83.64s/it0
+5/06/2020 07:59:08 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed| 510/900 [00:47<00:34, 11.38it/s]
+Empty line
+05/06/2020 07:59:08 - INFO - processors.utils -   Writing example 0
+05/06/2020 07:59:08 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:08 - INFO - processors.utils -   guid: test-nl-0
+05/06/2020 07:59:08 - INFO - processors.utils -   input_ids: 0 3011 83 293 14666 607 55 62057 1123 3562 58401 737 55 72 23 111765 5 5018 23134 737 72 24477 83 156551 22 4621 55 107323 171 9689 5 37050 19632 144243 242974 6 5 262 73654 186 81308 12444 8 75218 4390 112 22 8 75218 4390 112 103898 607 225 4319 126660 83 27 144009 95106 4621 225 15326 1850 233 225 50236 38295 44 35991 13707 740 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:08 - INFO - processors.utils -   sentence: <s> ▁Dit ▁is ▁een ▁boek ▁dat ▁je ▁gelijk ▁uit ▁wil ▁lezen ▁als ▁je ▁er ▁in ▁begint . ▁Een ▁drama ▁als ▁er ▁iemand ▁is ▁overleden ▁en ▁hoe ▁je ▁daarmee ▁om ▁gaat . ▁Uit ▁verschillende ▁kanten ▁beschreven ▁ . ▁De ▁moeder ▁be schuld igt ▁de ▁verlo of de ▁en ▁de ▁verlo of de ▁denkt ▁dat ▁het ▁haar ▁schuld ▁is ... heel ▁bijzonder ▁hoe ▁het ▁toch ▁nog ▁op ▁het ▁einde ▁allemaal ▁" goed ▁komt ". </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 07:59:08 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:08 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:08 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:59:08 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:08 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:08 - INFO - processors.utils -   guid: test-nl-1
+05/06/2020 07:59:08 - INFO - processors.utils -   input_ids: 0 3011 83 225 47442 645 3362 1176 4 13222 1442 737 932 259 6850 3778 21583 932 3932 8 11876 510 22 5094 2198 1055 5 10786 126410 932 61160 92 11000 233 23 4319 87281 1991 10484 5 6533 4621 123 32 3362 1176 44143 607 932 6 75752 7299 21882 3778 4 932 3778 1232 65750 19518 7077 259 6850 27 3786 3476 72 10584 664 4977 1476 793 32 3786 46079 171 435 4319 2184 60679 39162 1123 120 2814 79787 793 4319 16810 1055 73499 33 5 360 1926 22015 82834 8297 932 1123 1582 2541 191 6 4 68 293 103128 6136 124715 23 4319 6 75846 5 4887 83 5864 22 59696 27550 5864 4319 225 22485 404 474 23 2
+05/06/2020 07:59:08 - INFO - processors.utils -   sentence: <s> ▁Dit ▁is ▁het ▁verhaal ▁over ▁Sam my , ▁elke ▁dag ▁als ▁ze ▁wa kker ▁wordt ▁zit ▁ze ▁onder ▁de ▁bul ten ▁en ▁sch ram men . ▁Deze ▁loopt ▁ze ▁blij k baar ▁op ▁in ▁haar ▁nacht mer ries . ▁Maar ▁hoe ▁dan ? ▁Sam my ▁denk ▁dat ▁ze ▁ krank zin nig ▁wordt , ▁ze ▁wordt ▁ook ▁totaal ▁uitge put ▁wa kker ... ▁Ze ▁moet ▁er ▁iets ▁aan ▁doen ▁maar ▁wat ? ▁Ze ▁besluit ▁om ▁met ▁haar ▁beste ▁vriend ▁Matt ▁uit ▁te ▁gaan ▁zoeken ▁wat ▁haar ▁dro men ▁beteken en . ▁In ▁hun ▁zoek tocht ▁komen ▁ze ▁uit ▁bij ▁Dar on ▁ , ▁die ▁een ▁belangrijke ▁rol ▁speelt ▁in ▁haar ▁ droom . ▁Wie ▁is ▁hij ▁en ▁waarom ▁maakt ▁hij ▁haar ▁het ▁leven ▁zu ur ▁in </s>
+05/06/2020 07:59:08 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:08 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:08 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:59:08 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:08 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:08 - INFO - processors.utils -   guid: test-nl-2
+05/06/2020 07:59:08 - INFO - processors.utils -   input_ids: 0 717 33 1376 136893 435 58401 131 854 14666 1902 1376 1348 4884 154261 33 33292 120920 225 14666 1123 9966 1582 8 14395 165292 23 225 47442 5 262 8155 137840 4 171 225 1602 1476 3853 120 157629 4 51408 1376 23355 337 1399 3611 6 96514 435 13014 43233 131 225 23 4134 25306 30987 5 262 36688 137840 509 79052 203354 6543 4 98 814 54035 1476 1376 51408 225 1348 127866 5 2331 8 293 111 4052 10430 21583 72 15326 34353 175884 23 171 1911 120 37829 58401 5 61445 1585 67103 65699 872 2313 1056 4052 73792 4 1476 111 1376 932 62057 12255 71324 4 15014 1582 2709 4 203 1376 1348 52173 5 6533 1376 44143 607 2
+05/06/2020 07:59:08 - INFO - processors.utils -   sentence: <s> ▁To en ▁ik ▁begon ▁met ▁lezen ▁van ▁dit ▁boek ▁had ▁ik ▁niet ▁kunnen ▁vermoed en ▁welke ▁richting ▁het ▁boek ▁uit ging ▁bij ▁de ▁grote ▁twist ▁in ▁het ▁verhaal . ▁De ▁eerste ▁helft , ▁om ▁het ▁zo ▁maar ▁even ▁te ▁noemen , ▁vond ▁ik ▁zeer ▁bo ei end ▁ geschreven ▁met ▁echt ▁gevoel ▁van ▁het ▁in bre kers vak . ▁De ▁tweede ▁helft ▁was ▁nogal ▁vreemd ▁dus , ▁on ver wacht ▁maar ▁ik ▁vond ▁het ▁niet ▁jammer . ▁Op ▁de ▁een ▁of ▁andere ▁manier ▁zit ▁er ▁toch ▁genoeg ▁spanning ▁in ▁om ▁door ▁te ▁blijven ▁lezen . Ik ▁ben ▁nieuws gier ig ▁naar ▁zijn ▁andere ▁boeken , ▁maar ▁of ▁ik ▁ze ▁gelijk ▁zou ▁kopen , ▁zoals ▁bij ▁deze , ▁kan ▁ik ▁niet ▁zeggen . ▁Maar ▁ik ▁denk ▁dat </s>
+05/06/2020 07:59:08 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:08 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:08 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 07:59:08 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:08 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:08 - INFO - processors.utils -   guid: test-nl-3
+05/06/2020 07:59:08 - INFO - processors.utils -   input_ids: 0 1947 6 187161 7 28972 884 3400 1436 57263 14407 22 90062 58807 78473 13 7340 5094 107 1353 42517 16913 52 112 173 56 29764 111950 33 131 8 6 85407 63 22 52 112 146845 111950 33 131 8 23439 7344 4299 792 866 4021 83 293 210339 6 187161 4 46108 74383 4 232306 4 9969 191 1419 22 1013 9 1861 40455 147 5 78473 13 7340 83 177942 23 293 6 92517 22 67822 2061 40455 147 5 99243 98870 12216 932 23 8272 225 54995 1003 624 108238 191 54823 91969 2061 233 23 43769 4 155767 22 134288 5 78572 8 7706 7 3896 131 8 93526 13924 420 58721 932 101933 26 7 737 12585 56994 4 138261 2
+05/06/2020 07:59:08 - INFO - processors.utils -   sentence: <s> ▁Het ▁ schrijver s duo ▁Al jos cha ▁Andreas ▁Long ▁en ▁Ronald ▁Pierre ▁Schw e ppe ▁sch re ven ▁eerder ▁samen ▁“ de ▁ve er tien ▁geheim en ▁van ▁de ▁ panda ” ▁en ▁“ de ▁zeven ▁geheim en ▁van ▁de ▁schi ld pad ”. L ong ▁is ▁een ▁Duits ▁ schrijver , ▁psych oloog , ▁filosoof , ▁comp on ist ▁en ▁tai - chi lera ar . ▁Schw e ppe ▁is ▁muzikant ▁in ▁een ▁ orkest ▁en ▁medita tie lera ar . ▁Samen ▁rich tten ▁ze ▁in ▁1999 ▁het ▁Institu ut ▁voor ▁Perso on lijke ▁Integra tie ▁op ▁in ▁München , ▁Riga ▁en ▁Beijing . Met ▁de ▁wij s heid ▁van ▁de ▁witte ▁wol f ▁brengen ▁ze ▁thema ’ s ▁als ▁zelf zorg , ▁tevreden </s>
+05/06/2020 07:59:08 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:08 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:08 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 07:59:08 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:08 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:08 - INFO - processors.utils -   guid: test-nl-4
+05/06/2020 07:59:08 - INFO - processors.utils -   input_ids: 0 3000 747 73792 68 1376 131 6 121206 1515 12785 4 52757 38295 6543 4 83 854 6146 112462 126 5 6210 7 95 40043 7 18231 38232 57327 4812 1376 34398 435 8 23475 22 22169 18841 225 98763 38 3256 235961 46264 15315 86934 4621 8 41125 87482 20118 83 131 8 23475 22 111 854 14666 44828 71 83 4 3444 72 8297 124 7 181272 13 66413 7 23 624 4 6543 1348 624 50120 8562 52223 111 225 52223 13 3095 5 7768 106141 31243 1376 854 435 35965 23475 1123 8 105765 13 22768 33 4 6543 22768 361 22 3217 360 6146 32762 478 131 81949 4 6146 81949 4812 1376 144 143529 71 607 6 121206 1515 37760 2
+05/06/2020 07:59:08 - INFO - processors.utils -   sentence: <s> ▁Van ▁alle ▁boeken ▁die ▁ik ▁van ▁ schrijf ster ▁ken , ▁bijna ▁allemaal ▁dus , ▁is ▁dit ▁mijn ▁favori et . Al s ▁le rare s ▁basis onder wijs ▁heb ▁ik ▁ervaring ▁met ▁de ▁kinderen ▁en ▁zij ▁vinden ▁het ▁prachtig ! ▁Ik ▁bekijk ▁eerst ▁altijd ▁rustig ▁hoe ▁de ▁thuis situ atie ▁is ▁van ▁de ▁kinderen ▁en ▁of ▁dit ▁boek ▁passen d ▁is , ▁want ▁er ▁komen ▁som s ▁heftig e ▁situatie s ▁in ▁voor , ▁dus ▁niet ▁voor ▁elk ▁kind ▁geschikt ▁of ▁het ▁geschikt e ▁moment . En ▁meestal ▁lees ▁ik ▁dit ▁met ▁enkele ▁kinderen ▁uit ▁de ▁hoger e ▁groep en , ▁dus ▁groep ▁7 ▁en ▁8. ▁In ▁mijn ▁recens ie ▁van ▁Mio , ▁mijn ▁Mio ▁heb ▁ik ▁al ▁verklaar d ▁dat ▁ schrijf ster ▁vooral </s>
+05/06/2020 07:59:08 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:08 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:08 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:59:08 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:12 - INFO - __main__ -   Saving features into cached file /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed/cached_test_xlm-roberta-large_128_cls_nl
+05/06/2020 07:59:12 - INFO - __main__ -   ***** Running evaluation checkpoint-200 nl *****
+05/06/2020 07:59:12 - INFO - __main__ -     Num examples = 2000
+05/06/2020 07:59:12 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:16<00:00, 15.15it/s]
+05/06/2020 07:59:29 - INFO - __main__ -   ***** Eval results checkpoint-200 nl *****                                                   | 510/900 [00:59<00:34, 11.38it/s]
+05/06/2020 07:59:29 - INFO - __main__ -     acc = 0.814████████████████████████████████████████████████████████████████████████████████| 250/250 [00:16<00:00, 15.09it/s]
+05/06/2020 07:59:29 - INFO - __main__ -     correct = 1628
+05/06/2020 07:59:29 - INFO - __main__ -     num = 2000
+05/06/2020 07:59:29 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed
+Empty line
+05/06/2020 07:59:29 - INFO - processors.utils -   Writing example 0
+05/06/2020 07:59:29 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:29 - INFO - processors.utils -   guid: dev-nl-0
+05/06/2020 07:59:29 - INFO - processors.utils -   input_ids: 0 567 583 555 168026 1376 293 14666 190 28063 982 4 1476 854 14666 151624 225 5 164804 11120 2610 211113 71 435 293 23953 169381 5 262 53550 83 123201 5 262 36920 4534 61160 1098 1348 120 22169 1225 932 624 112 555 120 1056 5 21649 932 177 1376 1348 4 8 10588 3476 55 13014 12585 58401 5 353 159 19 129765 14817 236 3476 25051 4 83 854 225 36688 14666 131 799 133 11059 18391 22 32805 1056 13014 8 101031 38116 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:29 - INFO - processors.utils -   sentence: <s> ▁Z el den ▁geef ▁ik ▁een ▁boek ▁5 ▁ster ren , ▁maar ▁dit ▁boek ▁verdient ▁het . ▁Oude ▁mensen ▁worden ▁vermoor d ▁met ▁een ▁nek schot . ▁De ▁setting ▁is ▁Duitsland . ▁De ▁oud jes ▁blij ken ▁niet ▁te ▁zij ▁wie ▁ze ▁voor de den ▁te ▁zijn . ▁Meer ▁ze g ▁ik ▁niet , ▁de ▁rest ▁moet ▁je ▁echt ▁zelf ▁lezen . ▁Na ▁S n eeuw wit je ▁moet ▁dood , ▁is ▁dit ▁het ▁tweede ▁boek ▁van ▁Ne le ▁Neu haus ▁en ▁beide ▁zijn ▁echt ▁de ▁moeite ▁waard . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 07:59:29 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:59:29 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:29 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:29 - INFO - processors.utils -   guid: dev-nl-1
+05/06/2020 07:59:29 - INFO - processors.utils -   input_ids: 0 2043 737 1446 8420 1098 4 293 98763 22 102007 100879 14666 607 1232 4190 435 293 81 2109 21377 6 195167 8467 56 180301 18 5 6 4 15982 195 21533 38666 12 310 107 90 83 225 143863 233 225 233048 13 22 17474 31940 8 978 1003 83230 6827 38666 12 1446 8420 1098 131 8 103840 6 121206 1515 94239 262 68551 65171 5 262 68551 65171 6 7560 6328 435 310 107 90 293 23010 164 31607 51472 131 293 1911 293 14994 700 85073 24069 6848 4 58625 155927 22497 140048 2610 5 360 68 28973 2610 47757 134091 7 3283 46870 71 22 19410 3932 104 11061 3428 58241 5 627 82625 83 1602 17335 19 134091 4 8 2
+05/06/2020 07:59:29 - INFO - processors.utils -   sentence: <s> ▁net ▁als ▁Ver wel ken , ▁een ▁prachtig ▁en ▁intrig erend ▁boek ▁dat ▁ook ▁weer ▁met ▁een ▁v res elijke ▁ cliff hang er ▁eindig t . ▁ , Ch em ical ▁Garden : ▁V re es ▁is ▁het ▁vervolg ▁op ▁het ▁indrukwekkend e ▁en ▁succes volle ▁de bu ut ▁Chemi cal ▁Garden : ▁Ver wel ken ▁van ▁de ▁Amerikaanse ▁ schrijf ster ▁Lauren ▁De Ste fano . ▁De Ste fano ▁ sche pt ▁met ▁V re es ▁een ▁futur is tisch ▁beeld ▁van ▁een ▁door ▁een ▁virus ▁ge teist erd ▁Amerika , ▁waardoor ▁jongeren ▁nooit ▁volwassen ▁worden . ▁In ▁die ▁wereld ▁worden ▁jonge ▁meisje s ▁ont voer d ▁en ▁moeten ▁onder ▁d wang ▁tro uwen . ▁R hine ▁is ▁zo  n ▁meisje , ▁de </s>
+05/06/2020 07:59:29 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:29 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:59:29 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:29 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:29 - INFO - processors.utils -   guid: dev-nl-2
+05/06/2020 07:59:29 - INFO - processors.utils -   input_ids: 0 121190 137224 1348 793 1791 3603 1602 140518 664 83 5 2994 21044 1937 91963 148012 18 7559 293 47442 645 293 60724 52193 4450 6614 35912 162769 22 1056 98 372 1236 33738 13 45601 5 241 56 271 20974 4164 5864 4319 22 737 932 72 34353 131 3188 22 664 293 8518 22485 111765 9969 21161 2529 5864 1056 110449 90543 1911 72 115652 233 388 120 3717 1098 5 1947 131 1784 86472 186 1021 302 112 53216 206 9 107 118154 83 1791 1232 493 120 79787 5 5880 1067 131 225 12348 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:29 - INFO - processors.utils -   sentence: <s> ▁Snap ▁absoluut ▁niet ▁wat ▁hier ▁nou ▁zo ▁geweldig ▁aan ▁is . ▁Ter gend ▁lang zaam ▁ontwikkel t ▁zich ▁een ▁verhaal ▁over ▁een ▁weinig ▁sympa thi eke ▁hoofd persoon ▁en ▁zijn ▁on be ant woord e ▁liefde . ▁E er st ▁stal kt ▁hij ▁haar ▁en ▁als ▁ze ▁er ▁genoeg ▁van ▁heeft ▁en ▁aan ▁een ▁eigen ▁leven ▁begint ▁comp ense ert ▁hij ▁zijn ▁neder laag ▁door ▁er ▁flink ▁op ▁los ▁te ▁neu ken . ▁Het ▁van ▁Mar quez ▁be fa am de ▁magis ch - re alisme ▁is ▁hier ▁ook ▁ver ▁te ▁zoeken . ▁Zo nde ▁van ▁het ▁talent . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 07:59:29 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 07:59:29 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:29 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:29 - INFO - processors.utils -   guid: dev-nl-3
+05/06/2020 07:59:29 - INFO - processors.utils -   input_ids: 0 127890 4190 293 9800 310 143 302 184 6 187161 68 293 133995 207789 5 189184 93 126 94591 5 5018 58173 343 101933 5 2501 27802 435 8562 2814 72108 33 5 2501 27802 192484 18 3932 12900 22 8562 83 42614 11697 33 5 647 56 824 22830 5 2071 225 293 37168 1405 111 149312 32 15896 3232 2186 1067 14953 33 4884 1911 14333 624 149312 33 20702 20211 453 23 225 91556 19 131 8 73654 9689 79787 5 14441 8 96264 6475 131 8 73654 624 8 1442 131 8 42614 32674 592 1056 493 63008 5 2729 449 91963 8297 8 2638 169 5076 121996 1582 23910 5 141667 18488 71 1186 225 50236 5 2 1 1 1 1
+05/06/2020 07:59:29 - INFO - processors.utils -   sentence: <s> ▁Toch ▁weer ▁een ▁nieuwe ▁V la am se ▁ schrijver ▁die ▁een ▁thriller ▁schrijft . ▁Zeker ni et ▁slecht . ▁Een ▁klassi ek ▁thema . ▁Mo eder ▁met ▁kind ▁gaan ▁wandel en . ▁Mo eder ▁sterf t ▁onder weg ▁en ▁kind ▁is ▁verd wen en . E er ste ▁vraag . ▁Is ▁het ▁een ▁onge val ▁of ▁moord ? Ver sch ille nde ▁kandidat en ▁kunnen ▁door gaan ▁voor ▁moord en aar ▁wanneer ▁men ▁in ▁het ▁verlede n ▁van ▁de ▁moeder ▁gaat ▁zoeken . ▁Ook ▁de ▁gedrag ingen ▁van ▁de ▁moeder ▁voor ▁de ▁dag ▁van ▁de ▁verd wij ning ▁zijn ▁ver dacht . La ng zaam ▁komen ▁de ▁pu z zel stukken ▁bij ▁elkaar . Spa nnen d ▁tot ▁het ▁einde . </s> <pad> <pad> <pad> <pad>
+05/06/2020 07:59:29 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:59:29 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:29 - INFO - processors.utils -   *** Example ***
+05/06/2020 07:59:29 - INFO - processors.utils -   guid: dev-nl-4
+05/06/2020 07:59:29 - INFO - processors.utils -   input_ids: 0 853 297 7 23 5726 23119 3121 5 215975 14666 5 73668 20583 10826 34488 3232 26785 5 107437 1073 31607 31243 11000 5 15236 1683 4063 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 07:59:29 - INFO - processors.utils -   sentence: <s> ▁Re ed s ▁in ▁2002 ▁gele zen . ▁Heerlijk ▁boek . Vol gens ▁mij ▁histori sch ▁correct . Fan tas tisch ▁lees baar . ▁Form ida bel . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 07:59:29 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 07:59:29 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 07:59:29 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 07:59:29 - INFO - __main__ -   Saving features into cached file /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed/cached_dev_xlm-roberta-large_128_cls_nl
+05/06/2020 07:59:29 - INFO - __main__ -   ***** Running evaluation 200 nl *****
+05/06/2020 07:59:29 - INFO - __main__ -     Num examples = 200
+05/06/2020 07:59:29 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25/25 [00:01<00:00, 15.18it/s]
+05/06/2020 07:59:31 - INFO - __main__ -   ***** Eval results 200 nl *****
+05/06/2020 07:59:31 - INFO - __main__ -     acc = 0.805█████████████████████████████████████████████████████████████████████████████▏    | 24/25 [00:01<00:00, 15.17it/s]
+05/06/2020 07:59:31 - INFO - __main__ -     correct = 161
+05/06/2020 07:59:31 - INFO - __main__ -     num = 200
+05/06/2020 07:59:31 - INFO - __main__ -    Dev accuracy nl = 0.805
+05/06/2020 07:59:31 - INFO - __main__ -    result['acc']=0.805 > best_score=0
+05/06/2020 07:59:31 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best/config.json
+05/06/2020 07:59:43 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best/pytorch_model.bin
+05/06/2020 07:59:43 - INFO - __main__ -   Saving model checkpoint to /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best
+05/06/2020 08:00:07 - INFO - __main__ -   Saving optimizer and scheduler states to /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 900/900 [02:23<00:00,  6.28it/s]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 900/900 [01:23<00:00, 10.75it/s]
+Epoch: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [07:57<00:00, 95.55s/it]
+05/06/2020 08:02:07 - INFO - __main__ -    global_step = 280, average loss = 0.4065274874846052
+05/06/2020 08:02:07 - INFO - __main__ -    best checkpoint = /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best, best score = 0.805
+05/06/2020 08:02:07 - INFO - __main__ -   Saving model checkpoint to /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/
+05/06/2020 08:02:07 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/config.json
+05/06/2020 08:02:19 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/pytorch_model.bin
+05/06/2020 08:02:19 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/config.json
+05/06/2020 08:02:19 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 08:02:19 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/pytorch_model.bin
+05/06/2020 08:02:38 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/06/2020 08:02:38 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/added_tokens.json. We won't load it.
+05/06/2020 08:02:38 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/sentencepiece.bpe.model
+05/06/2020 08:02:38 - INFO - transformers.tokenization_utils -   loading file None
+05/06/2020 08:02:38 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/special_tokens_map.json
+05/06/2020 08:02:38 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/tokenizer_config.json
+05/06/2020 08:02:39 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/06/2020 08:02:39 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/added_tokens.json. We won't load it.
+05/06/2020 08:02:39 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/sentencepiece.bpe.model
+05/06/2020 08:02:39 - INFO - transformers.tokenization_utils -   loading file None
+05/06/2020 08:02:39 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/special_tokens_map.json
+05/06/2020 08:02:39 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/tokenizer_config.json
+05/06/2020 08:02:40 - INFO - __main__ -   Evaluate the following checkpoints: ['/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best', '/home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128']
+05/06/2020 08:02:40 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best/config.json
+05/06/2020 08:02:40 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 08:02:59 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed
+Empty line
+05/06/2020 08:02:59 - INFO - processors.utils -   Writing example 0
+05/06/2020 08:02:59 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:02:59 - INFO - processors.utils -   guid: dev-nl-0
+05/06/2020 08:02:59 - INFO - processors.utils -   input_ids: 0 567 583 555 168026 1376 293 14666 190 28063 982 4 1476 854 14666 151624 225 5 164804 11120 2610 211113 71 435 293 23953 169381 5 262 53550 83 123201 5 262 36920 4534 61160 1098 1348 120 22169 1225 932 624 112 555 120 1056 5 21649 932 177 1376 1348 4 8 10588 3476 55 13014 12585 58401 5 353 159 19 129765 14817 236 3476 25051 4 83 854 225 36688 14666 131 799 133 11059 18391 22 32805 1056 13014 8 101031 38116 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:02:59 - INFO - processors.utils -   sentence: <s> ▁Z el den ▁geef ▁ik ▁een ▁boek ▁5 ▁ster ren , ▁maar ▁dit ▁boek ▁verdient ▁het . ▁Oude ▁mensen ▁worden ▁vermoor d ▁met ▁een ▁nek schot . ▁De ▁setting ▁is ▁Duitsland . ▁De ▁oud jes ▁blij ken ▁niet ▁te ▁zij ▁wie ▁ze ▁voor de den ▁te ▁zijn . ▁Meer ▁ze g ▁ik ▁niet , ▁de ▁rest ▁moet ▁je ▁echt ▁zelf ▁lezen . ▁Na ▁S n eeuw wit je ▁moet ▁dood , ▁is ▁dit ▁het ▁tweede ▁boek ▁van ▁Ne le ▁Neu haus ▁en ▁beide ▁zijn ▁echt ▁de ▁moeite ▁waard . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 08:02:59 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:02:59 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:02:59 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:02:59 - INFO - processors.utils -   guid: dev-nl-1
+05/06/2020 08:02:59 - INFO - processors.utils -   input_ids: 0 2043 737 1446 8420 1098 4 293 98763 22 102007 100879 14666 607 1232 4190 435 293 81 2109 21377 6 195167 8467 56 180301 18 5 6 4 15982 195 21533 38666 12 310 107 90 83 225 143863 233 225 233048 13 22 17474 31940 8 978 1003 83230 6827 38666 12 1446 8420 1098 131 8 103840 6 121206 1515 94239 262 68551 65171 5 262 68551 65171 6 7560 6328 435 310 107 90 293 23010 164 31607 51472 131 293 1911 293 14994 700 85073 24069 6848 4 58625 155927 22497 140048 2610 5 360 68 28973 2610 47757 134091 7 3283 46870 71 22 19410 3932 104 11061 3428 58241 5 627 82625 83 1602 17335 19 134091 4 8 2
+05/06/2020 08:02:59 - INFO - processors.utils -   sentence: <s> ▁net ▁als ▁Ver wel ken , ▁een ▁prachtig ▁en ▁intrig erend ▁boek ▁dat ▁ook ▁weer ▁met ▁een ▁v res elijke ▁ cliff hang er ▁eindig t . ▁ , Ch em ical ▁Garden : ▁V re es ▁is ▁het ▁vervolg ▁op ▁het ▁indrukwekkend e ▁en ▁succes volle ▁de bu ut ▁Chemi cal ▁Garden : ▁Ver wel ken ▁van ▁de ▁Amerikaanse ▁ schrijf ster ▁Lauren ▁De Ste fano . ▁De Ste fano ▁ sche pt ▁met ▁V re es ▁een ▁futur is tisch ▁beeld ▁van ▁een ▁door ▁een ▁virus ▁ge teist erd ▁Amerika , ▁waardoor ▁jongeren ▁nooit ▁volwassen ▁worden . ▁In ▁die ▁wereld ▁worden ▁jonge ▁meisje s ▁ont voer d ▁en ▁moeten ▁onder ▁d wang ▁tro uwen . ▁R hine ▁is ▁zo  n ▁meisje , ▁de </s>
+05/06/2020 08:02:59 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:02:59 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:02:59 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:02:59 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:02:59 - INFO - processors.utils -   guid: dev-nl-2
+05/06/2020 08:02:59 - INFO - processors.utils -   input_ids: 0 121190 137224 1348 793 1791 3603 1602 140518 664 83 5 2994 21044 1937 91963 148012 18 7559 293 47442 645 293 60724 52193 4450 6614 35912 162769 22 1056 98 372 1236 33738 13 45601 5 241 56 271 20974 4164 5864 4319 22 737 932 72 34353 131 3188 22 664 293 8518 22485 111765 9969 21161 2529 5864 1056 110449 90543 1911 72 115652 233 388 120 3717 1098 5 1947 131 1784 86472 186 1021 302 112 53216 206 9 107 118154 83 1791 1232 493 120 79787 5 5880 1067 131 225 12348 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:02:59 - INFO - processors.utils -   sentence: <s> ▁Snap ▁absoluut ▁niet ▁wat ▁hier ▁nou ▁zo ▁geweldig ▁aan ▁is . ▁Ter gend ▁lang zaam ▁ontwikkel t ▁zich ▁een ▁verhaal ▁over ▁een ▁weinig ▁sympa thi eke ▁hoofd persoon ▁en ▁zijn ▁on be ant woord e ▁liefde . ▁E er st ▁stal kt ▁hij ▁haar ▁en ▁als ▁ze ▁er ▁genoeg ▁van ▁heeft ▁en ▁aan ▁een ▁eigen ▁leven ▁begint ▁comp ense ert ▁hij ▁zijn ▁neder laag ▁door ▁er ▁flink ▁op ▁los ▁te ▁neu ken . ▁Het ▁van ▁Mar quez ▁be fa am de ▁magis ch - re alisme ▁is ▁hier ▁ook ▁ver ▁te ▁zoeken . ▁Zo nde ▁van ▁het ▁talent . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 08:02:59 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 08:02:59 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:02:59 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:02:59 - INFO - processors.utils -   guid: dev-nl-3
+05/06/2020 08:02:59 - INFO - processors.utils -   input_ids: 0 127890 4190 293 9800 310 143 302 184 6 187161 68 293 133995 207789 5 189184 93 126 94591 5 5018 58173 343 101933 5 2501 27802 435 8562 2814 72108 33 5 2501 27802 192484 18 3932 12900 22 8562 83 42614 11697 33 5 647 56 824 22830 5 2071 225 293 37168 1405 111 149312 32 15896 3232 2186 1067 14953 33 4884 1911 14333 624 149312 33 20702 20211 453 23 225 91556 19 131 8 73654 9689 79787 5 14441 8 96264 6475 131 8 73654 624 8 1442 131 8 42614 32674 592 1056 493 63008 5 2729 449 91963 8297 8 2638 169 5076 121996 1582 23910 5 141667 18488 71 1186 225 50236 5 2 1 1 1 1
+05/06/2020 08:02:59 - INFO - processors.utils -   sentence: <s> ▁Toch ▁weer ▁een ▁nieuwe ▁V la am se ▁ schrijver ▁die ▁een ▁thriller ▁schrijft . ▁Zeker ni et ▁slecht . ▁Een ▁klassi ek ▁thema . ▁Mo eder ▁met ▁kind ▁gaan ▁wandel en . ▁Mo eder ▁sterf t ▁onder weg ▁en ▁kind ▁is ▁verd wen en . E er ste ▁vraag . ▁Is ▁het ▁een ▁onge val ▁of ▁moord ? Ver sch ille nde ▁kandidat en ▁kunnen ▁door gaan ▁voor ▁moord en aar ▁wanneer ▁men ▁in ▁het ▁verlede n ▁van ▁de ▁moeder ▁gaat ▁zoeken . ▁Ook ▁de ▁gedrag ingen ▁van ▁de ▁moeder ▁voor ▁de ▁dag ▁van ▁de ▁verd wij ning ▁zijn ▁ver dacht . La ng zaam ▁komen ▁de ▁pu z zel stukken ▁bij ▁elkaar . Spa nnen d ▁tot ▁het ▁einde . </s> <pad> <pad> <pad> <pad>
+05/06/2020 08:02:59 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:02:59 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:02:59 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:02:59 - INFO - processors.utils -   guid: dev-nl-4
+05/06/2020 08:02:59 - INFO - processors.utils -   input_ids: 0 853 297 7 23 5726 23119 3121 5 215975 14666 5 73668 20583 10826 34488 3232 26785 5 107437 1073 31607 31243 11000 5 15236 1683 4063 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:02:59 - INFO - processors.utils -   sentence: <s> ▁Re ed s ▁in ▁2002 ▁gele zen . ▁Heerlijk ▁boek . Vol gens ▁mij ▁histori sch ▁correct . Fan tas tisch ▁lees baar . ▁Form ida bel . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 08:02:59 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:02:59 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:02:59 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:02:59 - INFO - __main__ -   Saving features into cached file /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed/cached_dev_xlm-roberta-large_128_cls_nl
+05/06/2020 08:02:59 - INFO - __main__ -   ***** Running evaluation checkpoint-best nl *****
+05/06/2020 08:02:59 - INFO - __main__ -     Num examples = 200
+05/06/2020 08:02:59 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25/25 [00:01<00:00, 15.31it/s]
+05/06/2020 08:03:01 - INFO - __main__ -   ***** Eval results checkpoint-best nl *****
+05/06/2020 08:03:01 - INFO - __main__ -     acc = 0.805
+05/06/2020 08:03:01 - INFO - __main__ -     correct = 161
+05/06/2020 08:03:01 - INFO - __main__ -     num = 200
+05/06/2020 08:03:01 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/config.json
+05/06/2020 08:03:01 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 08:03:20 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed
+Empty line
+05/06/2020 08:03:20 - INFO - processors.utils -   Writing example 0
+05/06/2020 08:03:20 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:20 - INFO - processors.utils -   guid: dev-nl-0
+05/06/2020 08:03:20 - INFO - processors.utils -   input_ids: 0 567 583 555 168026 1376 293 14666 190 28063 982 4 1476 854 14666 151624 225 5 164804 11120 2610 211113 71 435 293 23953 169381 5 262 53550 83 123201 5 262 36920 4534 61160 1098 1348 120 22169 1225 932 624 112 555 120 1056 5 21649 932 177 1376 1348 4 8 10588 3476 55 13014 12585 58401 5 353 159 19 129765 14817 236 3476 25051 4 83 854 225 36688 14666 131 799 133 11059 18391 22 32805 1056 13014 8 101031 38116 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:20 - INFO - processors.utils -   sentence: <s> ▁Z el den ▁geef ▁ik ▁een ▁boek ▁5 ▁ster ren , ▁maar ▁dit ▁boek ▁verdient ▁het . ▁Oude ▁mensen ▁worden ▁vermoor d ▁met ▁een ▁nek schot . ▁De ▁setting ▁is ▁Duitsland . ▁De ▁oud jes ▁blij ken ▁niet ▁te ▁zij ▁wie ▁ze ▁voor de den ▁te ▁zijn . ▁Meer ▁ze g ▁ik ▁niet , ▁de ▁rest ▁moet ▁je ▁echt ▁zelf ▁lezen . ▁Na ▁S n eeuw wit je ▁moet ▁dood , ▁is ▁dit ▁het ▁tweede ▁boek ▁van ▁Ne le ▁Neu haus ▁en ▁beide ▁zijn ▁echt ▁de ▁moeite ▁waard . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 08:03:20 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:03:20 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:20 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:20 - INFO - processors.utils -   guid: dev-nl-1
+05/06/2020 08:03:20 - INFO - processors.utils -   input_ids: 0 2043 737 1446 8420 1098 4 293 98763 22 102007 100879 14666 607 1232 4190 435 293 81 2109 21377 6 195167 8467 56 180301 18 5 6 4 15982 195 21533 38666 12 310 107 90 83 225 143863 233 225 233048 13 22 17474 31940 8 978 1003 83230 6827 38666 12 1446 8420 1098 131 8 103840 6 121206 1515 94239 262 68551 65171 5 262 68551 65171 6 7560 6328 435 310 107 90 293 23010 164 31607 51472 131 293 1911 293 14994 700 85073 24069 6848 4 58625 155927 22497 140048 2610 5 360 68 28973 2610 47757 134091 7 3283 46870 71 22 19410 3932 104 11061 3428 58241 5 627 82625 83 1602 17335 19 134091 4 8 2
+05/06/2020 08:03:20 - INFO - processors.utils -   sentence: <s> ▁net ▁als ▁Ver wel ken , ▁een ▁prachtig ▁en ▁intrig erend ▁boek ▁dat ▁ook ▁weer ▁met ▁een ▁v res elijke ▁ cliff hang er ▁eindig t . ▁ , Ch em ical ▁Garden : ▁V re es ▁is ▁het ▁vervolg ▁op ▁het ▁indrukwekkend e ▁en ▁succes volle ▁de bu ut ▁Chemi cal ▁Garden : ▁Ver wel ken ▁van ▁de ▁Amerikaanse ▁ schrijf ster ▁Lauren ▁De Ste fano . ▁De Ste fano ▁ sche pt ▁met ▁V re es ▁een ▁futur is tisch ▁beeld ▁van ▁een ▁door ▁een ▁virus ▁ge teist erd ▁Amerika , ▁waardoor ▁jongeren ▁nooit ▁volwassen ▁worden . ▁In ▁die ▁wereld ▁worden ▁jonge ▁meisje s ▁ont voer d ▁en ▁moeten ▁onder ▁d wang ▁tro uwen . ▁R hine ▁is ▁zo  n ▁meisje , ▁de </s>
+05/06/2020 08:03:20 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:20 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:03:20 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:20 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:20 - INFO - processors.utils -   guid: dev-nl-2
+05/06/2020 08:03:20 - INFO - processors.utils -   input_ids: 0 121190 137224 1348 793 1791 3603 1602 140518 664 83 5 2994 21044 1937 91963 148012 18 7559 293 47442 645 293 60724 52193 4450 6614 35912 162769 22 1056 98 372 1236 33738 13 45601 5 241 56 271 20974 4164 5864 4319 22 737 932 72 34353 131 3188 22 664 293 8518 22485 111765 9969 21161 2529 5864 1056 110449 90543 1911 72 115652 233 388 120 3717 1098 5 1947 131 1784 86472 186 1021 302 112 53216 206 9 107 118154 83 1791 1232 493 120 79787 5 5880 1067 131 225 12348 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:20 - INFO - processors.utils -   sentence: <s> ▁Snap ▁absoluut ▁niet ▁wat ▁hier ▁nou ▁zo ▁geweldig ▁aan ▁is . ▁Ter gend ▁lang zaam ▁ontwikkel t ▁zich ▁een ▁verhaal ▁over ▁een ▁weinig ▁sympa thi eke ▁hoofd persoon ▁en ▁zijn ▁on be ant woord e ▁liefde . ▁E er st ▁stal kt ▁hij ▁haar ▁en ▁als ▁ze ▁er ▁genoeg ▁van ▁heeft ▁en ▁aan ▁een ▁eigen ▁leven ▁begint ▁comp ense ert ▁hij ▁zijn ▁neder laag ▁door ▁er ▁flink ▁op ▁los ▁te ▁neu ken . ▁Het ▁van ▁Mar quez ▁be fa am de ▁magis ch - re alisme ▁is ▁hier ▁ook ▁ver ▁te ▁zoeken . ▁Zo nde ▁van ▁het ▁talent . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 08:03:20 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 08:03:20 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:20 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:20 - INFO - processors.utils -   guid: dev-nl-3
+05/06/2020 08:03:20 - INFO - processors.utils -   input_ids: 0 127890 4190 293 9800 310 143 302 184 6 187161 68 293 133995 207789 5 189184 93 126 94591 5 5018 58173 343 101933 5 2501 27802 435 8562 2814 72108 33 5 2501 27802 192484 18 3932 12900 22 8562 83 42614 11697 33 5 647 56 824 22830 5 2071 225 293 37168 1405 111 149312 32 15896 3232 2186 1067 14953 33 4884 1911 14333 624 149312 33 20702 20211 453 23 225 91556 19 131 8 73654 9689 79787 5 14441 8 96264 6475 131 8 73654 624 8 1442 131 8 42614 32674 592 1056 493 63008 5 2729 449 91963 8297 8 2638 169 5076 121996 1582 23910 5 141667 18488 71 1186 225 50236 5 2 1 1 1 1
+05/06/2020 08:03:20 - INFO - processors.utils -   sentence: <s> ▁Toch ▁weer ▁een ▁nieuwe ▁V la am se ▁ schrijver ▁die ▁een ▁thriller ▁schrijft . ▁Zeker ni et ▁slecht . ▁Een ▁klassi ek ▁thema . ▁Mo eder ▁met ▁kind ▁gaan ▁wandel en . ▁Mo eder ▁sterf t ▁onder weg ▁en ▁kind ▁is ▁verd wen en . E er ste ▁vraag . ▁Is ▁het ▁een ▁onge val ▁of ▁moord ? Ver sch ille nde ▁kandidat en ▁kunnen ▁door gaan ▁voor ▁moord en aar ▁wanneer ▁men ▁in ▁het ▁verlede n ▁van ▁de ▁moeder ▁gaat ▁zoeken . ▁Ook ▁de ▁gedrag ingen ▁van ▁de ▁moeder ▁voor ▁de ▁dag ▁van ▁de ▁verd wij ning ▁zijn ▁ver dacht . La ng zaam ▁komen ▁de ▁pu z zel stukken ▁bij ▁elkaar . Spa nnen d ▁tot ▁het ▁einde . </s> <pad> <pad> <pad> <pad>
+05/06/2020 08:03:20 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:03:20 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:20 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:20 - INFO - processors.utils -   guid: dev-nl-4
+05/06/2020 08:03:20 - INFO - processors.utils -   input_ids: 0 853 297 7 23 5726 23119 3121 5 215975 14666 5 73668 20583 10826 34488 3232 26785 5 107437 1073 31607 31243 11000 5 15236 1683 4063 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:20 - INFO - processors.utils -   sentence: <s> ▁Re ed s ▁in ▁2002 ▁gele zen . ▁Heerlijk ▁boek . Vol gens ▁mij ▁histori sch ▁correct . Fan tas tisch ▁lees baar . ▁Form ida bel . </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 08:03:20 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:20 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:03:20 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:20 - INFO - __main__ -   Saving features into cached file /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed/cached_dev_xlm-roberta-large_128_cls_nl
+05/06/2020 08:03:20 - INFO - __main__ -   ***** Running evaluation  nl *****
+05/06/2020 08:03:20 - INFO - __main__ -     Num examples = 200
+05/06/2020 08:03:20 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25/25 [00:01<00:00, 15.35it/s]
+05/06/2020 08:03:22 - INFO - __main__ -   ***** Eval results  nl *****
+05/06/2020 08:03:22 - INFO - __main__ -     acc = 0.8
+05/06/2020 08:03:22 - INFO - __main__ -     correct = 160
+05/06/2020 08:03:22 - INFO - __main__ -     num = 200
+05/06/2020 08:03:22 - INFO - __main__ -   Best checkpoint is /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best, best accuracy is 0.805
+05/06/2020 08:03:23 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-sentencepiece.bpe.model from cache at /home/ubuntu/.cache/torch/transformers/f7e58cf8eef122765ff522a4c7c0805d2fe8871ec58dcb13d0c2764ea3e4a0f3.309f0c29486cffc28e1e40a2ab0ac8f500c203fe080b95f820aa9cb58e5b84ed
+05/06/2020 08:03:23 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs//cls/xlm-roberta-large-LR2e-5-epoch5-MaxLen128/checkpoint-best/config.json
+05/06/2020 08:03:23 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "cls",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/06/2020 08:03:42 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed
+Empty line
+05/06/2020 08:03:42 - INFO - processors.utils -   Writing example 0
+05/06/2020 08:03:42 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:42 - INFO - processors.utils -   guid: test-nl-0
+05/06/2020 08:03:42 - INFO - processors.utils -   input_ids: 0 3011 83 293 14666 607 55 62057 1123 3562 58401 737 55 72 23 111765 5 5018 23134 737 72 24477 83 156551 22 4621 55 107323 171 9689 5 37050 19632 144243 242974 6 5 262 73654 186 81308 12444 8 75218 4390 112 22 8 75218 4390 112 103898 607 225 4319 126660 83 27 144009 95106 4621 225 15326 1850 233 225 50236 38295 44 35991 13707 740 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:42 - INFO - processors.utils -   sentence: <s> ▁Dit ▁is ▁een ▁boek ▁dat ▁je ▁gelijk ▁uit ▁wil ▁lezen ▁als ▁je ▁er ▁in ▁begint . ▁Een ▁drama ▁als ▁er ▁iemand ▁is ▁overleden ▁en ▁hoe ▁je ▁daarmee ▁om ▁gaat . ▁Uit ▁verschillende ▁kanten ▁beschreven ▁ . ▁De ▁moeder ▁be schuld igt ▁de ▁verlo of de ▁en ▁de ▁verlo of de ▁denkt ▁dat ▁het ▁haar ▁schuld ▁is ... heel ▁bijzonder ▁hoe ▁het ▁toch ▁nog ▁op ▁het ▁einde ▁allemaal ▁" goed ▁komt ". </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>
+05/06/2020 08:03:42 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:42 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:42 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:03:42 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:42 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:42 - INFO - processors.utils -   guid: test-nl-1
+05/06/2020 08:03:42 - INFO - processors.utils -   input_ids: 0 3011 83 225 47442 645 3362 1176 4 13222 1442 737 932 259 6850 3778 21583 932 3932 8 11876 510 22 5094 2198 1055 5 10786 126410 932 61160 92 11000 233 23 4319 87281 1991 10484 5 6533 4621 123 32 3362 1176 44143 607 932 6 75752 7299 21882 3778 4 932 3778 1232 65750 19518 7077 259 6850 27 3786 3476 72 10584 664 4977 1476 793 32 3786 46079 171 435 4319 2184 60679 39162 1123 120 2814 79787 793 4319 16810 1055 73499 33 5 360 1926 22015 82834 8297 932 1123 1582 2541 191 6 4 68 293 103128 6136 124715 23 4319 6 75846 5 4887 83 5864 22 59696 27550 5864 4319 225 22485 404 474 23 2
+05/06/2020 08:03:42 - INFO - processors.utils -   sentence: <s> ▁Dit ▁is ▁het ▁verhaal ▁over ▁Sam my , ▁elke ▁dag ▁als ▁ze ▁wa kker ▁wordt ▁zit ▁ze ▁onder ▁de ▁bul ten ▁en ▁sch ram men . ▁Deze ▁loopt ▁ze ▁blij k baar ▁op ▁in ▁haar ▁nacht mer ries . ▁Maar ▁hoe ▁dan ? ▁Sam my ▁denk ▁dat ▁ze ▁ krank zin nig ▁wordt , ▁ze ▁wordt ▁ook ▁totaal ▁uitge put ▁wa kker ... ▁Ze ▁moet ▁er ▁iets ▁aan ▁doen ▁maar ▁wat ? ▁Ze ▁besluit ▁om ▁met ▁haar ▁beste ▁vriend ▁Matt ▁uit ▁te ▁gaan ▁zoeken ▁wat ▁haar ▁dro men ▁beteken en . ▁In ▁hun ▁zoek tocht ▁komen ▁ze ▁uit ▁bij ▁Dar on ▁ , ▁die ▁een ▁belangrijke ▁rol ▁speelt ▁in ▁haar ▁ droom . ▁Wie ▁is ▁hij ▁en ▁waarom ▁maakt ▁hij ▁haar ▁het ▁leven ▁zu ur ▁in </s>
+05/06/2020 08:03:42 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:42 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:42 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:03:42 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:42 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:42 - INFO - processors.utils -   guid: test-nl-2
+05/06/2020 08:03:42 - INFO - processors.utils -   input_ids: 0 717 33 1376 136893 435 58401 131 854 14666 1902 1376 1348 4884 154261 33 33292 120920 225 14666 1123 9966 1582 8 14395 165292 23 225 47442 5 262 8155 137840 4 171 225 1602 1476 3853 120 157629 4 51408 1376 23355 337 1399 3611 6 96514 435 13014 43233 131 225 23 4134 25306 30987 5 262 36688 137840 509 79052 203354 6543 4 98 814 54035 1476 1376 51408 225 1348 127866 5 2331 8 293 111 4052 10430 21583 72 15326 34353 175884 23 171 1911 120 37829 58401 5 61445 1585 67103 65699 872 2313 1056 4052 73792 4 1476 111 1376 932 62057 12255 71324 4 15014 1582 2709 4 203 1376 1348 52173 5 6533 1376 44143 607 2
+05/06/2020 08:03:42 - INFO - processors.utils -   sentence: <s> ▁To en ▁ik ▁begon ▁met ▁lezen ▁van ▁dit ▁boek ▁had ▁ik ▁niet ▁kunnen ▁vermoed en ▁welke ▁richting ▁het ▁boek ▁uit ging ▁bij ▁de ▁grote ▁twist ▁in ▁het ▁verhaal . ▁De ▁eerste ▁helft , ▁om ▁het ▁zo ▁maar ▁even ▁te ▁noemen , ▁vond ▁ik ▁zeer ▁bo ei end ▁ geschreven ▁met ▁echt ▁gevoel ▁van ▁het ▁in bre kers vak . ▁De ▁tweede ▁helft ▁was ▁nogal ▁vreemd ▁dus , ▁on ver wacht ▁maar ▁ik ▁vond ▁het ▁niet ▁jammer . ▁Op ▁de ▁een ▁of ▁andere ▁manier ▁zit ▁er ▁toch ▁genoeg ▁spanning ▁in ▁om ▁door ▁te ▁blijven ▁lezen . Ik ▁ben ▁nieuws gier ig ▁naar ▁zijn ▁andere ▁boeken , ▁maar ▁of ▁ik ▁ze ▁gelijk ▁zou ▁kopen , ▁zoals ▁bij ▁deze , ▁kan ▁ik ▁niet ▁zeggen . ▁Maar ▁ik ▁denk ▁dat </s>
+05/06/2020 08:03:42 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:42 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:42 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 08:03:42 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:42 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:42 - INFO - processors.utils -   guid: test-nl-3
+05/06/2020 08:03:42 - INFO - processors.utils -   input_ids: 0 1947 6 187161 7 28972 884 3400 1436 57263 14407 22 90062 58807 78473 13 7340 5094 107 1353 42517 16913 52 112 173 56 29764 111950 33 131 8 6 85407 63 22 52 112 146845 111950 33 131 8 23439 7344 4299 792 866 4021 83 293 210339 6 187161 4 46108 74383 4 232306 4 9969 191 1419 22 1013 9 1861 40455 147 5 78473 13 7340 83 177942 23 293 6 92517 22 67822 2061 40455 147 5 99243 98870 12216 932 23 8272 225 54995 1003 624 108238 191 54823 91969 2061 233 23 43769 4 155767 22 134288 5 78572 8 7706 7 3896 131 8 93526 13924 420 58721 932 101933 26 7 737 12585 56994 4 138261 2
+05/06/2020 08:03:42 - INFO - processors.utils -   sentence: <s> ▁Het ▁ schrijver s duo ▁Al jos cha ▁Andreas ▁Long ▁en ▁Ronald ▁Pierre ▁Schw e ppe ▁sch re ven ▁eerder ▁samen ▁“ de ▁ve er tien ▁geheim en ▁van ▁de ▁ panda ” ▁en ▁“ de ▁zeven ▁geheim en ▁van ▁de ▁schi ld pad ”. L ong ▁is ▁een ▁Duits ▁ schrijver , ▁psych oloog , ▁filosoof , ▁comp on ist ▁en ▁tai - chi lera ar . ▁Schw e ppe ▁is ▁muzikant ▁in ▁een ▁ orkest ▁en ▁medita tie lera ar . ▁Samen ▁rich tten ▁ze ▁in ▁1999 ▁het ▁Institu ut ▁voor ▁Perso on lijke ▁Integra tie ▁op ▁in ▁München , ▁Riga ▁en ▁Beijing . Met ▁de ▁wij s heid ▁van ▁de ▁witte ▁wol f ▁brengen ▁ze ▁thema ’ s ▁als ▁zelf zorg , ▁tevreden </s>
+05/06/2020 08:03:42 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:42 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:42 - INFO - processors.utils -   label: 0 (id = 0)
+05/06/2020 08:03:42 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:42 - INFO - processors.utils -   *** Example ***
+05/06/2020 08:03:42 - INFO - processors.utils -   guid: test-nl-4
+05/06/2020 08:03:42 - INFO - processors.utils -   input_ids: 0 3000 747 73792 68 1376 131 6 121206 1515 12785 4 52757 38295 6543 4 83 854 6146 112462 126 5 6210 7 95 40043 7 18231 38232 57327 4812 1376 34398 435 8 23475 22 22169 18841 225 98763 38 3256 235961 46264 15315 86934 4621 8 41125 87482 20118 83 131 8 23475 22 111 854 14666 44828 71 83 4 3444 72 8297 124 7 181272 13 66413 7 23 624 4 6543 1348 624 50120 8562 52223 111 225 52223 13 3095 5 7768 106141 31243 1376 854 435 35965 23475 1123 8 105765 13 22768 33 4 6543 22768 361 22 3217 360 6146 32762 478 131 81949 4 6146 81949 4812 1376 144 143529 71 607 6 121206 1515 37760 2
+05/06/2020 08:03:42 - INFO - processors.utils -   sentence: <s> ▁Van ▁alle ▁boeken ▁die ▁ik ▁van ▁ schrijf ster ▁ken , ▁bijna ▁allemaal ▁dus , ▁is ▁dit ▁mijn ▁favori et . Al s ▁le rare s ▁basis onder wijs ▁heb ▁ik ▁ervaring ▁met ▁de ▁kinderen ▁en ▁zij ▁vinden ▁het ▁prachtig ! ▁Ik ▁bekijk ▁eerst ▁altijd ▁rustig ▁hoe ▁de ▁thuis situ atie ▁is ▁van ▁de ▁kinderen ▁en ▁of ▁dit ▁boek ▁passen d ▁is , ▁want ▁er ▁komen ▁som s ▁heftig e ▁situatie s ▁in ▁voor , ▁dus ▁niet ▁voor ▁elk ▁kind ▁geschikt ▁of ▁het ▁geschikt e ▁moment . En ▁meestal ▁lees ▁ik ▁dit ▁met ▁enkele ▁kinderen ▁uit ▁de ▁hoger e ▁groep en , ▁dus ▁groep ▁7 ▁en ▁8. ▁In ▁mijn ▁recens ie ▁van ▁Mio , ▁mijn ▁Mio ▁heb ▁ik ▁al ▁verklaar d ▁dat ▁ schrijf ster ▁vooral </s>
+05/06/2020 08:03:42 - INFO - processors.utils -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/06/2020 08:03:42 - INFO - processors.utils -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/06/2020 08:03:42 - INFO - processors.utils -   label: 1 (id = 1)
+05/06/2020 08:03:42 - INFO - processors.utils -   language: nl, (lid = 0)
+05/06/2020 08:03:46 - INFO - __main__ -   Saving features into cached file /home/ubuntu/LASER/tasks/cls/data/cls-acl10-unprocessed/cached_test_xlm-roberta-large_128_cls_nl
+05/06/2020 08:03:47 - INFO - __main__ -   ***** Running evaluation best_checkpoint nl *****
+05/06/2020 08:03:47 - INFO - __main__ -     Num examples = 2000
+05/06/2020 08:03:47 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:16<00:00, 15.33it/s]
+05/06/2020 08:04:03 - INFO - __main__ -   ***** Eval results best_checkpoint nl *****
+05/06/2020 08:04:03 - INFO - __main__ -     acc = 0.814
+05/06/2020 08:04:03 - INFO - __main__ -     correct = 1628
+05/06/2020 08:04:03 - INFO - __main__ -     num = 2000
+05/06/2020 08:04:03 - INFO - __main__ -   nl=0.814
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ 
