@@ -1,0 +1,69 @@
+﻿(multifit) ubuntu@ip-172-31-42-96:~/multifit$ python -m ulmfit eval --glob="wiki/nl-100/models/sp15k/lstm_transformer.m" --name transformer --dataset-template='../cls/nl-books-laser' --num-lm-epochs=20  --num-cls-epochs=8  --bs=18 --lr_sched=1cycle --label-smoothing-eps=0.1
+Processing data/wiki/nl-100/models/sp15k/lstm_transformer.m
+../cls/nl-books-laser
+data/wiki/../cls/nl-books-laser
+Max vocab: 15000
+Cache dir: /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k
+Model dir: /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k/lstm_transformer.m
+Overwrite classifier? False
+Training
+Data dir /home/ubuntu/multifit/data/cls/nl-books-laser
+Loading validation /home/ubuntu/multifit/data/cls/nl-books-laser/nl.dev.csv
+dataset path /home/ubuntu/multifit/data/cls/nl-books-laser
+(100263, 2)
+(1800, 2)
+Data lm, trn: 90237, val: 10026
+Data cls, trn: 1800, val: 200
+Data tst, trn: 200, val: 2000
+Size of vocabulary: 15000
+First 20 words in vocab: ['xxunk', 'xxpad', 'xxbos', 'xxeos', 'xxfld', 'xxmaj', 'xxup', 'xxrep', 'xxwrep', '<unk>', '▁', '▁de', '▁.', '▁van', '▁,', '▁in', '▁het', '▁:', '▁een', 's']
+Transformer False
+Training args:  {'clip': 0.12, 'alpha': 2, 'beta': 1, 'drop_mult': 0.3} dps:  {'output_p': 0.25, 'hidden_p': 0.1, 'input_p': 0.2, 'embed_p': 0.02, 'weight_p': 0.15}
+Loading pretrained model
+Bptt 70
+Training lm from:  [PosixPath('/home/ubuntu/multifit/data/wiki/nl-100/models/sp15k/lstm_transformer.m/lm_best'), PosixPath('/home/ubuntu/multifit/data/wiki/nl-100/models/sp15k/lstm_transformer.m/../itos')]
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.482717    4.255115    0.376671  25:22                                                                                                         
+epoch     train_loss  valid_loss  accuracy  time    
+0         4.259969    4.137801    0.395106  26:52                                                                                                         1         4.184535    4.044168    0.409406  26:49                                                                                                         
+2         4.120978    3.968615    0.420472  26:52                                                                                                      
+3         4.020483    3.921227    0.427148  26:49                                                                                                      
+4         4.015011    3.887035    0.432002  26:51                                                                                                      
+5         3.993799    3.863954    0.435840  26:53                                                                                                      
+6         3.964047    3.842753    0.439073  26:51                                                                                                      
+7         3.981435    3.823785    0.441947  26:51                                                                                                      
+8         3.942779    3.810146    0.444263  26:53                                                                                                      
+9         3.888366    3.797489    0.446173  26:50                                                                                                       
+10        3.912121    3.779161    0.449251  26:50                                                                                                       
+11        3.875258    3.766328    0.451348  26:51                                                                                                       
+12        3.885454    3.750717    0.454149  26:51                                                                                                       
+13        3.853737    3.739022    0.455953  26:51                                                                                                       
+14        3.873227    3.726909    0.458223  26:59                                                                                                       
+15        3.851103    3.716513    0.460149  27:14                                                                                                       
+16        3.816413    3.708992    0.461518  27:13                                                                                                       
+17        3.809937    3.702986    0.462588  27:15                                                                                                       
+18        3.823606    3.700362    0.463107  27:10                                                                                                       
+19        3.830739    3.699674    0.463228  27:12                                                                                                       
+/home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k
+Saving info /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k/lstm_transformer.m/info.json
+Save model from the best epoch? False
+Single training schedule
+epoch     train_loss  valid_loss  accuracy  time    
+0         0.545085    0.608373    0.785000  00:26                                                                                                 
+1         0.488694    0.571018    0.750000  00:26                                                                                                 
+2         0.390346    0.624964    0.785000  00:26                                                                                                 
+3         0.306479    0.562726    0.800000  00:26                                                                                                 
+4         0.272706    0.548965    0.785000  00:26                                                                                                 
+5         0.243761    0.533291    0.800000  00:26                                                                                                 
+6         0.246824    0.528934    0.825000  00:26                                                                                                 
+7         0.221288    0.533651    0.800000  00:26                                                                                                 
+Saving models at /home/ubuntu/multifit/data/cls/nl-books-laser/models/sp15k/lstm_transformer.m
+Save model from the best epoch? False
+Loss and accuracy using (cls_best): [0.44918406, tensor(0.7970), tensor(0.7874), tensor(0.8057)] [0.45040444, tensor(0.7950), tensor(0.7919), tensor(0.7980)]
+                                                name  tst_accuracy  tst_loss  val_accuracy  val_loss
+0  data/cls/nl-books-laser/models/sp15k/lstm_tran...         0.797  0.449184         0.795  0.450404
+ds    nl-books-las
+best          79.7
+max           79.7
+avg           79.7
+(multifit) ubuntu@ip-172-31-42-96:~/multifit$    

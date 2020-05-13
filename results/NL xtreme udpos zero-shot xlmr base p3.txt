@@ -1,0 +1,587 @@
+﻿ubuntu@ip-172-31-42-96:~$ cd xtreme
+ubuntu@ip-172-31-42-96:~/xtreme$ source activate xtreme
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ bash scripts/train.sh xlm-roberta-large udpos
+Fine-tuning xlm-roberta-large on udpos using GPU 0
+Load data from /home/ubuntu/xtreme/download, and save models to /home/ubuntu/xtreme/outputs-temp/
+^C^C^C^C^C^CTraceback (most recent call last):
+  File "/home/ubuntu/xtreme/utils_preprocess.py", line 18, in <module>
+    from transformers import BertTokenizer, XLMTokenizer, XLMRobertaTokenizer
+  File "/home/ubuntu/anaconda3/envs/xtreme/lib/python3.7/site-packages/transformers/__init__.py", line 22, in <module>
+    from .configuration_albert import ALBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, AlbertConfig
+  File "/home/ubuntu/anaconda3/envs/xtreme/lib/python3.7/site-packages/transformers/configuration_albert.py", line 18, in <module>
+    from .configuration_utils import PretrainedConfig
+  File "/home/ubuntu/anaconda3/envs/xtreme/lib/python3.7/site-packages/transformers/configuration_utils.py", line 25, in <module>
+    from .file_utils import CONFIG_NAME, cached_path, hf_bucket_url, is_remote_url
+  File "/home/ubuntu/anaconda3/envs/xtreme/lib/python3.7/site-packages/transformers/file_utils.py", line 35, in <module>
+    import torch
+  File "/home/ubuntu/anaconda3/envs/xtreme/lib/python3.7/site-packages/torch/__init__.py", line 81, in <module>
+    from torch._C import *
+KeyboardInterrupt
+^C
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ ^C
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ ^C
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ bash scripts/train.sh xlm-roberta-base udpos
+Fine-tuning xlm-roberta-base on udpos using GPU 0                Load data from /home/ubuntu/xtreme/download, and save models to /home/ubuntu/xtreme/outputs-temp/
+DATA_DIR
+/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/
+05/13/2020 12:50:44 - INFO - root -   Input args: Namespace(adam_epsilon=1e-08, cache_dir=None, config_name='', data_dir='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=False, do_predict_dev=True, do_train=True, eval_all_checkpoints=False, eval_patience=-1, evaluate_during_training=False, few_shot=-1, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=4, init_checkpoint=None, labels='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128//labels.txt', learning_rate=2e-05, local_rank=-1, log_file='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl//train.log', logging_steps=500, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-base', model_type='xlmr', n_gpu=1, no_cuda=False, num_train_epochs=10.0, output_dir='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=8, predict_langs='nl', save_only_best_checkpoint=True, save_steps=500, seed=1, server_ip='', server_port='', tokenizer_name='', train_langs='en', warmup_steps=0, weight_decay=0.0)
+05/13/2020 12:50:44 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+arg labels /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128//labels.txt
+05/13/2020 12:50:45 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-base-config.json from cache at /home/ubuntu/.cache/torch/transformers/762ddd751172e9d3229e5da17a459eee6c0dfdc237c718944d0b1a85f06c7e1e.2b0f807393c56e8861a31cd67d2fc0b45d71d9735dd47dd66afb650f90b6d2a8
+05/13/2020 12:50:45 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/13/2020 12:50:45 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-base-sentencepiece.bpe.model from cache at /home/ubuntu/.cache/torch/transformers/0c370616ddfc06067c0634160f749c2cf9d8da2c50e03a2617ce5841c8df3b1d.309f0c29486cffc28e1e40a2ab0ac8f500c203fe080b95f820aa9cb58e5b84ed
+05/13/2020 12:50:46 - INFO - __main__ -   loading from cached model = xlm-roberta-base
+05/13/2020 12:50:46 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-base-pytorch_model.bin from cache at /home/ubuntu/.cache/torch/transformers/f80a708b21cc9b248e8af5a630ad9f887326bbaf0098b9f354427b2463d55346.aeeaca90954dc20ffa2909de722cfbfd455c5bb16d480c5bdf6d7fe79c68c267
+05/13/2020 12:51:02 - INFO - transformers.modeling_utils -   Weights of XLMRobertaForTokenClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+05/13/2020 12:51:02 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in XLMRobertaForTokenClassification: ['lm_head.bias', 'lm_head.dense.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight']
+05/13/2020 12:51:02 - INFO - __main__ -   Using lang2id = None
+05/13/2020 12:51:07 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir=None, config_name='', data_dir='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=False, do_predict_dev=True, do_train=True, eval_all_checkpoints=False, eval_patience=-1, evaluate_during_training=False, few_shot=-1, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=4, init_checkpoint=None, labels='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128//labels.txt', learning_rate=2e-05, local_rank=-1, log_file='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl//train.log', logging_steps=500, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-base', model_type='xlmr', n_gpu=1, no_cuda=False, num_train_epochs=10.0, output_dir='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=8, predict_langs='nl', save_only_best_checkpoint=True, save_steps=500, seed=1, server_ip='', server_port='', tokenizer_name='', train_langs='en', warmup_steps=0, weight_decay=0.0)
+05/13/2020 12:51:07 - INFO - __main__ -   all languages = en
+05/13/2020 12:51:07 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/en/train.xlm-roberta-base in language en
+05/13/2020 12:51:07 - INFO - utils_tag -   lang_id=0, lang=en, lang2id=None
+05/13/2020 12:51:07 - INFO - utils_tag -   Writing example 0 of 21269
+05/13/2020 12:51:07 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:51:07 - INFO - utils_tag -   guid: en-1
+05/13/2020 12:51:07 - INFO - utils_tag -   tokens: <s> ▁Distribu tion ▁of ▁this ▁license ▁does ▁not ▁create ▁an ▁attorney ▁- ▁client ▁relationship ▁ . </s> </s>
+05/13/2020 12:51:07 - INFO - utils_tag -   input_ids: 0 75571 1363 111 903 86872 14602 959 28282 142 200866 20 23282 76755 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:51:07 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   label_ids: -100 8 -100 2 6 8 4 10 16 6 8 13 8 8 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:51:07 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:51:07 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:51:07 - INFO - utils_tag -   guid: en-2
+05/13/2020 12:51:07 - INFO - utils_tag -   tokens: <s> ▁Creative ▁Commons ▁provides ▁this ▁information ▁on ▁an ▁" ▁as ▁- ▁is ▁" ▁basis ▁ . </s> </s>
+05/13/2020 12:51:07 - INFO - utils_tag -   input_ids: 0 9066 8127 87344 903 4677 98 142 44 237 20 83 44 18231 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:51:07 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   label_ids: -100 12 12 16 6 8 2 6 13 2 13 16 13 8 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:51:07 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:51:07 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:51:07 - INFO - utils_tag -   guid: en-3
+05/13/2020 12:51:07 - INFO - utils_tag -   tokens: <s> ▁Creative ▁Commons ▁makes ▁no ▁warrant ies ▁regarding ▁the ▁information ▁provided ▁ , ▁and ▁dis claim s ▁li ability ▁for ▁damage s ▁result ing ▁from ▁its ▁use ▁ . </s> </s>
+05/13/2020 12:51:07 - INFO - utils_tag -   input_ids: 0 9066 8127 30482 110 183594 3387 118861 70 4677 62952 6 4 136 2837 164779 7 400 41159 100 82649 7 16750 214 1295 6863 4527 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:51:07 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   label_ids: -100 12 12 16 6 8 -100 16 6 8 16 13 -100 5 16 -100 -100 8 -100 2 8 -100 16 -100 2 6 8 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:51:07 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:51:07 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:51:07 - INFO - utils_tag -   guid: en-4
+05/13/2020 12:51:07 - INFO - utils_tag -   tokens: <s> ▁License ▁ . </s> </s>
+05/13/2020 12:51:07 - INFO - utils_tag -   input_ids: 0 64779 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:51:07 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   label_ids: -100 8 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:51:07 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:51:07 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:51:07 - INFO - utils_tag -   guid: en-5
+05/13/2020 12:51:07 - INFO - utils_tag -   tokens: <s> ▁The ▁work ▁is ▁protected ▁by ▁copyright ▁and ▁/ ▁or ▁other ▁applicable ▁law ▁ . </s> </s>
+05/13/2020 12:51:07 - INFO - utils_tag -   input_ids: 0 581 4488 83 30312 390 112341 136 248 707 3789 152431 27165 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:51:07 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:51:07 - INFO - utils_tag -   label_ids: -100 6 8 4 16 2 8 5 13 5 1 1 8 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:51:07 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:51:13 - INFO - utils_tag -   Writing example 10000 of 21269
+05/13/2020 12:51:18 - INFO - utils_tag -   Writing example 20000 of 21269
+05/13/2020 12:51:19 - INFO - __main__ -   Saving features into cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_train_en_xlm-roberta-base_128, len(features)=21269
+05/13/2020 12:51:25 - INFO - __main__ -   ***** Running training *****
+05/13/2020 12:51:25 - INFO - __main__ -     Num examples = 21269
+05/13/2020 12:51:25 - INFO - __main__ -     Num Epochs = 10
+05/13/2020 12:51:25 - INFO - __main__ -     Instantaneous batch size per GPU = 8
+05/13/2020 12:51:25 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 32
+05/13/2020 12:51:25 - INFO - __main__ -     Gradient Accumulation steps = 4
+05/13/2020 12:51:25 - INFO - __main__ -     Total optimization steps = 6640
+Epoch:   0%|                                                                                                                            | 0/10 [00:00<?, ?it/s/
+home/ubuntu/anaconda3/envs/xtreme/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:100: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule.See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+               0
+5/13/2020 12:54:10 - INFO - __main__ -   all languages = en█████████████████████████████████████▍                          | 1998/2659 [02:44<00:53, 12.40it/s]
+05/13/2020 12:54:10 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/en/dev.xlm-roberta-base in language en
+05/13/2020 12:54:10 - INFO - utils_tag -   lang_id=0, lang=en, lang2id=None
+05/13/2020 12:54:10 - INFO - utils_tag -   Writing example 0 of 3974
+05/13/2020 12:54:10 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:54:10 - INFO - utils_tag -   guid: en-1
+05/13/2020 12:54:10 - INFO - utils_tag -   tokens: <s> ▁Creative ▁Commons ▁Corporation ▁is ▁not ▁a ▁law ▁firm ▁and ▁does ▁not ▁provide ▁legal ▁services ▁ . </s> </s>
+05/13/2020 12:54:10 - INFO - utils_tag -   input_ids: 0 9066 8127 84829 83 959 10 27165 11037 136 14602 959 22691 8437 11374 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:54:10 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   label_ids: -100 12 12 8 4 10 6 8 8 5 4 10 16 1 8 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:54:10 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:54:10 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:54:10 - INFO - utils_tag -   guid: en-2
+05/13/2020 12:54:10 - INFO - utils_tag -   tokens: <s> ▁The ▁work ▁( ▁as ▁define d ▁below ▁) ▁is ▁provided ▁under ▁the ▁terms ▁of ▁this ▁Creative ▁Commons ▁Public ▁License ▁( ▁" ▁CC PL ▁" ▁or ▁" ▁License ▁" ▁) ▁ . </s> </s>
+05/13/2020 12:54:10 - INFO - utils_tag -   input_ids: 0 581 4488 15 237 61924 71 35064 1388 83 62952 1379 70 69407 111 903 9066 8127 16934 64779 15 44 21581 21130 44 707 44 64779 44 1388 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:54:10 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   label_ids: -100 6 8 13 2 16 -100 3 13 4 16 2 6 8 2 6 12 12 1 8 13 13 12 -100 13 5 13 8 13 13 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:54:10 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:54:10 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:54:10 - INFO - utils_tag -   guid: en-3
+05/13/2020 12:54:10 - INFO - utils_tag -   tokens: <s> ▁1 ▁ . ▁Definition s ▁ . </s> </s>
+05/13/2020 12:54:10 - INFO - utils_tag -   input_ids: 0 106 6 5 155455 7 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:54:10 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   label_ids: -100 9 13 -100 8 -100 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:54:10 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:54:10 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:54:10 - INFO - utils_tag -   guid: en-4
+05/13/2020 12:54:10 - INFO - utils_tag -   tokens: <s> ▁4 ▁ . ▁Re strict ions ▁ . </s> </s>
+05/13/2020 12:54:10 - INFO - utils_tag -   input_ids: 0 201 6 5 853 144225 17514 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:54:10 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   label_ids: -100 9 13 -100 8 -100 -100 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:54:10 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:54:10 - INFO - utils_tag -   *** Example ***
+05/13/2020 12:54:10 - INFO - utils_tag -   guid: en-5
+05/13/2020 12:54:10 - INFO - utils_tag -   tokens: <s> ▁7 ▁ . ▁Termin ation ▁ . </s> </s>
+05/13/2020 12:54:10 - INFO - utils_tag -   input_ids: 0 361 6 5 27366 2320 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 12:54:10 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 12:54:10 - INFO - utils_tag -   label_ids: -100 9 13 -100 8 -100 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 12:54:10 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 12:54:12 - INFO - __main__ -   Saving features into cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128, len(features)=3974
+05/13/2020 12:54:14 - INFO - __main__ -   ***** Running evaluation 500 in en *****
+05/13/2020 12:54:14 - INFO - __main__ -     Num examples = 3974
+05/13/2020 12:54:14 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.64it/s]
+05/13/2020 12:54:27 - INFO - __main__ -   ***** Evaluation result 500 in en *****███████████████▍                          | 1998/2659 [03:00<00:53, 12.40it/s]
+05/13/2020 12:54:27 - INFO - __main__ -     f1 = 0.9526456240545272█████████████████████████████████████████████████████████▊| 496/497 [00:12<00:00, 36.77it/s]
+05/13/2020 12:54:27 - INFO - __main__ -     loss = 0.13802868108521824
+05/13/2020 12:54:27 - INFO - __main__ -     precision = 0.952402800435019
+05/13/2020 12:54:27 - INFO - __main__ -     recall = 0.9528885715257234
+05/13/2020 12:54:27 - INFO - __main__ -   result['f1']=0.9526456240545272 > best_score=0.0
+05/13/2020 12:54:27 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/13/2020 12:54:28 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 12:54:28 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 12:54:28 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [03:56<00:00, 11.22it/s]
+Epoch:  10%|███████████▌                                                                                                       | 1/10 [03:56<35:32, 236.99s/it0
+5/13/2020 12:57:13 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 12:57:13 - INFO - __main__ -   ***** Running evaluation 1000 in en *****
+05/13/2020 12:57:13 - INFO - __main__ -     Num examples = 3974
+05/13/2020 12:57:13 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 41.04it/s]
+               0
+5/13/2020 12:57:26 - INFO - __main__ -   ***** Evaluation result 1000 in en *****                                          | 1342/2659 [02:03<01:45, 12.45it/s]
+05/13/2020 12:57:26 - INFO - __main__ -     f1 = 0.9537898766482348
+05/13/2020 12:57:26 - INFO - __main__ -     loss = 0.1302308361617552
+05/13/2020 12:57:26 - INFO - __main__ -     precision = 0.9544881836137029
+05/13/2020 12:57:26 - INFO - __main__ -     recall = 0.9530925907035261
+05/13/2020 12:57:26 - INFO - __main__ -   result['f1']=0.9537898766482348 > best_score=0.9526456240545272
+05/13/2020 12:57:26 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/13/2020 12:57:32 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 12:57:32 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 12:57:32 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [03:59<00:00, 11.12it/s]
+Epoch:  20%|███████████████████████                                                                                            | 2/10 [07:56<31:40, 237.61s/it0
+5/13/2020 13:00:19 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:00:19 - INFO - __main__ -   ***** Running evaluation 1500 in en *****
+05/13/2020 13:00:19 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:00:19 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.59it/s]
+05/13/2020 13:00:32 - INFO - __main__ -   ***** Evaluation result 1500 in en *****
+05/13/2020 13:00:32 - INFO - __main__ -     f1 = 0.9566614799887764█████████████████████████████████████████████████████████▌| 495/497 [00:12<00:00, 36.81it/s]
+05/13/2020 13:00:32 - INFO - __main__ -     loss = 0.12204297555758575
+05/13/2020 13:00:32 - INFO - __main__ -     precision = 0.9568811552788692
+05/13/2020 13:00:32 - INFO - __main__ -     recall = 0.9564419055391207
+05/13/2020 13:00:32 - INFO - __main__ -   result['f1']=0.9566614799887764 > best_score=0.9537898766482348
+05/13/2020 13:00:32 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+               0
+5/13/2020 13:00:38 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:00:38 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:00:38 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [03:59<00:00, 11.12it/s]
+Epoch:  30%|██████████████████████████████████▌                                                                                | 3/10 [11:55<27:46, 238.03s/it0
+5/13/2020 13:03:23 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:03:23 - INFO - __main__ -   ***** Running evaluation 2000 in en *****
+05/13/2020 13:03:23 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:03:23 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 41.01it/s]
+               0
+5/13/2020 13:03:36 - INFO - __main__ -   ***** Evaluation result 2000 in en *****                                            | 30/2659 [00:14<03:31, 12.45it/s]
+05/13/2020 13:03:36 - INFO - __main__ -     f1 = 0.9581405633419512
+05/13/2020 13:03:36 - INFO - __main__ -     loss = 0.11722805721299269
+05/13/2020 13:03:36 - INFO - __main__ -     precision = 0.9585644760575843
+05/13/2020 13:03:36 - INFO - __main__ -     recall = 0.9577170254003876
+05/13/2020 13:03:36 - INFO - __main__ -   result['f1']=0.9581405633419512 > best_score=0.9566614799887764
+05/13/2020 13:03:36 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/13/2020 13:03:42 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:03:42 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:03:42 - INFO - __main__ -   Reset patience to 0
+               0
+5/13/2020 13:06:27 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:06:27 - INFO - __main__ -   ***** Running evaluation 2500 in en *****
+05/13/2020 13:06:27 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:06:27 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.97it/s]
+05/13/2020 13:06:40 - INFO - __main__ -   ***** Evaluation result 2500 in en *****
+05/13/2020 13:06:40 - INFO - __main__ -     f1 = 0.9589136608676428█████████████████████████████████████████████████████████▎| 494/497 [00:12<00:00, 36.81it/s]
+05/13/2020 13:06:40 - INFO - __main__ -     loss = 0.12033841188871011
+05/13/2020 13:06:40 - INFO - __main__ -     precision = 0.9591583316323059
+05/13/2020 13:06:40 - INFO - __main__ -     recall = 0.9586691148968003
+05/13/2020 13:06:40 - INFO - __main__ -   result['f1']=0.9589136608676428 > best_score=0.9581405633419512
+05/13/2020 13:06:40 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+               0
+5/13/2020 13:06:46 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:06:46 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:06:46 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [04:16<00:00, 10.35it/s]
+Epoch:  40%|██████████████████████████████████████████████                                                                     | 4/10 [16:12<24:22, 243.71s/it0
+5/13/2020 13:09:31 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:09:31 - INFO - __main__ -   ***** Running evaluation 3000 in en *****
+05/13/2020 13:09:31 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:09:31 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.75it/s]
+05/13/2020 13:09:44 - INFO - __main__ -   ***** Evaluation result 3000 in en *****
+05/13/2020 13:09:44 - INFO - __main__ -     f1 = 0.9589576990458049██████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 37.17it/s]
+05/13/2020 13:09:44 - INFO - __main__ -     loss = 0.1266925884790787
+05/13/2020 13:09:44 - INFO - __main__ -     precision = 0.95936564116526
+05/13/2020 13:09:44 - INFO - __main__ -     recall = 0.9585501037097487
+05/13/2020 13:09:44 - INFO - __main__ -   result['f1']=0.9589576990458049 > best_score=0.9589136608676428
+05/13/2020 13:09:44 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+               0
+5/13/2020 13:09:50 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:09:50 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:09:50 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [03:58<00:00, 11.17it/s]
+Epoch:  50%|█████████████████████████████████████████████████████████▌                                                         | 5/10 [20:10<20:10, 242.02s/it0
+5/13/2020 13:12:35 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:12:35 - INFO - __main__ -   ***** Running evaluation 3500 in en *****
+05/13/2020 13:12:35 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:12:35 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.68it/s]
+05/13/2020 13:12:48 - INFO - __main__ -   ***** Evaluation result 3500 in en *****                                          | 718/2659 [01:10<02:36, 12.41it/s]
+05/13/2020 13:12:48 - INFO - __main__ -     f1 = 0.958632711194252██████████████████████████████████████████████████████████▊| 496/497 [00:12<00:00, 36.77it/s]
+05/13/2020 13:12:48 - INFO - __main__ -     loss = 0.13090410708216482
+05/13/2020 13:12:48 - INFO - __main__ -     precision = 0.9588854678755507
+05/13/2020 13:12:48 - INFO - __main__ -     recall = 0.9583800877282465
+05/13/2020 13:12:48 - INFO - __main__ -   Hit patience=1
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [03:52<00:00, 11.44it/s]
+Epoch:  60%|█████████████████████████████████████████████████████████████████████                                              | 6/10 [24:02<15:56, 239.16s/it0
+5/13/2020 13:15:33 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:15:33 - INFO - __main__ -   ***** Running evaluation 4000 in en *****
+05/13/2020 13:15:33 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:15:33 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.90it/s]
+               0
+5/13/2020 13:15:47 - INFO - __main__ -   ***** Evaluation result 4000 in en *****                                            | 62/2659 [00:17<03:28, 12.44it/s]
+05/13/2020 13:15:47 - INFO - __main__ -     f1 = 0.9596204372114379
+05/13/2020 13:15:47 - INFO - __main__ -     loss = 0.129901695140273
+05/13/2020 13:15:47 - INFO - __main__ -     precision = 0.9598407919579528
+05/13/2020 13:15:47 - INFO - __main__ -     recall = 0.95940018361726
+05/13/2020 13:15:47 - INFO - __main__ -   result['f1']=0.9596204372114379 > best_score=0.9589576990458049
+05/13/2020 13:15:47 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/13/2020 13:15:52 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:15:52 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:15:52 - INFO - __main__ -   Reset patience to 0
+               0
+5/13/2020 13:18:37 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:18:37 - INFO - __main__ -   ***** Running evaluation 4500 in en *****
+05/13/2020 13:18:37 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:18:37 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 41.00it/s]
+05/13/2020 13:18:50 - INFO - __main__ -   ***** Evaluation result 4500 in en *****
+05/13/2020 13:18:50 - INFO - __main__ -     f1 = 0.9606067562856584██████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 37.25it/s]
+05/13/2020 13:18:50 - INFO - __main__ -     loss = 0.1347574929875285
+05/13/2020 13:18:50 - INFO - __main__ -     precision = 0.9608273375176473
+05/13/2020 13:18:50 - INFO - __main__ -     recall = 0.9603862763099731
+05/13/2020 13:18:50 - INFO - __main__ -   result['f1']=0.9606067562856584 > best_score=0.9596204372114379
+05/13/2020 13:18:50 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/13/2020 13:18:56 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:18:56 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:18:56 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [04:16<00:00, 10.36it/s]
+Epoch:  70%|████████████████████████████████████████████████████████████████████████████████▌                                  | 7/10 [28:19<12:13, 244.37s/it0
+5/13/2020 13:21:40 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:21:41 - INFO - __main__ -   ***** Running evaluation 5000 in en *****
+05/13/2020 13:21:41 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:21:41 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.53it/s]
+05/13/2020 13:21:54 - INFO - __main__ -   ***** Evaluation result 5000 in en *****
+05/13/2020 13:21:54 - INFO - __main__ -     f1 = 0.9607481402763017█████████████████████████████████████████████████████████▌| 495/497 [00:12<00:00, 36.72it/s]
+05/13/2020 13:21:54 - INFO - __main__ -     loss = 0.1388988704289454
+05/13/2020 13:21:54 - INFO - __main__ -     precision = 0.960837995476729
+05/13/2020 13:21:54 - INFO - __main__ -     recall = 0.9606583018803767
+05/13/2020 13:21:54 - INFO - __main__ -   result['f1']=0.9607481402763017 > best_score=0.9606067562856584
+05/13/2020 13:21:54 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+               0
+5/13/2020 13:21:59 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:21:59 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:21:59 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [03:58<00:00, 11.15it/s]
+Epoch:  80%|████████████████████████████████████████████████████████████████████████████████████████████                       | 8/10 [32:17<08:05, 242.61s/it0
+5/13/2020 13:24:46 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:24:46 - INFO - __main__ -   ***** Running evaluation 5500 in en *****
+05/13/2020 13:24:46 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:24:46 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.40it/s]
+05/13/2020 13:24:59 - INFO - __main__ -   ***** Evaluation result 5500 in en *****                                          | 750/2659 [01:12<02:36, 12.23it/s]
+05/13/2020 13:24:59 - INFO - __main__ -     f1 = 0.9605992585790566█████████████████████████████████████████████████████████▌| 495/497 [00:12<00:00, 36.63it/s]
+05/13/2020 13:24:59 - INFO - __main__ -     loss = 0.14209263636951963
+05/13/2020 13:24:59 - INFO - __main__ -     precision = 0.9607953192502636
+05/13/2020 13:24:59 - INFO - __main__ -     recall = 0.9604032779081234
+05/13/2020 13:24:59 - INFO - __main__ -   Hit patience=1
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [03:55<00:00, 11.29it/s]
+Epoch:  90%|███████████████████████████████████████████████████████████████████████████████████████████████████████▌           | 9/10 [36:13<04:00, 240.46s/it0
+5/13/2020 13:27:47 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:27:47 - INFO - __main__ -   ***** Running evaluation 6000 in en *****
+05/13/2020 13:27:47 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:27:47 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.69it/s]
+05/13/2020 13:28:00 - INFO - __main__ -   ***** Evaluation result 6000 in en *****
+05/13/2020 13:28:00 - INFO - __main__ -     f1 = 0.9609400241467853█████████████████████████████████████████████████████████▊| 496/497 [00:12<00:00, 36.76it/s]
+05/13/2020 13:28:00 - INFO - __main__ -     loss = 0.1429730035723946
+05/13/2020 13:28:00 - INFO - __main__ -     precision = 0.961119804068304
+05/13/2020 13:28:00 - INFO - __main__ -     recall = 0.9607603114692781
+05/13/2020 13:28:00 - INFO - __main__ -   result['f1']=0.9609400241467853 > best_score=0.9607481402763017
+05/13/2020 13:28:00 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/13/2020 13:28:05 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/13/2020 13:28:05 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/13/2020 13:28:05 - INFO - __main__ -   Reset patience to 0
+               0
+5/13/2020 13:30:50 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:30:50 - INFO - __main__ -   ***** Running evaluation 6500 in en *****
+05/13/2020 13:30:50 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:30:50 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 40.87it/s]
+05/13/2020 13:31:03 - INFO - __main__ -   ***** Evaluation result 6500 in en *****
+05/13/2020 13:31:03 - INFO - __main__ -     f1 = 0.9606319298006939██████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 37.08it/s]
+05/13/2020 13:31:03 - INFO - __main__ -     loss = 0.14510031752766184
+05/13/2020 13:31:03 - INFO - __main__ -     precision = 0.9608606905936383
+05/13/2020 13:31:03 - INFO - __main__ -     recall = 0.9604032779081234
+05/13/2020 13:31:03 - INFO - __main__ -   Hit patience=1
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 2659/2659 [04:10<00:00, 10.60it/s]
+Epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [40:24<00:00, 242.40s/it]
+05/13/2020 13:31:49 - INFO - __main__ -    global_step = 6640, average loss = 0.07914955429710008
+05/13/2020 13:31:49 - INFO - __main__ -   Saving model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/
+05/13/2020 13:31:49 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/config.json
+05/13/2020 13:31:51 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/pytorch_model.bin
+05/13/2020 13:31:51 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/13/2020 13:31:51 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/added_tokens.json. We won't load it.
+05/13/2020 13:31:51 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/sentencepiece.bpe.model
+05/13/2020 13:31:51 - INFO - transformers.tokenization_utils -   loading file None
+05/13/2020 13:31:51 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/special_tokens_map.json
+05/13/2020 13:31:51 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/tokenizer_config.json
+05/13/2020 13:31:51 - INFO - __main__ -   Evaluate the following checkpoints: ['/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/']
+05/13/2020 13:31:51 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/config.json
+05/13/2020 13:31:51 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/13/2020 13:31:51 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/pytorch_model.bin
+05/13/2020 13:32:04 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-base_128
+05/13/2020 13:32:05 - INFO - __main__ -   ***** Running evaluation  in en *****
+05/13/2020 13:32:05 - INFO - __main__ -     Num examples = 3974
+05/13/2020 13:32:05 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:12<00:00, 41.35it/s]
+05/13/2020 13:32:18 - INFO - __main__ -   ***** Evaluation result  in en *****
+05/13/2020 13:32:18 - INFO - __main__ -     f1 = 0.9606482662449195
+05/13/2020 13:32:18 - INFO - __main__ -     loss = 0.14542801555042797
+05/13/2020 13:32:18 - INFO - __main__ -     precision = 0.9608933796012792
+05/13/2020 13:32:18 - INFO - __main__ -     recall = 0.9604032779081234
+05/13/2020 13:32:18 - INFO - __main__ -   Loading the best checkpoint from /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/
+
+05/13/2020 13:32:18 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/13/2020 13:32:18 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/added_tokens.json. We won't load it.
+05/13/2020 13:32:18 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/sentencepiece.bpe.model
+05/13/2020 13:32:18 - INFO - transformers.tokenization_utils -   loading file None
+05/13/2020 13:32:18 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/special_tokens_map.json
+05/13/2020 13:32:18 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/tokenizer_config.json
+05/13/2020 13:32:18 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/config.json
+05/13/2020 13:32:18 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/13/2020 13:32:18 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-base-LR2e-5-epoch-MaxLen128-train-en-test-nl/pytorch_model.bin
+05/13/2020 13:32:31 - INFO - __main__ -   all languages = nl
+05/13/2020 13:32:31 - INFO - __main__ -   Creating features from dataset file at /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/nl/dev.xlm-roberta-base in language nl
+05/13/2020 13:32:31 - INFO - utils_tag -   lang_id=0, lang=nl, lang2id=None
+05/13/2020 13:32:31 - INFO - utils_tag -   Writing example 0 of 1397
+05/13/2020 13:32:31 - INFO - utils_tag -   *** Example ***
+05/13/2020 13:32:31 - INFO - utils_tag -   guid: nl-1
+05/13/2020 13:32:31 - INFO - utils_tag -   tokens: <s> ▁ , , ▁Mijn ▁basis niveau ▁is ▁flink ▁omhoog ▁gegaan ▁ . ▁'' </s> </s>
+05/13/2020 13:32:31 - INFO - utils_tag -   input_ids: 0 6 4 4 57843 18231 86439 83 115652 228399 102573 6 5 5106 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 13:32:31 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   label_ids: -100 13 -100 -100 11 8 -100 4 1 3 16 13 -100 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 13:32:31 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 13:32:31 - INFO - utils_tag -   *** Example ***
+05/13/2020 13:32:31 - INFO - utils_tag -   guid: nl-2
+05/13/2020 13:32:31 - INFO - utils_tag -   tokens: <s> ▁De ▁afgelopen ▁week ▁twijfel de ▁ze ▁nog ▁of ▁ze ▁wel ▁moest ▁mee do en ▁aan ▁het ▁ NK ▁ . </s> </s>
+05/13/2020 13:32:31 - INFO - utils_tag -   input_ids: 0 262 69284 5895 191396 112 932 1850 111 932 2950 67416 7421 246 33 664 225 6 25035 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 13:32:31 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   label_ids: -100 6 16 8 16 -100 11 3 14 11 3 4 16 -100 -100 2 6 12 -100 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 13:32:31 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 13:32:31 - INFO - utils_tag -   *** Example ***
+05/13/2020 13:32:31 - INFO - utils_tag -   guid: nl-3
+05/13/2020 13:32:31 - INFO - utils_tag -   tokens: <s> ▁Mo eder ▁Mi en ▁spo orde ▁haar ▁aan ▁toch ▁op ▁te ▁stappen ▁ . </s> </s>
+05/13/2020 13:32:31 - INFO - utils_tag -   input_ids: 0 2501 27802 1208 33 5732 53052 4319 664 15326 233 120 138444 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 13:32:31 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   label_ids: -100 8 -100 12 -100 16 -100 11 2 3 2 2 16 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 13:32:31 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 13:32:31 - INFO - utils_tag -   *** Example ***
+05/13/2020 13:32:31 - INFO - utils_tag -   guid: nl-4
+05/13/2020 13:32:31 - INFO - utils_tag -   tokens: <s> ▁Tot ▁halv er wege ▁de ▁ko ers ▁had ▁Van ▁Ale be ek ▁moeite ▁om ▁zich ▁volledig ▁te ▁concentr eren ▁op ▁de ▁wedstrijd ▁ . </s> </s>
+05/13/2020 13:32:31 - INFO - utils_tag -   input_ids: 0 13715 19326 56 111393 8 298 1314 1902 3000 4733 372 343 101031 171 7559 57654 120 92776 3683 233 8 78336 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 13:32:31 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   label_ids: -100 2 2 -100 -100 6 8 -100 16 12 12 -100 -100 8 2 11 1 2 16 -100 2 6 8 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 13:32:31 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 13:32:31 - INFO - utils_tag -   *** Example ***
+05/13/2020 13:32:31 - INFO - utils_tag -   guid: nl-5
+05/13/2020 13:32:31 - INFO - utils_tag -   tokens: <s> ▁ , , ▁Mijn ▁gedachten ▁ sprong en ▁alle ▁kanten ▁op ▁ . </s> </s>
+05/13/2020 13:32:31 - INFO - utils_tag -   input_ids: 0 6 4 4 57843 159885 6 150944 33 747 144243 233 6 5 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+05/13/2020 13:32:31 - INFO - utils_tag -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+05/13/2020 13:32:31 - INFO - utils_tag -   label_ids: -100 13 -100 -100 11 8 16 -100 -100 6 8 2 13 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100 -100
+05/13/2020 13:32:31 - INFO - utils_tag -   langs: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+05/13/2020 13:32:32 - INFO - __main__ -   Saving features into cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-base_128, len(features)=1397
+05/13/2020 13:32:33 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/13/2020 13:32:33 - INFO - __main__ -     Num examples = 1397
+05/13/2020 13:32:33 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 175/175 [00:04<00:00, 43.32it/s]
+05/13/2020 13:32:37 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/13/2020 13:32:37 - INFO - __main__ -     f1 = 0.8991343620624764
+05/13/2020 13:32:37 - INFO - __main__ -     loss = 0.49296271059396013
+05/13/2020 13:32:37 - INFO - __main__ -     precision = 0.8998540420923772
+05/13/2020 13:32:37 - INFO - __main__ -     recall = 0.8984158322756546
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ 
