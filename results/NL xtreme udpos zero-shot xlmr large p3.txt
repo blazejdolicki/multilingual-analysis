@@ -1,0 +1,425 @@
+﻿(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ bash scripts/train.sh xlm-roberta-large udpos
+Fine-tuning xlm-roberta-large on udpos using GPU 0
+Load data from /home/ubuntu/xtreme/download, and save models to /home/ubuntu/xtreme/outputs-temp/
+DATA_DIR
+/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/
+05/14/2020 09:07:42 - INFO - root -   Input args: Namespace(adam_epsilon=1e-08, cache_dir=None, config_name='', data_dir='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=False, do_predict_dev=True, do_train=True, eval_all_checkpoints=False, eval_patience=-1, evaluate_during_training=False, few_shot=-1, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, init_checkpoint=None, labels='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128//labels.txt', learning_rate=2e-05, local_rank=-1, log_file='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl//train.log', logging_steps=500, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-large', model_type='xlmr', n_gpu=1, no_cuda=False, num_train_epochs=10.0, output_dir='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=2, predict_langs='nl', save_only_best_checkpoint=True, save_steps=500, seed=1, server_ip='', server_port='', tokenizer_name='', train_langs='en', warmup_steps=0, weight_decay=0.0)
+05/14/2020 09:07:42 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+arg labels /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128//labels.txt
+05/14/2020 09:07:42 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-config.json from cache at /home/ubuntu/.cache/torch/transformers/5ac6d3984e5ca7c5227e4821c65d341900125db538c5f09a1ead14f380def4a7.aa59609b4f56f82fa7699f0d47997566ccc4cf07e484f3a7bc883bd7c5a34488
+05/14/2020 09:07:42 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/14/2020 09:07:42 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-sentencepiece.bpe.model from cache at /home/ubuntu/.cache/torch/transformers/f7e58cf8eef122765ff522a4c7c0805d2fe8871ec58dcb13d0c2764ea3e4a0f3.309f0c29486cffc28e1e40a2ab0ac8f500c203fe080b95f820aa9cb58e5b84ed
+05/14/2020 09:07:43 - INFO - __main__ -   loading from cached model = xlm-roberta-large
+05/14/2020 09:07:44 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlm-roberta-large-pytorch_model.bin from cache at /home/ubuntu/.cache/torch/transformers/4cb7e8aaa4c1a784991e044524aa4ec899c93dc895f081a27c4e5410f87c584d.2f41fe28a80f2730715b795242a01fc3dda846a85e7903adb3907dc5c5a498bf
+05/14/2020 09:08:15 - INFO - transformers.modeling_utils -   Weights of XLMRobertaForTokenClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+05/14/2020 09:08:15 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in XLMRobertaForTokenClassification: ['lm_head.bias', 'lm_head.dense.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight']
+05/14/2020 09:08:15 - INFO - __main__ -   Using lang2id = None
+05/14/2020 09:08:20 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir=None, config_name='', data_dir='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=False, do_predict_dev=True, do_train=True, eval_all_checkpoints=False, eval_patience=-1, evaluate_during_training=False, few_shot=-1, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, init_checkpoint=None, labels='/home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128//labels.txt', learning_rate=2e-05, local_rank=-1, log_file='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl//train.log', logging_steps=500, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='xlm-roberta-large', model_type='xlmr', n_gpu=1, no_cuda=False, num_train_epochs=10.0, output_dir='/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=2, predict_langs='nl', save_only_best_checkpoint=True, save_steps=500, seed=1, server_ip='', server_port='', tokenizer_name='', train_langs='en', warmup_steps=0, weight_decay=0.0)
+05/14/2020 09:08:20 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_train_en_xlm-roberta-large_128
+05/14/2020 09:08:21 - INFO - __main__ -   ***** Running training *****
+05/14/2020 09:08:21 - INFO - __main__ -     Num examples = 21269
+05/14/2020 09:08:21 - INFO - __main__ -     Num Epochs = 10
+05/14/2020 09:08:21 - INFO - __main__ -     Instantaneous batch size per GPU = 2
+05/14/2020 09:08:21 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 32
+05/14/2020 09:08:21 - INFO - __main__ -     Gradient Accumulation steps = 16
+05/14/2020 09:08:21 - INFO - __main__ -     Total optimization steps = 6640
+Epoch:   0%|                                                                                                                            | 0/10 [00:00<?, ?it/s/
+home/ubuntu/anaconda3/envs/xtreme/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:100: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule.See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+                                                                                                                                                              0
+5/14/2020 09:21:06 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 09:21:06 - INFO - __main__ -   ***** Running evaluation 500 in en *****
+05/14/2020 09:21:06 - INFO - __main__ -     Num examples = 3974
+05/14/2020 09:21:06 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.20it/s]
+05/14/2020 09:21:40 - INFO - __main__ -   ***** Evaluation result 500 in en *****██████████████▋                          | 7999/10635 [13:00<03:59, 11.01it/s]
+05/14/2020 09:21:40 - INFO - __main__ -     f1 = 0.9520430821061229█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 15.00it/s]
+05/14/2020 09:21:40 - INFO - __main__ -     loss = 0.13056382944458866
+05/14/2020 09:21:40 - INFO - __main__ -     precision = 0.9527969348659003
+05/14/2020 09:21:40 - INFO - __main__ -     recall = 0.9512904212996022
+05/14/2020 09:21:40 - INFO - __main__ -   result['f1']=0.9520430821061229 > best_score=0.0
+05/14/2020 09:21:40 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 09:21:51 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 09:21:51 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 09:21:51 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:44<00:00,  9.99it/s]
+Epoch:  10%|███████████▏                                                                                                    | 1/10 [17:44<2:39:37, 1064.13s/it0
+5/14/2020 09:34:41 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 09:34:41 - INFO - __main__ -   ***** Running evaluation 1000 in en *****
+05/14/2020 09:34:41 - INFO - __main__ -     Num examples = 3974
+05/14/2020 09:34:41 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.23it/s]
+05/14/2020 09:35:15 - INFO - __main__ -   ***** Evaluation result 1000 in en *****                                        | 5374/10635 [08:47<07:57, 11.02it/s]
+05/14/2020 09:35:15 - INFO - __main__ -     f1 = 0.9566563994350186█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 15.04it/s]
+05/14/2020 09:35:15 - INFO - __main__ -     loss = 0.11734290715678027
+05/14/2020 09:35:15 - INFO - __main__ -     precision = 0.9575526333719425
+05/14/2020 09:35:15 - INFO - __main__ -     recall = 0.9557618416131116
+05/14/2020 09:35:15 - INFO - __main__ -   result['f1']=0.9566563994350186 > best_score=0.9520430821061229
+05/14/2020 09:35:15 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 09:35:27 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 09:35:27 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 09:35:27 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:46<00:00,  9.97it/s]
+Epoch:  20%|██████████████████████▍                                                                                         | 2/10 [35:30<2:21:58, 1064.84s/it0
+5/14/2020 09:48:15 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 09:48:16 - INFO - __main__ -   ***** Running evaluation 1500 in en *****
+05/14/2020 09:48:16 - INFO - __main__ -     Num examples = 3974
+05/14/2020 09:48:16 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.23it/s]
+05/14/2020 09:48:49 - INFO - __main__ -   ***** Evaluation result 1500 in en *****                                        | 2750/10635 [04:40<11:57, 10.98it/s]
+05/14/2020 09:48:49 - INFO - __main__ -     f1 = 0.9595925239366677█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 14.98it/s]
+05/14/2020 09:48:49 - INFO - __main__ -     loss = 0.12031726423117858
+05/14/2020 09:48:49 - INFO - __main__ -     precision = 0.9598700326619488
+05/14/2020 09:48:49 - INFO - __main__ -     recall = 0.9593151756265089
+05/14/2020 09:48:49 - INFO - __main__ -   result['f1']=0.9595925239366677 > best_score=0.9566563994350186
+05/14/2020 09:48:49 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 09:49:01 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 09:49:01 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 09:49:01 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:42<00:00, 10.01it/s]
+Epoch:  30%|█████████████████████████████████▌                                                                              | 3/10 [53:13<2:04:09, 1064.16s/it0
+5/14/2020 10:01:46 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 10:01:46 - INFO - __main__ -   ***** Running evaluation 2000 in en *****
+05/14/2020 10:01:46 - INFO - __main__ -     Num examples = 3974
+05/14/2020 10:01:46 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.21it/s]
+05/14/2020 10:02:20 - INFO - __main__ -   ***** Evaluation result 2000 in en *****                                         | 126/10635 [00:28<15:55, 11.00it/s]
+05/14/2020 10:02:20 - INFO - __main__ -     f1 = 0.9596536148421618█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 15.02it/s]
+05/14/2020 10:02:20 - INFO - __main__ -     loss = 0.11889264937710993
+05/14/2020 10:02:20 - INFO - __main__ -     precision = 0.9602989495905616
+05/14/2020 10:02:20 - INFO - __main__ -     recall = 0.9590091468598049
+05/14/2020 10:02:20 - INFO - __main__ -   result['f1']=0.9596536148421618 > best_score=0.9595925239366677
+05/14/2020 10:02:20 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 10:02:32 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 10:02:32 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 10:02:32 - INFO - __main__ -   Reset patience to 0
+                                                                                                                                                              0
+5/14/2020 10:15:18 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 10:15:19 - INFO - __main__ -   ***** Running evaluation 2500 in en *****
+05/14/2020 10:15:19 - INFO - __main__ -     Num examples = 3974
+05/14/2020 10:15:19 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.20it/s]
+05/14/2020 10:15:52 - INFO - __main__ -   ***** Evaluation result 2500 in en *****██████████████▉                         | 8126/10635 [13:58<03:47, 11.04it/s]
+05/14/2020 10:15:52 - INFO - __main__ -     f1 = 0.9608493132054944█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 14.96it/s]
+05/14/2020 10:15:52 - INFO - __main__ -     loss = 0.11967695014337776
+05/14/2020 10:15:52 - INFO - __main__ -     precision = 0.9607513173550909
+05/14/2020 10:15:52 - INFO - __main__ -     recall = 0.9609473290489307
+05/14/2020 10:15:52 - INFO - __main__ -   result['f1']=0.9608493132054944 > best_score=0.9596536148421618
+05/14/2020 10:15:52 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 10:16:04 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 10:16:04 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 10:16:04 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [18:29<00:00,  9.58it/s]
+Epoch:  40%|████████████████████████████████████████████                                                                  | 4/10 [1:11:43<1:47:47, 1077.87s/it0
+5/14/2020 10:28:50 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 10:28:50 - INFO - __main__ -   ***** Running evaluation 3000 in en *****
+05/14/2020 10:28:50 - INFO - __main__ -     Num examples = 3974
+05/14/2020 10:28:50 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.20it/s]
+05/14/2020 10:29:23 - INFO - __main__ -   ***** Evaluation result 3000 in en *****                                        | 5502/10635 [08:58<07:43, 11.08it/s]
+05/14/2020 10:29:23 - INFO - __main__ -     f1 = 0.9629497351122904█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 15.03it/s]
+05/14/2020 10:29:23 - INFO - __main__ -     loss = 0.13077188922212715
+05/14/2020 10:29:23 - INFO - __main__ -     precision = 0.9632691947804488
+05/14/2020 10:29:23 - INFO - __main__ -     recall = 0.962630487265803
+05/14/2020 10:29:23 - INFO - __main__ -   result['f1']=0.9629497351122904 > best_score=0.9608493132054944
+05/14/2020 10:29:23 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 10:29:35 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 10:29:35 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 10:29:35 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:40<00:00, 10.03it/s]
+Epoch:  50%|███████████████████████████████████████████████████████                                                       | 5/10 [1:29:23<1:29:23, 1072.67s/it0
+5/14/2020 10:42:19 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 10:42:19 - INFO - __main__ -   ***** Running evaluation 3500 in en *****
+05/14/2020 10:42:19 - INFO - __main__ -     Num examples = 3974
+05/14/2020 10:42:19 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.20it/s]
+05/14/2020 10:42:53 - INFO - __main__ -   ***** Evaluation result 3500 in en *****                                        | 2878/10635 [04:48<11:41, 11.06it/s]
+05/14/2020 10:42:53 - INFO - __main__ -     f1 = 0.9630933251715255█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 14.93it/s]
+05/14/2020 10:42:53 - INFO - __main__ -     loss = 0.14063192335905725
+05/14/2020 10:42:53 - INFO - __main__ -     precision = 0.9632161624406917
+05/14/2020 10:42:53 - INFO - __main__ -     recall = 0.9629705192288075
+05/14/2020 10:42:53 - INFO - __main__ -   result['f1']=0.9630933251715255 > best_score=0.9629497351122904
+05/14/2020 10:42:53 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 10:43:05 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 10:43:05 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 10:43:05 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:42<00:00, 10.01it/s]
+Epoch:  60%|██████████████████████████████████████████████████████████████████                                            | 6/10 [1:47:05<1:11:18, 1069.57s/it0
+5/14/2020 10:55:51 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 10:55:51 - INFO - __main__ -   ***** Running evaluation 4000 in en *****
+05/14/2020 10:55:51 - INFO - __main__ -     Num examples = 3974
+05/14/2020 10:55:51 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.22it/s]
+05/14/2020 10:56:25 - INFO - __main__ -   ***** Evaluation result 4000 in en *****                                         | 254/10635 [00:36<15:44, 11.00it/s]
+05/14/2020 10:56:25 - INFO - __main__ -     f1 = 0.9637620176982122█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 15.03it/s]
+05/14/2020 10:56:25 - INFO - __main__ -     loss = 0.14649629627092509
+05/14/2020 10:56:25 - INFO - __main__ -     precision = 0.9637374407099505
+05/14/2020 10:56:25 - INFO - __main__ -     recall = 0.9637865959400184
+05/14/2020 10:56:25 - INFO - __main__ -   result['f1']=0.9637620176982122 > best_score=0.9630933251715255
+05/14/2020 10:56:25 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 10:56:37 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 10:56:37 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 10:56:37 - INFO - __main__ -   Reset patience to 0
+                                                                                                                                                              0
+5/14/2020 11:09:23 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 11:09:23 - INFO - __main__ -   ***** Running evaluation 4500 in en *****
+05/14/2020 11:09:23 - INFO - __main__ -     Num examples = 3974
+05/14/2020 11:09:23 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.20it/s]
+05/14/2020 11:09:56 - INFO - __main__ -   ***** Evaluation result 4500 in en *****████████████████▎                       | 8255/10635 [14:06<03:36, 10.99it/s]
+05/14/2020 11:09:56 - INFO - __main__ -     f1 = 0.9636394557823128█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 14.99it/s]
+05/14/2020 11:09:56 - INFO - __main__ -     loss = 0.15704801356148881
+05/14/2020 11:09:56 - INFO - __main__ -     precision = 0.9639345377836753
+05/14/2020 11:09:56 - INFO - __main__ -     recall = 0.9633445543881125
+05/14/2020 11:09:56 - INFO - __main__ -   Hit patience=1
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [18:17<00:00,  9.69it/s]
+Epoch:  70%|██████████████████████████████████████████████████████████████████████████████▍                                 | 7/10 [2:05:23<53:53, 1077.84s/it0
+5/14/2020 11:22:40 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 11:22:40 - INFO - __main__ -   ***** Running evaluation 5000 in en *****
+05/14/2020 11:22:40 - INFO - __main__ -     Num examples = 3974
+05/14/2020 11:22:40 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.22it/s]
+05/14/2020 11:23:14 - INFO - __main__ -   ***** Evaluation result 5000 in en *****                                        | 5630/10635 [09:09<07:33, 11.04it/s]
+05/14/2020 11:23:14 - INFO - __main__ -     f1 = 0.9641445102924047█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 15.03it/s]
+05/14/2020 11:23:14 - INFO - __main__ -     loss = 0.1680129640149437
+05/14/2020 11:23:14 - INFO - __main__ -     precision = 0.964349497389145
+05/14/2020 11:23:14 - INFO - __main__ -     recall = 0.9639396103233704
+05/14/2020 11:23:14 - INFO - __main__ -   result['f1']=0.9641445102924047 > best_score=0.9637620176982122
+05/14/2020 11:23:14 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 11:23:26 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 11:23:26 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 11:23:26 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:39<00:00, 10.03it/s]
+Epoch:  80%|█████████████████████████████████████████████████████████████████████████████████████████▌                      | 8/10 [2:23:02<35:44, 1072.46s/it0
+5/14/2020 11:36:10 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 11:36:10 - INFO - __main__ -   ***** Running evaluation 5500 in en *****
+05/14/2020 11:36:10 - INFO - __main__ -     Num examples = 3974
+05/14/2020 11:36:10 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.22it/s]
+05/14/2020 11:36:44 - INFO - __main__ -   ***** Evaluation result 5500 in en *****                                        | 3006/10635 [04:59<11:32, 11.02it/s]
+05/14/2020 11:36:44 - INFO - __main__ -     f1 = 0.9645016197464524█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 15.04it/s]
+05/14/2020 11:36:44 - INFO - __main__ -     loss = 0.17023584184215187
+05/14/2020 11:36:44 - INFO - __main__ -     precision = 0.9647066827683568
+05/14/2020 11:36:44 - INFO - __main__ -     recall = 0.9642966438845252
+05/14/2020 11:36:44 - INFO - __main__ -   result['f1']=0.9645016197464524 > best_score=0.9641445102924047
+05/14/2020 11:36:44 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/config.json
+05/14/2020 11:36:56 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best/pytorch_model.bin
+05/14/2020 11:36:56 - INFO - __main__ -   Saving the best model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/checkpoint-best
+05/14/2020 11:36:56 - INFO - __main__ -   Reset patience to 0
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:41<00:00, 10.02it/s]
+Epoch:  90%|████████████████████████████████████████████████████████████████████████████████████████████████████▊           | 9/10 [2:40:44<17:49, 1069.23s/it0
+5/14/2020 11:49:42 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 11:49:42 - INFO - __main__ -   ***** Running evaluation 6000 in en *****
+05/14/2020 11:49:42 - INFO - __main__ -     Num examples = 3974
+05/14/2020 11:49:42 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.24it/s]
+05/14/2020 11:50:16 - INFO - __main__ -   ***** Evaluation result 6000 in en *****                                         | 382/10635 [00:47<15:26, 11.07it/s]
+05/14/2020 11:50:16 - INFO - __main__ -     f1 = 0.9643649720684642█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 14.96it/s]
+05/14/2020 11:50:16 - INFO - __main__ -     loss = 0.17682358716089475
+05/14/2020 11:50:16 - INFO - __main__ -     precision = 0.9645864162882074
+05/14/2020 11:50:16 - INFO - __main__ -     recall = 0.9641436295011732
+05/14/2020 11:50:16 - INFO - __main__ -   Hit patience=1
+                                                                                                                                                              0
+5/14/2020 12:02:54 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 12:02:54 - INFO - __main__ -   ***** Running evaluation 6500 in en *****
+05/14/2020 12:02:54 - INFO - __main__ -     Num examples = 3974
+05/14/2020 12:02:54 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.26it/s]
+05/14/2020 12:03:28 - INFO - __main__ -   ***** Evaluation result 6500 in en *****█████████████████▌                      | 8382/10635 [14:07<03:20, 11.23it/s]
+05/14/2020 12:03:28 - INFO - __main__ -     f1 = 0.9644575957008997█████████████████████████████████████████████████████████▊| 496/497 [00:32<00:00, 14.97it/s]
+05/14/2020 12:03:28 - INFO - __main__ -     loss = 0.18180882180787383
+05/14/2020 12:03:28 - INFO - __main__ -     precision = 0.9647036810233381
+05/14/2020 12:03:28 - INFO - __main__ -     recall = 0.964211635893774
+05/14/2020 12:03:28 - INFO - __main__ -   Hit patience=2
+Iteration: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 10635/10635 [17:54<00:00,  9.90it/s]
+Epoch: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [2:58:39<00:00, 1071.94s/it]
+05/14/2020 12:07:00 - INFO - __main__ -    global_step = 6640, average loss = 0.055800124500392116
+05/14/2020 12:07:00 - INFO - __main__ -   Saving model checkpoint to /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/
+05/14/2020 12:07:00 - INFO - transformers.configuration_utils -   Configuration saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/config.json
+05/14/2020 12:07:03 - INFO - transformers.modeling_utils -   Model weights saved in /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/pytorch_model.bin
+05/14/2020 12:07:03 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/14/2020 12:07:03 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/added_tokens.json. We won't load it.
+05/14/2020 12:07:03 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/sentencepiece.bpe.model
+05/14/2020 12:07:03 - INFO - transformers.tokenization_utils -   loading file None
+05/14/2020 12:07:03 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/special_tokens_map.json
+05/14/2020 12:07:03 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/tokenizer_config.json
+05/14/2020 12:07:03 - INFO - __main__ -   Evaluate the following checkpoints: ['/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/']
+05/14/2020 12:07:03 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/config.json
+05/14/2020 12:07:03 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/14/2020 12:07:03 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/pytorch_model.bin
+05/14/2020 12:07:27 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_en_xlm-roberta-large_128
+05/14/2020 12:07:27 - INFO - __main__ -   ***** Running evaluation  in en *****
+05/14/2020 12:07:27 - INFO - __main__ -     Num examples = 3974
+05/14/2020 12:07:27 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 497/497 [00:32<00:00, 15.32it/s]
+05/14/2020 12:08:00 - INFO - __main__ -   ***** Evaluation result  in en *****
+05/14/2020 12:08:00 - INFO - __main__ -     f1 = 0.9644922114141895
+05/14/2020 12:08:00 - INFO - __main__ -     loss = 0.18213341634101113
+05/14/2020 12:08:00 - INFO - __main__ -     precision = 0.9647218914781426
+05/14/2020 12:08:00 - INFO - __main__ -     recall = 0.9642626406882246
+05/14/2020 12:08:00 - INFO - __main__ -   Loading the best checkpoint from /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/
+
+05/14/2020 12:08:00 - INFO - transformers.tokenization_utils -   Model name '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/' not found in model shortcut name list (xlm-roberta-base, xlm-roberta-large, xlm-roberta-large-finetuned-conll02-dutch, xlm-roberta-large-finetuned-conll02-spanish, xlm-roberta-large-finetuned-conll03-english, xlm-roberta-large-finetuned-conll03-german). Assuming '/home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/' is a path, a model identifier, or url to a directory containing tokenizer files.
+05/14/2020 12:08:00 - INFO - transformers.tokenization_utils -   Didn't find file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/added_tokens.json. We won't load it.
+05/14/2020 12:08:00 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/sentencepiece.bpe.model
+05/14/2020 12:08:00 - INFO - transformers.tokenization_utils -   loading file None
+05/14/2020 12:08:00 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/special_tokens_map.json
+05/14/2020 12:08:00 - INFO - transformers.tokenization_utils -   loading file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/tokenizer_config.json
+05/14/2020 12:08:01 - INFO - transformers.configuration_utils -   loading configuration file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/config.json
+05/14/2020 12:08:01 - INFO - transformers.configuration_utils -   Model config XLMRobertaConfig {
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 16,
+  "num_beams": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 18,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 250002
+}
+
+05/14/2020 12:08:01 - INFO - transformers.modeling_utils -   loading weights file /home/ubuntu/xtreme/outputs-temp//udpos/xlm-roberta-large-LR2e-5-epoch-MaxLen128-train-en-test-nl/pytorch_model.bin
+05/14/2020 12:08:24 - INFO - __main__ -   Loading features from cached file /home/ubuntu/xtreme/download/udpos/udpos_processed_maxlen128/cached_dev_nl_xlm-roberta-large_128
+05/14/2020 12:08:24 - INFO - __main__ -   ***** Running evaluation  in nl *****
+05/14/2020 12:08:24 - INFO - __main__ -     Num examples = 1397
+05/14/2020 12:08:24 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 175/175 [00:11<00:00, 15.60it/s]
+05/14/2020 12:08:36 - INFO - __main__ -   ***** Evaluation result  in nl *****
+05/14/2020 12:08:36 - INFO - __main__ -     f1 = 0.9022849493929502
+05/14/2020 12:08:36 - INFO - __main__ -     loss = 0.6303917575521129
+05/14/2020 12:08:36 - INFO - __main__ -     precision = 0.9015016424213984
+05/14/2020 12:08:36 - INFO - __main__ -     recall = 0.9030696187655713
+(xtreme) ubuntu@ip-172-31-42-96:~/xtreme$ 
