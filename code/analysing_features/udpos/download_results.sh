@@ -1,8 +1,8 @@
-langs="af ar bg de el en es et eu fa fi fr he hi hu id it"
+langs="af ar bg de el en es et eu fa fi fr he hi hu id it ja ko mr nl pt ru ta te tr ur vi zh"
 
 key_dir="C:/Users/bdolicki/.ssh/blazej-key-pair.pem"
 user="ubuntu"
-vm_ip="ec2-3-121-200-176.eu-central-1.compute.amazonaws.com"
+vm_ip="ec2-52-29-120-235.eu-central-1.compute.amazonaws.com"
 vm_dir="/home/ubuntu/xtreme/outputs-temp/udpos"
 local_dir="C:/Users/bdolicki/Documents/Git/multilingual-analysis/code/analysing_features/udpos/results"
 
