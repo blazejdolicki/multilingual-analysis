@@ -6,3 +6,5 @@ code/analysing_predictions/.ipynb_checkpoints/Translate reviews - don't run, too
 code/analysing_predictions/.ipynb_checkpoints/
 */.ipynb_checkpoints/
 code/analysing_features/udpos/.ipynb_checkpoints/
+code/analysing_predictions/train-fr.tsv
+code/analysing_predictions/train-de.tsv

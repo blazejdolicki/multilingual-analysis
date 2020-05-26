@@ -6,8 +6,8 @@ vm_ip="ec2-35-156-25-216.eu-central-1.compute.amazonaws.com"
 vm_dir="/home/ubuntu/xtreme/outputs-temp/udpos"
 local_dir="C:/Users/bdolicki/Documents/Git/multilingual-analysis/code/analysing_features/ner/results"
 echo "hey"
-if [ ! -d $local_dir ]; then
-    mkdir ner/results
+if [ ! -d ${local_dir} ]; then
+    mkdir ${local_dir}
     echo "Created ${local_dir}"
 fi
 for lang in $langs; do
