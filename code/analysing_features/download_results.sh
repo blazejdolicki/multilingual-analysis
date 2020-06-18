@@ -1,11 +1,10 @@
-# langs="af ar bg de el en es et eu fa fi fr he hi hu id it ja ko mr nl pt ru ta te tr ur vi zh"
-langs="en"
+langs="af ar bg bn de el en es et eu fa fi fr he hi hu id it ja jv ka kk ko ml mr ms my nl pt ru sw ta te th tl ur vi zh"
+# langs="en"
 key_dir="C:/Users/bdolicki/.ssh/blazej-key-pair.pem"
 user="ubuntu"
-vm_ip="ec2-35-156-25-216.eu-central-1.compute.amazonaws.com"
-vm_dir="/home/ubuntu/xtreme/outputs-temp/udpos"
+vm_ip="ec2-18-156-163-12.eu-central-1.compute.amazonaws.com"
+vm_dir="/home/ubuntu/xtreme/outputs-temp/panx"
 local_dir="C:/Users/bdolicki/Documents/Git/multilingual-analysis/code/analysing_features/ner/results"
-echo "hey"
 if [ ! -d ${local_dir} ]; then
     mkdir ${local_dir}
     echo "Created ${local_dir}"
