@@ -10,3 +10,9 @@ code/analysing_predictions/train-fr.tsv
 code/analysing_predictions/train-de.tsv
 *.jpg
 code/analysing_features/ner/.ipynb_checkpoints/
+code/analysing_features/xnli/.ipynb_checkpoints/
+code/analysing_predictions/udpos/dev_sets/
+code/analysing_predictions/udpos/results/
+*/.ipynb_checkpoints/*
+code/analysing_predictions/udpos/.ipynb_checkpoints/
+code/analysing_predictions/udpos/train-de.tsv
