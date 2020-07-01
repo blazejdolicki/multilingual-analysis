@@ -16,3 +16,11 @@ code/analysing_predictions/udpos/results/
 */.ipynb_checkpoints/*
 code/analysing_predictions/udpos/.ipynb_checkpoints/
 code/analysing_predictions/udpos/train-de.tsv
+code/analysing_features/.ipynb_checkpoints/
+code/analysing_predictions/panx/.ipynb_checkpoints/
+*.pyc
+code/analysing_predictions/xnli/.ipynb_checkpoints/
+code/analysing_predictions/panx/dev_sets/
+code/analysing_predictions/panx/results/
+code/analysing_predictions/xnli/dev_sets/
+code/analysing_predictions/xnli/results/
