@@ -41,23 +41,30 @@ In the former we analyse how important particular features are for transfer perf
 [1] B. van der Burgh and S. Verberne, “The merits of universal language
 model fine-tuning for small datasets–a case with dutch book reviews,”
 arXiv preprint arXiv:1910.00896, 2019.
+
 [2] P. Prettenhofer and B. Stein, “Cross-language text classification using
 structural correspondence learning,” in Proceedings of the 48th annual
 meeting of the association for computational linguistics, Conference
 Proceedings, pp. 1118–1127.
+
 [3] J. Nivre, M. Abrams, Agic, L. Ahrenberg, L. Antonsen, M. J. Aranzabe, ´
 G. Arutie, M. Asahara, L. Ateyah, and M. Attia, “Universal dependencies 2.2,” 2018
+
 [4] X. Pan, B. Zhang, J. May, J. Nothman, K. Knight, and H. Ji, “Crosslingual name tagging and linking for 282 languages,” in Proceedings
 of the 55th Annual Meeting of the Association for Computational
 Linguistics (Volume 1: Long Papers). Vancouver, Canada: Association
 for Computational Linguistics, Jul. 2017, pp. 1946–1958. [Online].
 Available: https://www.aclweb.org/anthology/P17-1178
+
 [5] ] A. Conneau, G. Lample, R. Rinott, A. Williams, S. R. Bowman,
 H. Schwenk, and V. Stoyanov, “XNLI: evaluating cross-lingual sentence
 representations,” CoRR, vol. abs/1809.05053, 2018. [Online]. Available:
 http://arxiv.org/abs/1809.05053
+
 [6] M. Artetxe and H. Schwenk, “Massively multilingual sentence embeddings for zero-shot cross-lingual transfer and beyond,” Transactions of
 the Association for Computational Linguistics, vol. 7, pp. 597–610, 2019.
+
 [7] J. Eisenschlos, S. Ruder, P. Czapla, M. Kardas, S. Gugger, and
 J. Howard, “Multifit: Efficient multi-lingual language model finetuning,” arXiv preprint arXiv:1909.04761, 2019.
+
 [8] A. Conneau, K. Khandelwal, N. Goyal, V. Chaudhary, G. Wenzek, F. Guzman, E. Grave, M. Ott, L. Zettlemoyer, and V. Stoyanov, “Unsupervised cross-lingual representation learning at scale,” arXiv preprint arXiv:1911.02116, 2019.
