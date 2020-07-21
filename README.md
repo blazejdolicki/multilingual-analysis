@@ -36,6 +36,10 @@ To reproduce the experiments use the repositories below. Each repository has ins
 ## Linguistic analysis
 In the second part we analysed how linguistic features influence the performance in zero-shot learning. The scripts I used are in the `code` folder which in turn contains two important folders: `analysing_features` and `analysing_predictions`. 
 In the former we analyse how important particular features are for transfer performance, the main notebook for each task is "Feature importance <task>.ipynb". In the latter we examine model outputs and look for patterns in zero-shot predictions. We take an especially close look at Dutch and more of a general overview of other languages. Using the `utils.py` it is easy to examine the outputs of sequence tagging tasks with just a few lines of code. We hope that by publishing the predictions for many languages we encourage researchers to further examine the predictions in order to gain further insights.
+  
+The results and predictions for all languages are available here: https://drive.google.com/file/d/1Lf5eFS2KRqnJbY7L7oH6agz0DnVgcDsT/view?usp=sharing
+After unzipping this foler, you should put the folder 'results' from 'predictions and results/<task>/' into 'multilingual-analysis\code\analysing_features\<task>' and folders 'dev_sets' and 'results' from 'predictions and results/<task>/predictions/' into 'multilingual-analysis\code\analysing_predictions\<task>'.
+ 
 
 ## References
 [1] B. van der Burgh and S. Verberne, “The merits of universal language
