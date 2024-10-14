@@ -1,6 +1,6 @@
 # Analysing The Impact Of Linguistic Features On Cross-Lingual Transfer
 ## Introduction
-This repository presents work that I have done for my bachelor thesis "Analysing The Impact Of Linguistic Features On Cross-Lingual Transfer" which was prepared in partial fulfilment of the requirements for the Degree of Bachelor of Science in Data Science and Knowledge Engineering, Maastricht University. 
+This repository presents work that I have done for my bachelor thesis "Analysing The Impact Of Linguistic Features On Cross-Lingual Transfer" which was prepared in partial fulfilment of the requirements for the Degree of Bachelor of Science in Data Science and Knowledge Engineering, Maastricht University. The paper is available here: https://arxiv.org/pdf/2105.05975
 
 ## Data
 We used the following datasets in our analysis: 
